@@ -1,34 +1,36 @@
-import { createContext, useState, useEffect } from 'react';
+import { useState, useEffect } from 'react';
 import { Routes, Route } from 'react-router';
-import Header from './components/Header';
-import Footer from './components/Footer';
-import FloatingButton from './components/FloatingButton';
 import HomePage from './pages/Home';
 import Vision from './pages/Vision';
-import ProjectDetail from './pages/ProjectDetail';
 import NewsPage from './pages/News';
+import Header from './components/Header';
+import Footer from './components/Footer';
 import ErrorPage from './pages/ErrorPage';
 import OurJourney from './pages/OurJourney';
+import ThemeContext from './context/ThemeContext';
+import ProjectDetail from './pages/ProjectDetail';
+import FloatingButton from './components/FloatingButton';
+import ServicePageDetail from './pages/ServicePageDetail';
 
-export const DarkModeContext = createContext();
 function App() {
   const get = JSON.parse(localStorage.getItem('dark-theme'));
   const [darkMode, setDarkMode] = useState(get || false);
-
   useEffect(() => {
     // 👇️ scroll to top on page load
     window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
   }, []);
+
   return (
-    <DarkModeContext.Provider value={{ darkMode, setDarkMode }}>
+    <ThemeContext.Provider value={{ darkMode, setDarkMode }}>
       <div className='page dark:bg-dark dark:text-white'>
         <Header />
         <FloatingButton />
-        <main className='container py-[80px]'>
+        <main className='py-[80px]'>
           <Routes>
             <Route path='/' element={<HomePage />} />
-            <Route path='/about-us/Vision' element={<Vision />} />
+            <Route path='/about-us/vision' element={<Vision />} />
             <Route path='/about-us/our-journey' element={<OurJourney />} />
+            <Route path='/services/:href' element={<ServicePageDetail />} />
             <Route path='/projects/:projectid' element={<ProjectDetail />} />
             <Route path='/news-&-media' element={<NewsPage />} />
             <Route path='*' element={<ErrorPage />} />
@@ -36,7 +38,7 @@ function App() {
         </main>
         <Footer />
       </div>
-    </DarkModeContext.Provider>
+    </ThemeContext.Provider>
   );
 }
 export default App;

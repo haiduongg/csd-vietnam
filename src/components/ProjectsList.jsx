@@ -33,8 +33,8 @@ const ProjectsList = () => {
 
   return (
     <div className='mx-auto'>
-      <h2 className='text-h2 font-bold text-center'>Popular Projects</h2>
-      <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 mx-11 xl:mx-0 gap-6 mt-10'>
+      <h2 className='font-bold text-center uppercase'>Popular Projects</h2>
+      <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mx-11 xl:mx-0 gap-6 mt-10'>
         {isLoading
           ? projects?.map((project) => (
               <div
@@ -45,8 +45,6 @@ const ProjectsList = () => {
                 <img
                   src={project.thumbnail}
                   alt={`Project ${project.id}`}
-                  width={342}
-                  height={193}
                   className=' hover:opacity-60 duration-300 hover:scale-105 object-cover'
                 />
               </div>
@@ -54,9 +52,7 @@ const ProjectsList = () => {
           : projects.map((item) => (
               <Skeleton
                 key={item}
-                className='rounded-xl'
-                width={342}
-                height={193}
+                className='rounded-xl w-full min-h-[100px]'
               />
             ))}
       </div>

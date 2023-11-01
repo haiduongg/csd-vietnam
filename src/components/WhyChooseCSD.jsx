@@ -19,7 +19,7 @@ const ReasonCard = ({ data }) => {
         className='mx-auto my-6'
       />
       <p className='text-center text-[17px] font-bold'>{data.title}</p>
-      <p className='mt-2 text-center text-[14px] group-hover:text-text dark:group-hover:text-primary opacity-80'>
+      <p className='mt-2 text-[14px] group-hover:text-text dark:group-hover:text-primary opacity-80 text-center'>
         {data.description}
       </p>
     </div>
@@ -90,9 +90,9 @@ const WhyChooseCSD = () => {
   ];
   return (
     <div className='w-full'>
-      <h1 className='text-h2 font-bold text-center uppercase'>
+      <h2 className='font-bold text-center uppercase'>
         Why Choose <p className='inline-block text-primary'>CSD?</p>
-      </h1>
+      </h2>
       <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 xl:mx-0 px-8 gap-7 mt-10'>
         {reasons.map((reason) => (
           <ReasonCard key={reason.id} data={reason} />

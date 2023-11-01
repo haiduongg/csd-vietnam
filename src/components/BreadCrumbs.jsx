@@ -1,28 +1,30 @@
-import { useParams } from 'react-router-dom';
-import projectsData from '../data/projectsData';
-// import './breadcrumbs.scss';
+import PropTypes from 'prop-types';
 
-const BreadCrumbs = () => {
-  const { projectid } = useParams();
-  const thisProject = projectsData.find((proj) => proj.id === projectid);
-
+const BreadCrumbs = ({ serviceName, serviceHref }) => {
   return (
     <div className='bg-slate-200 dark:bg-hover-dark'>
-      <div className='max-w-[1240px] mx-auto py-2 px-8 xl:px-0 '>
+      <div className='container py-2'>
         <ol className='flex gap-2'>
           <li className="after:content-['_/'] after:ml-1">
             <a href='/'>Home</a>
           </li>
           <li className="after:content-['_/'] after:ml-1">
-            <a href='/projects'>Projects</a>
+            <a href='/services'>Service</a>
           </li>
           <li>
-            <a href='/projects/3'>{thisProject.name}</a>
+            <a href={`/services/${serviceHref}`}>{serviceName}</a>
           </li>
         </ol>
       </div>
     </div>
   );
+};
+BreadCrumbs.propTypes = {
+  serviceName: PropTypes.string.isRequired,
+  serviceHref: PropTypes.string,
+};
+BreadCrumbs.defaultProps = {
+  serviceHref: '',
 };
 
 export default BreadCrumbs;

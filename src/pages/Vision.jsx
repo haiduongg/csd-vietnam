@@ -17,41 +17,39 @@ const AboutPage = () => {
         <title>Vision | CSD Vietnam</title>
         <meta name='description' content='Helmet application' />
       </Helmet>
-      <section>
-        <AboutHeading />
-      </section>
-      <section>
-        <Content />
-      </section>
-      <section className='mt-14'>
-        <MeetTheTeam />
-      </section>
+      <AboutHeading />
+      <div className='container'>
+        <section>
+          <Content />
+        </section>
+        <section className='mt-14'>
+          <MeetTheTeam />
+        </section>
+      </div>
     </>
   );
 };
 
 const AboutHeading = () => {
   return (
-    <div className='w-full bg-text text-white py-12'>
-      <h2 className='text-h2 text-center font-semibold uppercase '>
-        Who are we ?
-      </h2>
+    <section className='w-full bg-text text-white py-12'>
+      <h2 className='text-center font-semibold uppercase '>Who are we ?</h2>
       <p className='mt-3 text-center'>
         &quot; We are a highly skilled and experienced group of mechanical
         engineers passionate about turning innovative ideas into tangible
         reality &quot;
       </p>
-    </div>
+    </section>
   );
 };
 
 const Content = () => {
   return (
     <div className='mt-12 text-justify text-[18px] leading-loose '>
-      <aside className='float-left mr-8'>
+      <aside className='mx-auto md:float-left md:mr-8 max-w-md'>
         <VisionCard />
       </aside>
-      <section className='relative'>
+      <section className='relative mt-3 md:mt-0'>
         <img
           src={worldwideBackground}
           alt='background'
@@ -82,7 +80,7 @@ const Content = () => {
           <br />
         </p>
       </section>
-      <section className='flex gap-8'>
+      <section className='md:flex gap-8'>
         <p>
           “With a highly experienced workforce that has accumulated years of
           expertise in their respective fields, including notable achievements
@@ -93,9 +91,7 @@ const Content = () => {
         <img
           src={Focus1}
           alt='Focus one'
-          width={500}
-          height={282}
-          className='mt-3 rounded-md'
+          className='mx-auto mt-3 rounded-md md:w-[50%] md:h-[50%] lg:w-[500px] lg:h-[282px]'
         />
       </section>
     </div>

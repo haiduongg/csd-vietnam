@@ -6,7 +6,7 @@ import CustomerReviewSection from '../components/CustomerReviewSlider';
 
 const HomePage = () => {
   return (
-    <>
+    <div className='container'>
       <Helmet>
         <title>CSD Vietnam | Highly skilled and experienced group</title>
         <meta name='description' content='Helmet application' />
@@ -23,7 +23,7 @@ const HomePage = () => {
       <section className='mt-20'>
         <CustomerReviewSection />
       </section>
-    </>
+    </div>
   );
 };
 

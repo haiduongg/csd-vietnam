@@ -41,9 +41,10 @@ export default function Header() {
       name: 'About us',
       icon: FaRegPenToSquare,
       menus: [
-        { name: 'Vision', icon: PiUserListDuotone },
+        { name: 'Vision', href: '/about-us/vision', icon: PiUserListDuotone },
         {
           name: 'Our Journey',
+          href: '/about-us/our-journey',
           icon: PiUsersFourLight,
         },
       ],
@@ -52,13 +53,41 @@ export default function Header() {
       name: 'Services',
       icon: MdMiscellaneousServices,
       menus: [
-        { name: '3D Modeling & Rendering', icon: TbBoxModel },
-        { name: 'Steel Structure & Landscape', icon: CgGhostCharacter },
-        { name: 'Simulation & Rendering', icon: AiOutlineCodepen },
-        { name: '3D Artist & 3D Printing', icon: AiOutlineMacCommand },
-        { name: 'Portraits & Caricatures', icon: PiTreeStructureDuotone },
-        { name: 'Logo Design', icon: GiTeleport },
-        { name: 'Training Course', icon: MdOutlineClass },
+        {
+          name: '3D Modeling & Rendering',
+          href: '/services/3d-modeling-rendering',
+          icon: TbBoxModel,
+        },
+        {
+          name: 'Steel Structure & Landscape',
+          href: '/services/steel-structure-landscape',
+          icon: CgGhostCharacter,
+        },
+        {
+          name: 'Simulation & Rendering',
+          href: '/services/simulation-rendering',
+          icon: AiOutlineCodepen,
+        },
+        {
+          name: '3D Artist & 3D Printing',
+          href: '/services/3d-artist-3d-printing',
+          icon: AiOutlineMacCommand,
+        },
+        {
+          name: 'Portraits & Caricatures',
+          href: '/services/portraits-caricatures',
+          icon: PiTreeStructureDuotone,
+        },
+        {
+          name: 'Logo Design',
+          href: '/services/logo-design',
+          icon: GiTeleport,
+        },
+        {
+          name: 'Training Courses',
+          href: 'https://courses.csdvietnam.com',
+          icon: MdOutlineClass,
+        },
       ],
     },
     {

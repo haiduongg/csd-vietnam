@@ -1,4 +1,5 @@
-/* eslint-disable react/prop-types */
+import { useContext, useEffect, useState } from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { AiOutlineGlobal } from 'react-icons/ai';
 import { PiCaretDown } from 'react-icons/pi';
@@ -8,9 +9,7 @@ import logo from '../../assets/images/logo.webp';
 import logoWhite from '../../assets/images/logo-white.webp';
 import usa from '../../assets/images/Flag/usa.webp';
 import vietnam from '../../assets/images/Flag/vietnam.webp';
-import { useContext, useEffect, useState } from 'react';
-import { DarkModeContext } from '../../App';
-// import { DarkModeContext } from '../../context/darkmode';
+import ThemeContext from '../../context/ThemeContext';
 
 const Language = () => {
   const [language, setLanguage] = useState('Vietnamese');
@@ -42,7 +41,9 @@ const Language = () => {
                 width='35'
                 height='24'
               />
-              <p className='ml-3 text-[14px] font-medium'>{language.name}</p>
+              <span className='ml-3 text-[14px] font-medium'>
+                {language.name}
+              </span>
             </li>
           ))}
         </ul>
@@ -52,7 +53,7 @@ const Language = () => {
 };
 
 export default function Navbar({ data }) {
-  const { darkMode, setDarkMode } = useContext(DarkModeContext);
+  const { darkMode, setDarkMode } = useContext(ThemeContext);
   useEffect(() => {
     if (darkMode) {
       document.documentElement.classList.add('dark');
@@ -112,15 +113,19 @@ export default function Navbar({ data }) {
                   {item.menus?.map((menu) => (
                     <Link
                       key={menu.name}
-                      to={`/${translationURL(item.name)}/${translationURL(
-                        menu.name
-                      )}`}
+                      to={
+                        menu.href
+                          ? menu.href
+                          : `/${translationURL(item.name)}/${translationURL(
+                              menu.name
+                            )}`
+                      }
                       className='group flex items-center rounded-md py-3 pl-4 pr-6 duration-300 hover:bg-hover-light dark:hover:bg-hover-dark mb-2 relative'
                     >
-                      <div className='mr-4'>
+                      <div className='mr-4 inline-block'>
                         {menu.icon ? <menu.icon size='20' /> : null}
                       </div>
-                      <p>{menu.name}</p>
+                      <span>{menu.name}</span>
                     </Link>
                   ))}
                 </ul>
@@ -156,3 +161,6 @@ export default function Navbar({ data }) {
     </div>
   );
 }
+Navbar.propTypes = {
+  data: PropTypes.array.isRequired,
+};

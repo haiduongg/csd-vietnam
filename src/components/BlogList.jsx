@@ -62,7 +62,7 @@ const BlogList = () => {
     <div className='py-16'>
       <div className='heading'>
         <div>
-          <h1 className='text-h1 font-bold text-center'>
+          <h1 className='font-bold text-center'>
             {showTag !== 'All'
               ? `Tag #${showTag} | CSD Vietnam`
               : 'News & Media'}

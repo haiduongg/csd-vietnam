@@ -2,6 +2,19 @@ import { Helmet } from 'react-helmet';
 import { BiSolidTimeFive } from 'react-icons/bi';
 import Timeline from '../components/Timeline';
 
+const Heading = () => {
+  return (
+    <section className='w-full bg-text text-white py-12'>
+      <h2 className='text-center font-semibold uppercase '>Our Journey</h2>
+      <p className='mt-3 text-center'>
+        &quot; We are a highly skilled and experienced group of mechanical
+        engineers passionate about turning innovative ideas into tangible
+        reality &quot;
+      </p>
+    </section>
+  );
+};
+
 const OurJourney = () => {
   const timelines = [
     {
@@ -35,9 +48,12 @@ const OurJourney = () => {
         <title>Our Journey | CSD Vietnam</title>
         <meta name='description' content='Helmet application' />
       </Helmet>
-      <section>
-        <Timeline dataTimeline={timelines} />
-      </section>
+      <Heading />
+      <div className='container'>
+        <section>
+          <Timeline dataTimeline={timelines} />
+        </section>
+      </div>
     </>
   );
 };

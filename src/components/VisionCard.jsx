@@ -1,6 +1,5 @@
-import { BiSolidUser, BiTime } from 'react-icons/bi';
+import { BiSolidUser } from 'react-icons/bi';
 import { MdLocationOn } from 'react-icons/md';
-import { FiSend } from 'react-icons/fi';
 import avatar from '../assets/images/card-avatar.webp';
 
 const VisionCard = () => {
@@ -25,7 +24,7 @@ const VisionCard = () => {
 
   return (
     <div className='border-solid border-[1px] border-gray-300 p-8'>
-      <div className='flex flex-col items-center pb-5'>
+      <div className='flex flex-col items-center pb-5 text-center'>
         <img
           src={avatar}
           alt='CSD Vietnam'
@@ -33,8 +32,8 @@ const VisionCard = () => {
           width='150px'
           height='150px'
         />
-        <p className='mt-3 text-[15px]'>{informations.secondaryName}</p>
-        <h2 className='text-[22px] font-bold mt-2'>{informations.name}</h2>
+        <p className='mt-3'>{informations.secondaryName}</p>
+        <h4 className='font-bold'>{informations.name}</h4>
       </div>
       <div className='border-t-2 border-solid pt-5'>
         {informations.desc?.map((item) => (

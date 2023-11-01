@@ -13,7 +13,6 @@ const Timeline = ({ dataTimeline }) => {
   }, []);
   return (
     <>
-      <Heading />
       <div className='mt-32'>
         <VerticalTimeline lineColor={'black'}>
           {dataTimeline?.map((timeline) => (
@@ -41,21 +40,6 @@ const Timeline = ({ dataTimeline }) => {
 };
 Timeline.propTypes = {
   dataTimeline: PropTypes.array.isRequired,
-};
-
-const Heading = () => {
-  return (
-    <div className='w-full bg-text text-white py-12'>
-      <h2 className='text-h2 text-center font-semibold uppercase '>
-        Our Journey
-      </h2>
-      <p className='mt-3 text-center'>
-        &quot; We are a highly skilled and experienced group of mechanical
-        engineers passionate about turning innovative ideas into tangible
-        reality &quot;
-      </p>
-    </div>
-  );
 };
 
 export default Timeline;

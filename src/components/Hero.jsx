@@ -11,11 +11,12 @@ import darkP082 from '../assets/images/hero/FIVERR.P082-000-FA-000_Dark.png';
 import darkP128 from '../assets/images/hero/FIVERR.P128-000-FA-001_Dark.png';
 import darkP135 from '../assets/images/hero/FIVERR.P135-000-FA-001_Dark.png';
 import darkHM from '../assets/images/hero/HM_Dark.png';
-import { DarkModeContext } from '../App';
+import ThemeContext from '../context/ThemeContext';
+
 import { useContext } from 'react';
 
 const Hero = () => {
-  const { darkMode, setDarkMode } = useContext(DarkModeContext);
+  const { darkMode } = useContext(ThemeContext);
   const images = [
     { id: 1, src: P061 },
     { id: 2, src: P066 },
@@ -33,19 +34,23 @@ const Hero = () => {
     { id: 6, src: darkHM },
   ];
   return (
-    <div className='relative flex justify-center items-center lg:items-start lg:justify-between px-12 xl:px-0'>
-      <div className='text-center lg:text-left min-h-[500px] min-w-[500px]'>
-        <h2 className='text-h2 font-semibold'>Welcome here</h2>
-        <h1 className='text-h1 font-bold my-2 text-primary'>
-          We are CSD Vietnam
-        </h1>
-        <div className='max-w-[500px] select-none block lg:hidden'>
+    <div className='flex flex-col lg:flex-row justify-center items-center lg:items-start lg:justify-between'>
+      <div className='text-center lg:text-left'>
+        <h2 className='font-semibold'>Welcome here</h2>
+        <h1 className='font-bold mt-2 text-primary'>We are CSD Vietnam</h1>
+        <div className='w-[300px] select-none block lg:hidden mx-auto'>
           <HeroSlideShow dataImg={darkMode ? darkImages : images} />
         </div>
-        <ul className='m-0 mx-10 leading-9 text-h3 list-disc'>
-          <li>Professional CAD Services</li>
-          <li>Unique and creative</li>
-          <li>Reaching the world</li>
+        <ul className='m-0 mx-10 list-disc'>
+          <li className='my-4'>
+            <h4>Professional CAD Services</h4>
+          </li>
+          <li className='my-4'>
+            <h4>Unique and creative</h4>
+          </li>
+          <li className='my-4'>
+            <h4>Reaching the world</h4>
+          </li>
         </ul>
         <div className='mt-6 flex justify-center lg:justify-start'>
           <a href='https://www.facebook.com/CSD.Vie' target='_'>
@@ -55,7 +60,7 @@ const Hero = () => {
           </a>
         </div>
       </div>
-      <div className='max-w-[500px] select-none hidden lg:block'>
+      <div className='w-[500px] select-none hidden lg:block'>
         <HeroSlideShow dataImg={darkMode ? darkImages : images} />
       </div>
     </div>

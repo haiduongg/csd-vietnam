@@ -2,8 +2,6 @@
 import { Helmet } from 'react-helmet';
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
 import Content from '../components/Content';
 import BreadCrumbs from '../components/BreadCrumbs';
 import FloatingButton from '../components/FloatingButton';
@@ -36,7 +34,6 @@ const ProjectDetail = () => {
         {project.name && <title>{`${project.name} | CSD Vietnam`}</title>}
         <meta name='description' content='Helmet application' />
       </Helmet>
-      <Header />
       <main className='pt-[80px] pb-28 dark:bg-dark dark:text-white'>
         <BreadCrumbs />
         <FloatingButton />
@@ -48,7 +45,6 @@ const ProjectDetail = () => {
           />
         </div>
       </main>
-      <Footer />
     </>
   );
 };
