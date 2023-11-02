@@ -1,6 +1,8 @@
 import { useContext, useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
+import { Button } from 'antd';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import { motion } from 'framer-motion';
 import { AiOutlineGlobal } from 'react-icons/ai';
 import { PiCaretDown } from 'react-icons/pi';
 import { RiMoonFill, RiSunFill } from 'react-icons/ri';
@@ -10,7 +12,6 @@ import logoWhite from '../../assets/images/logo-white.webp';
 import usa from '../../assets/images/Flag/usa.webp';
 import vietnam from '../../assets/images/Flag/vietnam.webp';
 import ThemeContext from '../../context/ThemeContext';
-
 const Language = () => {
   const [language, setLanguage] = useState('Vietnamese');
   const languages = [
@@ -71,15 +72,22 @@ export default function Navbar({ data }) {
     <div className='w-full hidden xl:block'>
       <div className='flex justify-between items-center'>
         <div className='flex items-center'>
-          <a id='logo' href={'/'}>
-            <img
-              src={darkMode ? logoWhite : logo}
-              alt='CSD Vietnam'
-              width='140'
-              height='60'
-              className='select-none'
-            />
-          </a>
+          <motion.div
+            animate={{ opacity: 1, x: 10 }}
+            initial={{ opacity: 0, x: -10 }}
+            transition={{ ease: 'easeOut', duration: 0.5 }}
+          >
+            <a id='logo' href={'/'}>
+              <motion.img
+                src={darkMode ? logoWhite : logo}
+                alt='CSD Vietnam'
+                width='140'
+                height='60'
+                className='select-none'
+                whileTap={{ scale: 0.95 }}
+              />
+            </a>
+          </motion.div>
           <ul className='flex items-center ml-10'>
             {data?.map((item) => (
               <li
@@ -87,7 +95,7 @@ export default function Navbar({ data }) {
                 className='group py-8 px-3 mx-2 font-medium cursor-pointer'
               >
                 <div className='flex items-center'>
-                  <div className='text-sm group-hover:text-primary duration-300 font-bold'>
+                  <div className='text-sm group-hover:text-primary duration-300 font-bold tracking-wide'>
                     {item.menus ? (
                       <span className='uppercase'>{item.name}</span>
                     ) : (
@@ -145,17 +153,16 @@ export default function Navbar({ data }) {
           <div className='my-auto'>
             <Language />
           </div>
-          <div className='ml-3'>
-            <a
+          <motion.div className='ml-3' whileTap={{ scale: 0.95 }}>
+            <Button
+              type='primary'
+              className='bg-primary'
               href='https://www.facebook.com/CSD.Vie'
               target='_'
-              className='w-[280px] h-[6px]'
             >
-              <button className='bg-primary inline-flex items-center justify-center rounded-xl py-2 px-5 text-center text-base font-normal text-white hover:bg-opacity-90 uppercase focus:outline-none focus:ring-4 focus:ring-orange-200'>
-                Contact
-              </button>
-            </a>
-          </div>
+              <span>Contact</span>
+            </Button>
+          </motion.div>
         </div>
       </div>
     </div>
