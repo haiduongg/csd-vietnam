@@ -21,7 +21,7 @@ function Sidebar({ menuList, openMenu, setOpenMenu }) {
       {menuList?.map((item) => (
         <li key={item.id}>
           <motion.div
-            className='cursor-pointer py-3'
+            className='cursor-pointer py-3 w-screen'
             onClick={() => {
               setIsItem(item.label);
               isItem === item.label && isOpen == true
@@ -50,7 +50,7 @@ function Sidebar({ menuList, openMenu, setOpenMenu }) {
                   whileTap={{ scale: 0.9 }}
                   className='w-scrren'
                 >
-                  <Link to={child.href} className='py-2 w-full block'>
+                  <Link to={child.href} className='py-3 w-full block'>
                     {child.label}
                   </Link>
                 </motion.li>
