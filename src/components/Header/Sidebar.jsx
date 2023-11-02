@@ -48,9 +48,11 @@ function Sidebar({ menuList, openMenu, setOpenMenu }) {
                   key={child.id}
                   onClick={() => setOpenMenu(!openMenu)}
                   whileTap={{ scale: 0.9 }}
-                  className='py-2'
+                  className='w-scrren'
                 >
-                  <Link to={child.href}>{child.label}</Link>
+                  <Link to={child.href} className='py-2 w-full block'>
+                    {child.label}
+                  </Link>
                 </motion.li>
               ))}
             </motion.ul>
