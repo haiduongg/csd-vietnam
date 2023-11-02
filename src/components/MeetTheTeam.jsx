@@ -83,8 +83,6 @@ const VisionSlider = ({ data }) => {
         }}
         navigation
         pagination={{ clickable: true }}
-        onSwiper={(swiper) => console.log(swiper)}
-        onSlideChange={() => console.log('slide change')}
         className='flex items-center justify-center hidden lg:block'
       >
         {data?.map((person) => (
@@ -120,8 +118,6 @@ const VisionSlider = ({ data }) => {
         }}
         navigation
         pagination={{ clickable: true }}
-        onSwiper={(swiper) => console.log(swiper)}
-        onSlideChange={() => console.log('slide change')}
         className='flex items-center justify-center block lg:hidden'
       >
         {data?.map((person) => (

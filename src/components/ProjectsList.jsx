@@ -5,8 +5,6 @@ import 'react-loading-skeleton/dist/skeleton.css';
 const ProjectsList = () => {
   const [projects, setProjects] = useState(new Array(1, 2, 3, 4, 5, 6, 7, 8));
   const [isLoading, setIsLoading] = useState(false);
-  console.log(isLoading);
-  console.log(projects);
   useEffect(() => {
     // fetch API
 

@@ -36,8 +36,8 @@ const Hero = () => {
     { id: 6, src: darkHM },
   ];
   return (
-    <div className='flex flex-col lg:flex-row justify-center items-center lg:items-start lg:justify-between'>
-      <div className='text-center lg:text-left'>
+    <div className='flex items-start justify-between'>
+      <div className='w-full text-center lg:text-left flex flex-col items-center justify-center lg:items-start lg:justify-between'>
         <motion.h2
           className='font-semibold'
           animate={{ x: 0, opacity: 1 }}
@@ -54,7 +54,7 @@ const Hero = () => {
         >
           We are CSD Vietnam
         </motion.h1>
-        <div className='w-[300px] select-none block lg:hidden mx-auto'>
+        <div className='w-[200px] sm:w-[400px] select-none block lg:hidden mx-auto'>
           <HeroSlideShow dataImg={darkMode ? darkImages : images} />
         </div>
         <motion.div
@@ -76,7 +76,7 @@ const Hero = () => {
           <motion.div whileTap={{ scale: 0.95 }}>
             <Button
               type='primary'
-              className='bg-primary w-36 h-12 text-xl flex items-center justify-center uppercase mt-6 rounded-xl'
+              className='bg-primary w-36 h-12 text-xl flex items-center justify-center uppercase mt-6 rounded-xl mx-auto lg:mx-0'
               href='https://www.facebook.com/CSD.Vie'
               target='_'
             >

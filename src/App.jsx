@@ -20,12 +20,20 @@ function App() {
     window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
   }, []);
 
+  useEffect(() => {
+    if (darkMode) {
+      document.documentElement.classList.add('dark');
+    } else {
+      document.documentElement.classList.remove('dark');
+    }
+  }, [darkMode]);
+
   return (
     <ThemeContext.Provider value={{ darkMode, setDarkMode }}>
       <div className='page dark:bg-dark dark:text-white'>
         <Header />
         <FloatingButton />
-        <main className='py-[80px]'>
+        <main className='py-[72px]'>
           <Routes>
             <Route path='/' element={<HomePage />} />
             <Route path='/about-us/vision' element={<Vision />} />

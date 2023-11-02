@@ -1,64 +1,64 @@
-/* eslint-disable react/prop-types */
-import { motion } from 'framer-motion';
+import PropTypes from 'prop-types';
 import { useState } from 'react';
+import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { PiCaretDown } from 'react-icons/pi';
-import translationURL from '../../utils/translationURL';
+import { HiChevronDown } from 'react-icons/hi';
 
-export default function SubMenu({ data }) {
-  const [subMenuOpen, setSubMenuOpen] = useState(false);
+Sidebar.propTypes = {
+  menuList: PropTypes.array.isRequired,
+  openMenu: PropTypes.bool.isRequired,
+  setOpenMenu: PropTypes.func.isRequired,
+};
+function Sidebar({ menuList, openMenu, setOpenMenu }) {
+  const [isItem, setIsItem] = useState('');
+  const [isOpen, setIsOpen] = useState(false);
   return (
-    <>
-      <li
-        onClick={() => setSubMenuOpen(!subMenuOpen)}
-        className='flex justify-between items-center cursor-pointer p-3 '
-      >
-        <div className='flex items-center'>
-          <data.icon size={24} />
-          {data.menus ? (
-            <p className='capitalize ml-6'>{data.name}</p>
-          ) : (
-            <Link to={translationURL(data.name)} className='capitalize ml-6'>
-              {data.name}
-            </Link>
-          )}
-        </div>
-        <PiCaretDown
-          size={17}
-          className={
-            data.menus
-              ? `block ${subMenuOpen && 'rotate-180'} duration-200`
-              : 'hidden'
-          }
-        />
-      </li>
-      <motion.ul
-        animate={
-          subMenuOpen
-            ? {
-                height: 'fit-content',
-              }
-            : {
-                height: 0,
-              }
-        }
-        className={
-          subMenuOpen
-            ? 'block ml-16 overflow-hidden'
-            : 'hidden ml-16 overflow-hidden'
-        }
-      >
-        {data.menus?.map((menu) => (
-          <li key={menu.name} className='py-3'>
-            <Link
-              to={`/${translationURL(data.name)}/${translationURL(menu.name)}`}
-              className='link !bg-transparent capitalize'
+    <motion.div
+      animate={{ x: 0, opacity: 1 }}
+      initial={{ x: -200, opacity: 0 }}
+      className='bg-primary text-white flex flex-col items-center justify-start select-none h-fit text-center z-50 py-2'
+    >
+      {menuList?.map((item) => (
+        <li key={item.id}>
+          <motion.div
+            className='cursor-pointer py-3'
+            onClick={() => {
+              setIsItem(item.label);
+              isItem === item.label && isOpen == true
+                ? setIsOpen(false)
+                : setIsOpen(true);
+            }}
+            whileTap={{ scale: 0.9 }}
+          >
+            <span className='text-base'>{item.label}</span>
+            <HiChevronDown
+              className={`${
+                isItem === item.label && isOpen === true && 'rotate-180'
+              } inline-block duration-300`}
+            />
+          </motion.div>
+          {isItem === item.label && isOpen === true && (
+            <motion.ul
+              animate={{ opacity: 1 }}
+              initial={{ opacity: 0 }}
+              className='w-screen border-y-[1px] border-solid border-gray-200 bg-primary hue-rotate-15'
             >
-              <p className='text-sm'>{menu.name}</p>
-            </Link>
-          </li>
-        ))}
-      </motion.ul>
-    </>
+              {item.children?.map((child) => (
+                <motion.li
+                  key={child.id}
+                  onClick={() => setOpenMenu(!openMenu)}
+                  whileTap={{ scale: 0.9 }}
+                  className='py-2'
+                >
+                  <Link to={child.href}>{child.label}</Link>
+                </motion.li>
+              ))}
+            </motion.ul>
+          )}
+        </li>
+      ))}
+    </motion.div>
   );
 }
+
+export default Sidebar;

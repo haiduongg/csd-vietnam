@@ -11,7 +11,7 @@ const HomePage = () => {
         <title>CSD Vietnam | Highly skilled and experienced group</title>
         <meta name='description' content='Helmet application' />
       </Helmet>
-      <section className='pt-[100px]'>
+      <section className='pt-[50px] lg:pt-[100px]'>
         <HeroSection />
       </section>
       <section className='mt-8'>

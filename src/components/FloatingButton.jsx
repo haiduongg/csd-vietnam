@@ -27,7 +27,7 @@ const FloatingButton = () => {
     },
   ];
   return (
-    <div className='fixed bottom-[2%] right-3 lg:bottom-[5%] z-50'>
+    <div className='fixed bottom-[2%] right-3 lg:bottom-[5%] z-10'>
       <div>
         {contacts.map((contact) => (
           <div

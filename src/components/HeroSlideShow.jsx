@@ -24,8 +24,6 @@ const SlideShow = ({ dataImg }) => {
       }}
       // navigation
       // pagination={{ clickable: true }}
-      onSwiper={(swiper) => console.log(swiper)}
-      onSlideChange={() => console.log('slide change')}
       className='flex items-center justify-center'
     >
       {dataImg?.map((image) => (

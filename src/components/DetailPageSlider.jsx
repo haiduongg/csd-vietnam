@@ -1,4 +1,3 @@
-import React from 'react';
 import PropTypes from 'prop-types';
 import {
   Navigation,
@@ -29,8 +28,6 @@ function DetailPageSlider({ dataImg }) {
       }}
       navigation
       pagination={{ clickable: true }}
-      onSwiper={(swiper) => console.log(swiper)}
-      onSlideChange={() => console.log('slide change')}
       className='flex items-center justify-center'
     >
       {dataImg?.map((image) => (
