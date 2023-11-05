@@ -62,7 +62,7 @@ export default function Social() {
               href={item.path}
               title={item.name}
               target='_'
-              className='cursor-pointer text-[17px] opacity-70'
+              className='cursor-pointer text-[17px] opacity-70 border-b-[1px] border-solid border-gray-200 pb-[1px]'
             >
               {item.name}
             </a>

@@ -5,6 +5,23 @@ import { Button } from 'antd';
 import { HiChevronDown } from 'react-icons/hi';
 import { RiMoonFill, RiSunFill } from 'react-icons/ri';
 
+const menuMotion = {
+  show: {
+    opacity: 1,
+  },
+  hidden: {
+    opacity: 1,
+  },
+};
+const subMenuMotion = {
+  show: {
+    display: 'block',
+  },
+  hidden: {
+    display: 'none',
+  },
+};
+
 Navbar.propTypes = {
   menuList: PropTypes.array.isRequired,
   darkMode: PropTypes.bool.isRequired,
@@ -16,15 +33,27 @@ function Navbar({ menuList, darkMode, setDarkMode }) {
       {/* Menu  */}
       <ul className='flex justify-start items-center'>
         {menuList?.map((item) => (
-          <li key={item.id} className='group relative'>
-            <div className='py-3.5 px-3 mx-2 cursor-pointer group-hover:text-primary'>
+          <motion.li
+            initial='hidden'
+            animate='hidden'
+            whileHover='show'
+            key={item.id}
+            className='group relative'
+          >
+            <motion.div
+              variants={menuMotion}
+              className='py-3.5 px-3 mx-2 cursor-pointer group-hover:text-primary'
+            >
               <span className='uppercase font-bold text-sm'>{item.label}</span>
               <HiChevronDown
                 className='inline-block group-hover:rotate-180 duration-300'
                 size={20}
               />
-            </div>
-            <ul className='sub-menu absolute hidden group-hover:block bg-white dark:bg-dark top-full left-2 shadow-[0px_10px_40px_rgba(0,0,0,0.05)] py-4 px-5 rounded-xl border-[1px] border-solid border-gray-100 dark:border-hover-dark'>
+            </motion.div>
+            <motion.ul
+              variants={subMenuMotion}
+              className='sub-menu absolute  bg-white dark:bg-dark top-full left-2 shadow-[0px_10px_40px_rgba(0,0,0,0.05)] py-4 px-5 rounded-xl border-[1px] border-solid border-gray-100 dark:border-hover-dark'
+            >
               {item.children?.map((child) => (
                 <li key={child.id}>
                   <Link
@@ -40,8 +69,8 @@ function Navbar({ menuList, darkMode, setDarkMode }) {
                   </Link>
                 </li>
               ))}
-            </ul>
-          </li>
+            </motion.ul>
+          </motion.li>
         ))}
       </ul>
 
