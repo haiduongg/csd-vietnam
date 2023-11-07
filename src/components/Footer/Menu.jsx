@@ -59,11 +59,11 @@ export default function Menu() {
       {menuList.map((item) => {
         return (
           <div key={item.name} className='text-white'>
-            <p className='text-[23px] font-semibold mb-3'>{item.name}</p>
+            <p className='text-2xl font-semibold mb-3'>{item.name}</p>
             {item.children.map((child) => {
               return (
                 <ul
-                  className='text-[18px] opacity-60 hover:!opacity-100 duration-300'
+                  className='text-lg opacity-60 hover:!opacity-100 duration-300'
                   key={child.name}
                 >
                   <li className='group my-3 relative flex items-center cursor-pointer'>

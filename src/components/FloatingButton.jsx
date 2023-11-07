@@ -1,6 +1,21 @@
+import { motion } from 'framer-motion';
 import FacebookMessenger from '../assets/images/Icons/facebook-messenger.webp';
 import Skype from '../assets/images/Icons/skype-2019.webp';
 import Whatsapp from '../assets/images/Icons/whatsapp.webp';
+
+const variants = {
+  show: {
+    opacity: 1,
+    x: 0,
+    transition: {
+      delayChildren: 1,
+    },
+  },
+  hidden: {
+    opacity: 0,
+    x: 100,
+  },
+};
 
 const FloatingButton = () => {
   const contacts = [
@@ -28,11 +43,12 @@ const FloatingButton = () => {
   ];
   return (
     <div className='fixed bottom-[2%] right-3 lg:bottom-[5%] z-10'>
-      <div>
+      <motion.div initial='hidden' animate='show' variants={variants}>
         {contacts.map((contact) => (
-          <div
+          <motion.div
             key={contact.id}
             className='group p-2 lg:pl-3 lg:pr-6 lg:py-2 mb-3 bg-white dark:bg-dark rounded-xl shadow-lg dark:shadow-slate-700 select-none'
+            whileTap={{ scale: 0.95 }}
           >
             <a href={contact.href} target='_' className='flex items-center'>
               <img
@@ -47,14 +63,14 @@ const FloatingButton = () => {
                   {contact.title}
                 </span>
                 <br />
-                <span className='font-semibold text-[13px] opacity-60'>
+                <span className='font-semibold text-sm opacity-60'>
                   {contact.description}
                 </span>
               </p>
             </a>
-          </div>
+          </motion.div>
         ))}
-      </div>
+      </motion.div>
     </div>
   );
 };

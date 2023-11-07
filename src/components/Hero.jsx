@@ -73,7 +73,10 @@ const Hero = () => {
               <h4>Reaching the world</h4>
             </li>
           </ul>
-          <motion.div whileTap={{ scale: 0.95 }} className='w-32'>
+          <motion.div
+            whileTap={{ scale: 0.95 }}
+            className='w-32 mx-auto lg:mx-0'
+          >
             <Button
               type='primary'
               className='bg-primary text-xl py-5 flex items-center justify-center uppercase mt-6 rounded-xl mx-auto lg:mx-0'

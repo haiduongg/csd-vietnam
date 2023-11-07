@@ -19,7 +19,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className='h-[50px] leading-[50px] text-center bg-[#130e49] text-white dark:bg-[#191f27] text-[17px]'>
+        <div className='h-[50px] leading-[50px] text-center bg-[#130e49] text-white dark:bg-[#191f27] text-lg'>
           <span>Copyright @ 2023 by CADSQUAD - All Right Reserved</span>
         </div>
       </div>

@@ -18,8 +18,8 @@ const ReasonCard = ({ data }) => {
         height='70'
         className='mx-auto my-6'
       />
-      <p className='text-center text-[17px] font-bold'>{data.title}</p>
-      <p className='mt-2 text-[14px] group-hover:text-text dark:group-hover:text-primary opacity-80 text-center'>
+      <p className='text-center font-bold'>{data.title}</p>
+      <p className='mt-2 text-sm leading-normal group-hover:text-text dark:group-hover:text-primary opacity-80 text-center'>
         {data.description}
       </p>
     </div>

@@ -53,7 +53,7 @@ const Services = () => {
             key={service.name}
             className='group rounded-2xl py-10 px-8 border-[1.5px] border-solid border-gray-300'
           >
-            <h3 className='text-h3 text-center font-medium uppercase my-6 group-hover:text-[#F47920] duration-300'>
+            <h3 className='text-h3 text-center font-medium uppercase my-6 group-hover:text-primary duration-300'>
               {service.name}
             </h3>
             <ul className='list-disc pl-8'>

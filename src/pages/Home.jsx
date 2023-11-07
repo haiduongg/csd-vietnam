@@ -3,6 +3,7 @@ import HeroSection from '../components/Hero';
 import ProjectsList from '../components/ProjectsList';
 import WhyChooseCSDSection from '../components/WhyChooseCSD';
 import CustomerReviewSection from '../components/CustomerReviewSlider';
+import Procedure from '../components/Procedure';
 
 const HomePage = () => {
   return (
@@ -22,6 +23,9 @@ const HomePage = () => {
       </section>
       <section className='mt-20'>
         <CustomerReviewSection />
+      </section>
+      <section className='mt-20'>
+        <Procedure />
       </section>
     </div>
   );

@@ -98,9 +98,7 @@ const VisionSlider = ({ data }) => {
                 height={100}
                 className='w-[100px] h-[100px] object-cover rounded-full'
               />
-              <span className='font-bold mt-7 mb-2 text-[22px]'>
-                {person.name}
-              </span>
+              <span className='font-bold mt-7 mb-2 text-xl'>{person.name}</span>
               <span className='opacity-75'>{person.poisiton}</span>
             </div>
           </SwiperSlide>
@@ -133,9 +131,7 @@ const VisionSlider = ({ data }) => {
                 height={100}
                 className='w-[100px] h-[100px] object-cover rounded-full'
               />
-              <span className='font-bold mt-7 mb-2 text-[22px]'>
-                {person.name}
-              </span>
+              <span className='font-bold mt-7 mb-2 text-lg'>{person.name}</span>
               <span className='opacity-75'>{person.poisiton}</span>
             </div>
           </SwiperSlide>

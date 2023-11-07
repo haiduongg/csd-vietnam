@@ -35,7 +35,7 @@ const Timeline = ({ tag }) => {
                     </p>
                     <div className='flex items-center justify-start text-primary font-semibold leading-none mt-4'>
                       <span className='mr-1'>Đọc thêm</span>
-                      <PiCaretRightBold className='text-[10px]' />
+                      <PiCaretRightBold className='text-sm' />
                     </div>
                   </a>
                 </div>

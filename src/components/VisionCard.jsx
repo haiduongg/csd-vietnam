@@ -23,7 +23,7 @@ const VisionCard = () => {
   };
 
   return (
-    <div className='border-solid border-[1px] border-gray-300 p-8'>
+    <div className='border-solid border-[1px] border-gray-300 p-8 w-full'>
       <div className='flex flex-col items-center pb-5 text-center'>
         <img
           src={avatar}
@@ -32,14 +32,14 @@ const VisionCard = () => {
           width='150px'
           height='150px'
         />
-        <p className='mt-3'>{informations.secondaryName}</p>
-        <h4 className='font-bold'>{informations.name}</h4>
+        <span className='my-3 text-sm'>{informations.secondaryName}</span>
+        <span className='font-bold text-xl'>{informations.name}</span>
       </div>
       <div className='border-t-2 border-solid pt-5'>
         {informations.desc?.map((item) => (
           <div
             key={item}
-            className='flex justify-between items-center text-[15px] mb-4'
+            className='flex justify-between items-center text-lg mb-4'
           >
             <div className='flex items-center'>
               <item.icon size={18} className='mr-3' />

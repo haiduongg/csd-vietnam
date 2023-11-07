@@ -5,21 +5,14 @@ import { Button } from 'antd';
 import { HiChevronDown } from 'react-icons/hi';
 import { RiMoonFill, RiSunFill } from 'react-icons/ri';
 
-const menuMotion = {
-  show: {
-    opacity: 1,
-  },
-  hidden: {
-    opacity: 1,
-  },
-};
 const subMenuMotion = {
   show: {
     display: 'block',
+    opacity: 1,
+    y: 0,
+    transition: { type: 'spring', stiffness: 300, damping: 24 },
   },
-  hidden: {
-    display: 'none',
-  },
+  hidden: { display: 'none', opacity: 0, y: 20, transition: { duration: 0.2 } },
 };
 
 Navbar.propTypes = {
@@ -40,16 +33,13 @@ function Navbar({ menuList, darkMode, setDarkMode }) {
             key={item.id}
             className='group relative'
           >
-            <motion.div
-              variants={menuMotion}
-              className='py-3.5 px-3 mx-2 cursor-pointer group-hover:text-primary'
-            >
+            <div className='py-3.5 px-3 mx-2 cursor-pointer group-hover:text-primary'>
               <span className='uppercase font-bold text-sm'>{item.label}</span>
               <HiChevronDown
                 className='inline-block group-hover:rotate-180 duration-300'
                 size={20}
               />
-            </motion.div>
+            </div>
             <motion.ul
               variants={subMenuMotion}
               className='sub-menu absolute  bg-white dark:bg-dark top-full left-2 shadow-[0px_10px_40px_rgba(0,0,0,0.05)] py-4 px-5 rounded-xl border-[1px] border-solid border-gray-100 dark:border-hover-dark'
