@@ -62,7 +62,7 @@ export default function Social() {
               href={item.path}
               title={item.name}
               target='_'
-              className='cursor-pointer opacity-70 border-b-[1px] border-solid border-gray-200 pb-[1px]'
+              className='cursor-pointer opacity-70 hover:opacity-100 border-b-[1px] border-solid border-gray-200 pb-[1px] duration-200'
             >
               {item.name}
             </a>

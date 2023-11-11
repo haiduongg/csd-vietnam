@@ -90,9 +90,9 @@ const WhyChooseCSD = () => {
   ];
   return (
     <div className='w-full'>
-      <h2 className='font-bold text-center uppercase'>
+      <h3 className='font-bold text-center uppercase'>
         Why Choose <p className='inline-block text-primary'>CSD?</p>
-      </h2>
+      </h3>
       <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 xl:grid-cols-4 xl:mx-0 px-8 gap-7 mt-10'>
         {reasons.map((reason) => (
           <ReasonCard key={reason.id} data={reason} />

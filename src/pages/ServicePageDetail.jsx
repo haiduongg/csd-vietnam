@@ -3,9 +3,13 @@ import { useParams } from 'react-router';
 import { Helmet } from 'react-helmet';
 import ServiceDetailContent from '../components/ServiceDetailContent';
 import BreadCrumbs from '../components/BreadCrumbs';
+import Header from '../components/Header';
+import FloatingButton from '../components/FloatingButton';
+import Footer from '../components/Footer';
 
 function ServicePageDetail() {
   const [servicesData, setServicesData] = useState([]);
+  const [isLoading, setIsLoading] = useState(false);
   const { href } = useParams();
 
   useEffect(() => {
@@ -20,6 +24,7 @@ function ServicePageDetail() {
         throw new Error(`HTTP error! status: ${response.status}`);
       }
       const data = await response.json();
+      setIsLoading(true);
       setServicesData(data);
     }
     getResponse();
@@ -35,10 +40,15 @@ function ServicePageDetail() {
         <title>{service.name ? `${service.name} | CSD Vietnam` : ''}</title>
         <meta name='description' content='Helmet application' />
       </Helmet>
-      <BreadCrumbs serviceName={service.name} serviceHref={service.href} />
-      <div className='mt-10'>
-        <ServiceDetailContent dataService={service} />
-      </div>
+      <Header />
+      <FloatingButton />
+      <main className='py-[72px]'>
+        {isLoading && <BreadCrumbs serviceName={service.name} serviceHref={service.href} />}
+        <section className='mt-10'>
+          <ServiceDetailContent dataService={service} />
+        </section>
+      </main>
+      <Footer />
     </>
   );
 }

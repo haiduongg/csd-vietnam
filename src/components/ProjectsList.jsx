@@ -1,3 +1,4 @@
+import axios from 'axios';
 import { useState, useEffect } from 'react';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
@@ -7,31 +8,20 @@ const ProjectsList = () => {
   const [isLoading, setIsLoading] = useState(false);
   useEffect(() => {
     // fetch API
-
-    async function getResponse() {
-      const response = await fetch(
-        'https://api-csd-vietnam.vercel.app/projects',
-        {
-          method: 'GET',
-          headers: {
-            'x-rapidapi-host': 'carbonfootprint1.p.rapidapi.com',
-            'x-rapidapi-key': 'your_api_key',
-          },
-        }
+    const getData = async () => {
+      const response = await axios.get(
+        'https://api-csd-vietnam.vercel.app/projects'
       );
-      if (!response.ok) {
-        throw new Error(`HTTP error! status: ${response.status}`);
-      }
-      const data = await response.json();
+      const data = await response.data;
       setProjects(data);
       setIsLoading(true);
-    }
-    getResponse();
+    };
+    getData();
   }, []);
 
   return (
     <div className='mx-auto'>
-      <h2 className='font-bold text-center uppercase'>Popular Projects</h2>
+      <h3 className='font-bold text-center uppercase'>Popular Projects</h3>
       <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 mx-11 xl:mx-0 gap-6 mt-10'>
         {isLoading
           ? projects?.map((project) => (

@@ -140,7 +140,7 @@ const CustomerReviewSlider = () => {
   ];
   return (
     <div className='w-full'>
-      <h2 className='text-center font-bold uppercase'>{`Customer's Review`}</h2>
+      <h3 className='text-center font-bold uppercase'>{`Customer's Review`}</h3>
       <div className='mt-6'>
         <CustomerCard dataCustomers={reviews} />
       </div>

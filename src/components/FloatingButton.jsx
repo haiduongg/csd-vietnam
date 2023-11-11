@@ -49,6 +49,8 @@ const FloatingButton = () => {
             key={contact.id}
             className='group p-2 lg:pl-3 lg:pr-6 lg:py-2 mb-3 bg-white dark:bg-dark rounded-xl shadow-lg dark:shadow-slate-700 select-none'
             whileTap={{ scale: 0.95 }}
+            whileHover={{ x: -10 }}
+            initial={{ x: 0 }}
           >
             <a href={contact.href} target='_' className='flex items-center'>
               <img

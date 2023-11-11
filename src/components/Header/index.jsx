@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import { Turn as Hamburger } from 'hamburger-react';
 import { RiMoonFill, RiSunFill } from 'react-icons/ri';
 import Navbar from './Navbar';
-import Sidebar from './Sidebar';
+import NavbarMobile from './NavbarMobile';
 import LogoCsd from '../../assets/images/logo.webp';
 import LogoCsdWhite from '../../assets/images/logo-white.webp';
 import navigationList from '../../data/navigations';
@@ -55,9 +55,9 @@ function Header() {
             />
           </div>
           {/* For small screen */}
-          <div className='absolute w-full top-full left-0 sidebar block lg:hidden'>
+          <div className='absolute w-full top-full left-0 NavbarMobile block lg:hidden'>
             {openMenu ? (
-              <Sidebar
+              <NavbarMobile
                 menuList={navigationList}
                 openMenu={openMenu}
                 setOpenMenu={setOpenMenu}

@@ -4,6 +4,9 @@ import VisionCard from '../components/VisionCard';
 import Focus1 from '../assets/images/Vision/Focus_1.png';
 import MeetTheTeam from '../components/MeetTheTeam';
 import worldwideBackground from '../assets/images/Vision/WorldwideBackground.png';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import FloatingButton from '../components/FloatingButton';
 
 const AboutPage = () => {
   useEffect(() => {
@@ -17,15 +20,22 @@ const AboutPage = () => {
         <title>Vision | CSD Vietnam</title>
         <meta name='description' content='Helmet application' />
       </Helmet>
-      <AboutHeading />
-      <div className='container'>
+      <Header />
+      <FloatingButton />
+      <main className='py-[72px]'>
         <section>
-          <Content />
+          <AboutHeading />
         </section>
-        <section className='mt-14'>
-          <MeetTheTeam />
-        </section>
-      </div>
+        <div className='container'>
+          <section>
+            <Content />
+          </section>
+          <section className='mt-14'>
+            <MeetTheTeam />
+          </section>
+        </div>
+      </main>
+      <Footer />
     </>
   );
 };
@@ -58,34 +68,34 @@ const Content = () => {
             width={800}
             height={800}
           />
-          <p>
-            Welcome to our Engineering Design Team. We are a highly skilled and
-            experienced group of mechanical engineers passionate about turning
-            innovative ideas into tangible reality. With expertise in diverse
-            areas of mechanical engineering, we offer comprehensive design
-            solutions tailored to meet your specific needs. Our team brings
-            together a wealth of knowledge and practical experience in concept
-            development, 3D modeling, 3D artist, CAD drafting, and product
-            design.
-            <br />
-            <br />
-            CADSQUAD&apos;s vision is to become a trusted and reputable partner
-            in the field of 3D design and related services. We strive to achieve
-            this mission by delivering creativity, quality, and exceptional
-            performance to our clients in every project. With the ideal of
-            surpassing client expectations and creating products and design
-            solutions that go above and beyond, CADSQUAD is committed to shaping
-            and driving sustainable growth in the CAD and 3D design industry. We
-            prioritize continuous improvement, ceaseless innovation, and ensure
-            that all our projects leave a unique mark and provide significant
-            value to our clients.
-            <br />
-            <br />
-          </p>
+          <div className='mb-5'>
+            <p className='first-letter:ml-10'>
+              Welcome to our Engineering Design Team. We are a highly skilled
+              and experienced group of mechanical engineers passionate about
+              turning innovative ideas into tangible reality. With expertise in
+              diverse areas of mechanical engineering, we offer comprehensive
+              design solutions tailored to meet your specific needs. Our team
+              brings together a wealth of knowledge and practical experience in
+              concept development, 3D modeling, 3D artist, CAD drafting, and
+              product design.
+            </p>
+            <p className='first-letter:ml-10 mt-3'>
+              CADSQUAD&apos;s vision is to become a trusted and reputable
+              partner in the field of 3D design and related services. We strive
+              to achieve this mission by delivering creativity, quality, and
+              exceptional performance to our clients in every project. With the
+              ideal of surpassing client expectations and creating products and
+              design solutions that go above and beyond, CADSQUAD is committed
+              to shaping and driving sustainable growth in the CAD and 3D design
+              industry. We prioritize continuous improvement, ceaseless
+              innovation, and ensure that all our projects leave a unique mark
+              and provide significant value to our clients.
+            </p>
+          </div>
         </section>
       </div>
       <section className='md:flex gap-8'>
-        <p>
+        <p className='first-letter:ml-10 mt-3'>
           “With a highly experienced workforce that has accumulated years of
           expertise in their respective fields, including notable achievements
           in mechanical engineering CAD design competitions, and a richly

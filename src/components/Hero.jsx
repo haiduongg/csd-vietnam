@@ -1,3 +1,5 @@
+import { useContext } from 'react';
+import { Button } from 'flowbite-react';
 import { motion } from 'framer-motion';
 import HeroSlideShow from './HeroSlideShow';
 import P061 from '../assets/images/hero/FIVERR.P061-001-FA-001_White.png';
@@ -14,8 +16,6 @@ import darkP135 from '../assets/images/hero/FIVERR.P135-000-FA-001_Dark.png';
 import darkHM from '../assets/images/hero/HM_Dark.png';
 import ThemeContext from '../context/ThemeContext';
 
-import { useContext } from 'react';
-import { Button } from 'antd';
 
 const Hero = () => {
   const { darkMode } = useContext(ThemeContext);
@@ -77,14 +77,7 @@ const Hero = () => {
             whileTap={{ scale: 0.95 }}
             className='w-32 mx-auto lg:mx-0'
           >
-            <Button
-              type='primary'
-              className='bg-primary text-xl py-5 flex items-center justify-center uppercase mt-6 rounded-xl mx-auto lg:mx-0'
-              href='https://www.facebook.com/CSD.Vie'
-              target='_'
-            >
-              <span>Contact</span>
-            </Button>
+            <motion.div whileHover={{scale: 0.97}} whileTap={{scale: 0.95}}><Button size='lg' href='https://facebook.com/CSD.Vie' target='_blank' className='bg-primary hover:opacity-75 uppercase focus:ring-0 text-xl rounded-xl'>Contact</Button></motion.div>
           </motion.div>
         </motion.div>
       </div>

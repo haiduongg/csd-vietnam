@@ -1,6 +1,9 @@
 import { Helmet } from 'react-helmet';
 import { BiSolidTimeFive } from 'react-icons/bi';
 import Timeline from '../components/Timeline';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
+import FloatingButton from '../components/FloatingButton';
 
 const Heading = () => {
   return (
@@ -48,12 +51,19 @@ const OurJourney = () => {
         <title>Our Journey | CSD Vietnam</title>
         <meta name='description' content='Helmet application' />
       </Helmet>
-      <Heading />
-      <div className='container'>
+      <Header />
+      <FloatingButton />
+      <main className='py-[72px]'>
         <section>
-          <Timeline dataTimeline={timelines} />
+          <Heading />
         </section>
-      </div>
+        <div className='container'>
+          <section>
+            <Timeline dataTimeline={timelines} />
+          </section>
+        </div>
+      </main>
+      <Footer />
     </>
   );
 };

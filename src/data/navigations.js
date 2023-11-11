@@ -132,7 +132,7 @@ export default [
       {
         id: 'news:2',
         label: 'Blogs',
-        href: 'https://blogs.csdvietnam.com',
+        href: '/blogs',
         icon: LuBadgeCheck,
       },
     ],

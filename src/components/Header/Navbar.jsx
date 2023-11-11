@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
-import { Button } from 'antd';
+import { Button } from 'flowbite-react';
 import { HiChevronDown } from 'react-icons/hi';
 import { RiMoonFill, RiSunFill } from 'react-icons/ri';
 
@@ -77,14 +77,7 @@ function Navbar({ menuList, darkMode, setDarkMode }) {
         >
           {darkMode ? <RiSunFill size={24} /> : <RiMoonFill size={24} />}
         </motion.div>
-        <Button
-          type='primary'
-          className='bg-primary uppercase'
-          href='https://facebook.com/CSD.Vie'
-          target='_blank'
-        >
-          Contact
-        </Button>
+        <motion.div whileHover={{scale: 0.97}} whileTap={{scale: 0.95}}><Button size='sm' href='https://facebook.com/CSD.Vie' target='_blank' className='bg-primary hover:opacity-75 uppercase focus:ring-0'>Contact</Button></motion.div>
       </div>
     </div>
   );
