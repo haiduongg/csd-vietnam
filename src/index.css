@@ -5,9 +5,6 @@
 html {
   font-size: 100%;
   overflow-x: hidden;
-  @media screen and (max-width: 976px) {
-    font-size: 70%;
-  }
 }
 body {
   font-family: 'Inter', sans-serif;
@@ -43,6 +40,10 @@ h5 {
 small,
 .text_small {
   font-size: 0.8rem;
+}
+
+ol {
+  list-style: disc;
 }
 
 ::-webkit-scrollbar {

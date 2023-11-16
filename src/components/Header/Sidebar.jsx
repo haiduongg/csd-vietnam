@@ -62,11 +62,11 @@ function Sidebar() {
     <nav
       className={`${
         open ? 'w-[250px]' : 'w-[85px]'
-      } bg-hover-light dark:bg-hover-dark duration-200 h-screen pb-10 fixed`}
+      } bg-black-100 dark:bg-black-800 duration-200 h-screen pb-10 fixed`}
     >
       {/* Heading  */}
       <div className='heading relative'>
-        <div className='flex items-center justify-start gap-3 pt-6 pb-4 px-6 border-b-[1px] border-solid border-gray-600 text-primary font-bold'>
+        <div className='flex items-center justify-start gap-3 pt-6 pb-4 px-6 border-b-[1px] border-solid border-gray-600 text-primary-900 dark:text-primary-700 font-bold'>
           <div className=''>
             <FaTools size={32} />
           </div>
@@ -157,13 +157,13 @@ const SidebarMenuList = ({ dataMenu, isOpen, setIsOpen }) => {
           <div
             className={`${
               current === item.title ? 'block' : 'hidden group-hover:block'
-            } absolute left-0 w-1 h-[80%] top-[50%] translate-y-[-50%] bg-primary rounded-r-full`}
+            } absolute left-0 w-1 h-[80%] top-[50%] translate-y-[-50%] bg-primary-900 dark:bg-primary-700 rounded-r-full`}
           />
           <Link
             to={item.href}
             className={`${isOpen ? 'justify-start' : 'justify-center'} ${
-              current === item.title && 'text-primary'
-            } group-hover:text-primary flex items-center gap-3 py-3 px-6`}
+              current === item.title && 'text-primary-900'
+            } group-hover:text-primary-900 flex items-center gap-3 py-3 px-6`}
           >
             <div className='w-5 h-5'>
               <div

@@ -18,14 +18,14 @@ const Timeline = ({ tag }) => {
               <div className='hidden sm:block'>
                 <div className='absolute top-0 left-[-900px] mt-2 sm:top-[-10px] sm:left-[95px] xl:mt-4 flex flex-col items-center justify-center opacity-10 mr-1 '>
                   <PiDotOutlineThin size={60} className='inline' />
-                  <div className='h-[250px] w-[2px] xl:h-[172px] bg-dark dark:bg-white mt-[-24px]'></div>
+                  <div className='h-[250px] w-[2px] xl:h-[172px] bg-black-900 dark:bg-white mt-[-24px]'></div>
                 </div>
               </div>
               <div className='flex flex-col xl:flex-row'>
                 <div className='Time mt-6 min-w-fit mr-11'>
                   <span>{blog.createAt}</span>
                 </div>
-                <div className='BlogItem hover:bg-hover-light hover:dark:bg-hover-dark p-6 rounded-2xl cursor-pointer'>
+                <div className='BlogItem hover:bg-black-100 hover:dark:bg-black-800 p-6 rounded-2xl cursor-pointer'>
                   <a href={`/blogs/${blog.link}`}>
                     <p className='mb-2'>
                       <span className='font-semibold'>{blog.title}</span>
@@ -33,7 +33,7 @@ const Timeline = ({ tag }) => {
                     <p className='opacity-75 max-h-[50px] overflow-hidden text-ellipsis'>
                       {blog.description}
                     </p>
-                    <div className='flex items-center justify-start text-primary font-semibold leading-none mt-4'>
+                    <div className='flex items-center justify-start text-primary-900 font-semibold leading-none mt-4'>
                       <span className='mr-1'>Đọc thêm</span>
                       <PiCaretRightBold className='text-sm' />
                     </div>

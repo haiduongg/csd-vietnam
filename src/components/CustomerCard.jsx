@@ -31,7 +31,7 @@ const CustomerCard = ({ dataCustomers }) => {
         {dataCustomers?.map((customer) => (
           <SwiperSlide
             key={customer.id}
-            className='h-[550px] w-[500px] flex items-center justify-center bg-hover-light dark:bg-hover-dark rounded-3xl'
+            className='h-[550px] w-[500px] flex items-center justify-center bg-black-100 dark:bg-black-800 rounded-3xl'
           >
             <div className='w-[400px] flex flex-col items-center justify-center p-7'>
               <div className='rounded-full cursor-pointer w-32 h-32'>
@@ -70,7 +70,7 @@ const CustomerCard = ({ dataCustomers }) => {
             key={customer.id}
             className='h-[550px] w-[500px] flex items-center justify-center '
           >
-            <div className='w-[400px] flex flex-col items-center justify-center p-7 bg-hover-light dark:bg-hover-dark rounded-3xl'>
+            <div className='w-[400px] flex flex-col items-center justify-center p-7 bg-black-100 dark:bg-black-800 rounded-3xl'>
               <div className='rounded-full cursor-pointer w-32 h-32'>
                 <img
                   src={customer.avatar}

@@ -2,20 +2,19 @@ import { useContext } from 'react';
 import { Button } from 'flowbite-react';
 import { motion } from 'framer-motion';
 import HeroSlideShow from './HeroSlideShow';
-import P061 from '../assets/images/hero/FIVERR.P061-001-FA-001_White.png';
-import P066 from '../assets/images/hero/FIVERR.P066-000-FA-000_White.png';
-import P082 from '../assets/images/hero/FIVERR.P082-000-FA-000_White.png';
-import P128 from '../assets/images/hero/FIVERR.P128-000-FA-001_White.png';
-import P135 from '../assets/images/hero/FIVERR.P135-000-FA-001_White.png';
-import HM from '../assets/images/hero/HM_White.png';
-import darkP061 from '../assets/images/hero/FIVERR.P061-001-FA-001_Dark.png';
-import darkP066 from '../assets/images/hero/FIVERR.P066-000-FA-000_Dark.png';
-import darkP082 from '../assets/images/hero/FIVERR.P082-000-FA-000_Dark.png';
-import darkP128 from '../assets/images/hero/FIVERR.P128-000-FA-001_Dark.png';
-import darkP135 from '../assets/images/hero/FIVERR.P135-000-FA-001_Dark.png';
-import darkHM from '../assets/images/hero/HM_Dark.png';
+import P061 from '../assets/images/Hero/FIVERR.P061-001-FA-001_White.png';
+import P066 from '../assets/images/Hero/FIVERR.P066-000-FA-000_White.png';
+import P082 from '../assets/images/Hero/FIVERR.P082-000-FA-000_White.png';
+import P128 from '../assets/images/Hero/FIVERR.P128-000-FA-001_White.png';
+import P135 from '../assets/images/Hero/FIVERR.P135-000-FA-001_White.png';
+import HM from '../assets/images/Hero/HM_White.png';
+import darkP061 from '../assets/images/Hero/FIVERR.P061-001-FA-001_Dark.png';
+import darkP066 from '../assets/images/Hero/FIVERR.P066-000-FA-000_Dark.png';
+import darkP082 from '../assets/images/Hero/FIVERR.P082-000-FA-000_Dark.png';
+import darkP128 from '../assets/images/Hero/FIVERR.P128-000-FA-001_Dark.png';
+import darkP135 from '../assets/images/Hero/FIVERR.P135-000-FA-001_Dark.png';
+import darkHM from '../assets/images/Hero/HM_Dark.png';
 import ThemeContext from '../context/ThemeContext';
-
 
 const Hero = () => {
   const { darkMode } = useContext(ThemeContext);
@@ -50,7 +49,7 @@ const Hero = () => {
           animate={{ x: 0, opacity: 1 }}
           initial={{ x: -200, opacity: 0 }}
           transition={{ type: 'spring' }}
-          className='font-bold mt-2 text-primary'
+          className='font-bold mt-2 text-primary-900 dark:text-primary-700'
         >
           We are CSD Vietnam
         </motion.h1>
@@ -77,7 +76,16 @@ const Hero = () => {
             whileTap={{ scale: 0.95 }}
             className='w-32 mx-auto lg:mx-0'
           >
-            <motion.div whileHover={{scale: 0.97}} whileTap={{scale: 0.95}}><Button size='lg' href='https://facebook.com/CSD.Vie' target='_blank' className='bg-primary hover:opacity-75 uppercase focus:ring-0 text-xl rounded-xl'>Contact</Button></motion.div>
+            <motion.div whileHover={{ scale: 0.97 }} whileTap={{ scale: 0.95 }}>
+              <Button
+                size='lg'
+                href='https://facebook.com/CSD.Vie'
+                target='_blank'
+                className='bg-primary-900 dark:bg-primary-700 hover:opacity-75 uppercase focus:ring-0 text-xl rounded-xl'
+              >
+                Contact
+              </Button>
+            </motion.div>
           </motion.div>
         </motion.div>
       </div>

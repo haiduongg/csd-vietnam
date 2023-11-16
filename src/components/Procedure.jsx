@@ -12,7 +12,7 @@ const ProcedureContent = ({ dataProcedure }) => {
             key={item.id}
             className='mt-10 first:mt-5 flex gap-6 items-center justify-center'
           >
-            <p className='uppercase text-center bg-primary rounded-xl p-3 text-sm text-white'>
+            <p className='uppercase text-center bg-primary-900 rounded-xl p-3 text-sm text-white'>
               Step <span className='font-bold'>{item.id}</span>
             </p>
             <p className='text-justify rounded-lg border-solid border-2 p-3'>
@@ -63,9 +63,7 @@ function Procedure() {
   ];
   return (
     <div>
-      <h3 className='uppercase font-bold text-center'>
-        How do we work ?
-      </h3>
+      <h3 className='uppercase font-bold text-center'>How do we work ?</h3>
       <div className='mt-6 flex items-start justify-start gap-5'>
         <div className='max-w-[450px]'>
           <img
@@ -79,7 +77,7 @@ function Procedure() {
           <ProcedureContent dataProcedure={procedure} />
         </div>
       </div>
-      <div className='mt-6 text-primary font-semibold text-justify'>
+      <div className='mt-6 text-primary-900 font-semibold text-justify'>
         <MdStar className='inline mr-1 ' size={20} />
         <p className='inline'>
           Please note that the last two stages, Production and Acceptance

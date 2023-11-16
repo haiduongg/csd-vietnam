@@ -16,7 +16,7 @@ function NavbarMobile({ menuList, openMenu, setOpenMenu }) {
     <motion.div
       animate={{ x: 0, opacity: 1 }}
       initial={{ x: -200, opacity: 0 }}
-      className='bg-primary text-white flex flex-col items-center justify-start select-none h-fit text-center z-50 py-2'
+      className='bg-primary-900 dark:bg-primary-700 text-white flex flex-col items-center justify-start select-none h-fit text-center z-50 py-2'
     >
       {menuList?.map((item) => (
         <li key={item.id}>
@@ -41,7 +41,7 @@ function NavbarMobile({ menuList, openMenu, setOpenMenu }) {
             <motion.ul
               animate={{ opacity: 1 }}
               initial={{ opacity: 0 }}
-              className='w-screen border-y-[1px] border-solid border-gray-200 bg-primary hue-rotate-15'
+              className='w-screen border-y-[1px] border-solid border-gray-200 bg-primary-800 dark:bg-primary-800 hue-rotate-15'
             >
               {item.children?.map((child) => (
                 <motion.li

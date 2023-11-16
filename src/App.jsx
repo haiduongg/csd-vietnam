@@ -24,12 +24,12 @@ function App() {
 
   return (
     <ThemeContext.Provider value={{ darkMode, setDarkMode }}>
-      <div className='page dark:bg-dark dark:text-white'>
+      <div className='page dark:bg-black-900 dark:text-black-none'>
         <Routes>
           <Route path='/' element={<HomePage />} />
           <Route path='dashboard/*' element={<Dashboard />} />
-          <Route path='about-us/vision' element={<Vision />} />
-          <Route path='about-us/our-journey' element={<OurJourney />} />
+          <Route path='vision' element={<Vision />} />
+          <Route path='our-journey' element={<OurJourney />} />
           <Route path='services/:href' element={<ServicePageDetail />} />
           <Route path='projects/:projectid' element={<ProjectDetail />} />
           <Route path='blogs' element={<NewsPage />} />

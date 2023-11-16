@@ -13,7 +13,7 @@ function Header() {
   const { darkMode, setDarkMode } = useContext(ThemeContext);
   const [openMenu, setOpenMenu] = useState(false);
   return (
-    <header className='header fixed w-full z-50 bg-white dark:bg-dark border-b-[1px] border-solid border-gray-200 lg:border-none'>
+    <header className='header fixed w-full z-50 bg-white dark:bg-black-900 border-b-[1px] border-solid border-gray-200 lg:border-none'>
       <div className='container relative py-2 lg:flex lg:items-center lg:justify-start'>
         <div className='flex items-center justify-between'>
           <div className='block lg:hidden cursor-pointer'>

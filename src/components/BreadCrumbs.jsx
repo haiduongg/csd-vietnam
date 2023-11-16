@@ -2,19 +2,21 @@ import PropTypes from 'prop-types';
 
 const BreadCrumbs = ({ serviceName, serviceHref }) => {
   return (
-    <div className='bg-slate-200 dark:bg-hover-dark'>
+    <div className='bg-black-100 dark:bg-black-800'>
       <div className='container py-2'>
-        <ol className='flex gap-2'>
+        <ul className='flex gap-2 text-sm md:text-base'>
           <li className="after:content-['_/'] after:ml-1">
-            <a href='/'>Home</a>
+            <span>Home</span>
           </li>
           <li className="after:content-['_/'] after:ml-1">
-            <a href='/services'>Service</a>
+            <span>Service</span>
           </li>
           <li>
-            <a href={`/services/${serviceHref}`}>{serviceName}</a>
+            <a href={`/services/${serviceHref}`} className='opacity-75'>
+              {serviceName}
+            </a>
           </li>
-        </ol>
+        </ul>
       </div>
     </div>
   );

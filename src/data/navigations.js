@@ -18,13 +18,13 @@ export default [
       {
         id: 'about:1',
         label: 'Vision',
-        href: '/about-us/vision',
+        href: '/vision',
         icon: PiUserListDuotone,
       },
       {
         id: 'about:2',
         label: 'Our Journey',
-        href: '/about-us/our-journey',
+        href: '/our-journey',
         icon: PiUsersFourLight,
       },
     ],

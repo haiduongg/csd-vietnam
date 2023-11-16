@@ -21,7 +21,7 @@ function LastNewsList({ dataList }) {
               height={90}
             />
             <div className='mt-3'>
-              <p className='text-primary'>{blog.createAt}</p>
+              <p className='text-primary-900'>{blog.createAt}</p>
               <p className='uppercase'>{blog.tag}</p>
             </div>
           </div>

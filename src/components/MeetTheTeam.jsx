@@ -88,7 +88,7 @@ const VisionSlider = ({ data }) => {
         {data?.map((person) => (
           <SwiperSlide
             key={person.id}
-            className='min-h-[300px] w-[500px] flex items-center justify-center bg-hover-light dark:bg-hover-dark rounded-3xl'
+            className='min-h-[300px] w-[500px] flex items-center justify-center bg-black-100 dark:bg-black-800 rounded-3xl'
           >
             <div className='w-[400px] flex flex-col items-center justify-center p-7'>
               <img
@@ -123,7 +123,7 @@ const VisionSlider = ({ data }) => {
             key={person.id}
             className='min-h-[300px] w-[500px] flex items-center justify-center'
           >
-            <div className='w-[400px] flex flex-col items-center justify-center p-7 bg-hover-light dark:bg-hover-dark rounded-3xl'>
+            <div className='w-[400px] flex flex-col items-center justify-center p-7 bg-black-100 dark:bg-black-800 rounded-3xl'>
               <img
                 src={person.avatar}
                 alt={person.name}

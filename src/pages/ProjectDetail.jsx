@@ -34,7 +34,7 @@ const ProjectDetail = () => {
         {project.name && <title>{`${project.name} | CSD Vietnam`}</title>}
         <meta name='description' content='Helmet application' />
       </Helmet>
-      <main className='pt-[80px] pb-28 dark:bg-dark dark:text-white'>
+      <main className='pt-[80px] pb-28 dark:bg-black-900 dark:text-white'>
         <BreadCrumbs />
         <FloatingButton />
         <div className='max-w-[1440px] mx-auto px-8 xl:px-0'>
