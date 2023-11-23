@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-const BreadCrumbs = ({ serviceName, serviceHref }) => {
+const BreadCrumbs = ({ type, name, href }) => {
   return (
     <div className='bg-black-100 dark:bg-black-800'>
       <div className='container py-2'>
@@ -8,12 +8,12 @@ const BreadCrumbs = ({ serviceName, serviceHref }) => {
           <li className="after:content-['_/'] after:ml-1">
             <span>Home</span>
           </li>
-          <li className="after:content-['_/'] after:ml-1">
-            <span>Service</span>
-          </li>
+          {type && <li className="after:content-['_/'] after:ml-1">
+            <span>{type}</span>
+          </li>}
           <li>
-            <a href={`/services/${serviceHref}`} className='opacity-75'>
-              {serviceName}
+            <a href={`/services/${href || '#'}`} className='opacity-75'>
+              {name}
             </a>
           </li>
         </ul>
@@ -22,8 +22,9 @@ const BreadCrumbs = ({ serviceName, serviceHref }) => {
   );
 };
 BreadCrumbs.propTypes = {
-  serviceName: PropTypes.string.isRequired,
-  serviceHref: PropTypes.string,
+  type: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  href: PropTypes.string,
 };
 BreadCrumbs.defaultProps = {
   serviceHref: '',

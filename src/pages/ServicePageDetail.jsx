@@ -28,7 +28,7 @@ function ServicePageDetail() {
       <Header />
       <FloatingButton />
       <main className='py-[72px]'>
-        <BreadCrumbs serviceName={service.name} serviceHref={service.href} />
+        <BreadCrumbs type='Service' name={service.name} href={service.href} />
         <section className='mt-10'>
           <ServiceDetailContent dataService={service} />
         </section>
