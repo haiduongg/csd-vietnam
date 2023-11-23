@@ -2,7 +2,7 @@ import { useContext } from 'react';
 import { Button } from 'flowbite-react';
 import { motion } from 'framer-motion';
 import HeroSlideShow from './HeroSlideShow';
-import P061 from '../assets/images/Hero/FIVERR.P061-001-FA-001_White.png';
+import P061 from '../assets/images/Hero/FIVERR.P066-000-FA-000_White.png';
 import P066 from '../assets/images/Hero/FIVERR.P066-000-FA-000_White.png';
 import P082 from '../assets/images/Hero/FIVERR.P082-000-FA-000_White.png';
 import P128 from '../assets/images/Hero/FIVERR.P128-000-FA-001_White.png';
