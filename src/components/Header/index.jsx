@@ -4,12 +4,12 @@ import { Turn as Hamburger } from 'hamburger-react';
 import { RiMoonFill, RiSunFill } from 'react-icons/ri';
 import Navbar from './Navbar';
 import NavbarMobile from './NavbarMobile';
-import LogoCsd from '../../assets/images/logo.webp';
-import LogoCsdWhite from '../../assets/images/logo-white.webp';
+import LogoCsd from '/assets/img/logo.webp';
+import LogoCsdWhite from '/assets/img/logo-white.webp';
 import navigationList from '../../data/navigations';
 import ThemeContext from '../../context/ThemeContext';
 
-function Header() {
+export default function Header() {
   const { darkMode, setDarkMode } = useContext(ThemeContext);
   const [openMenu, setOpenMenu] = useState(false);
   return (
@@ -69,5 +69,3 @@ function Header() {
     </header>
   );
 }
-
-export default Header;

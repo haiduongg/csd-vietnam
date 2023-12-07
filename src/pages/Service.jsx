@@ -1,14 +1,14 @@
 import { useParams } from 'react-router';
 import { Helmet } from 'react-helmet';
-import ServiceDetailContent from '../components/ServiceDetailContent';
+import ServiceDetailContent from '../components/Service/ServiceDetailContent';
 import BreadCrumbs from '../components/BreadCrumbs';
 import Header from '../components/Header';
-import FloatingButton from '../components/FloatingButton';
+import FloatingButton from '../components/SocialFloatButton';
 import Footer from '../components/Footer';
 import servicesData from '../data/services';
 import { useEffect } from 'react';
 
-function ServicePageDetail() {
+export default function Service() {
   const { href } = useParams();
   useEffect(() => {
     // 👇️ scroll to top on page load
@@ -37,5 +37,3 @@ function ServicePageDetail() {
     </>
   );
 }
-
-export default ServicePageDetail;

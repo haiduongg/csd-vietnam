@@ -11,65 +11,12 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
-import PhongPham from '../assets/images/Vision/MeetTheTeam/PT.PHONG.png';
-import MinhNguyen from '../assets/images/Vision/MeetTheTeam/NKH.MINH.png';
-import DatLe from '../assets/images/Vision/MeetTheTeam/LT.DAT.png';
-import HieuNguyen from '../assets/images/Vision/MeetTheTeam/NC.HIEU.png';
-import DucNguyen from '../assets/images/Vision/MeetTheTeam/NQ.DUC.png';
-import DuongCao from '../assets/images/Vision/MeetTheTeam/CH.DUONG.png';
 
-const MeetTheTeam = () => {
-  const teams = [
-    {
-      id: 1,
-      name: 'Phong Pham',
-      avatar: PhongPham,
-      poisiton: 'Founder, Lead Engineer',
-    },
-    {
-      id: 2,
-      name: 'Dat Le',
-      avatar: DatLe,
-      poisiton: 'Mechanical Engineer',
-    },
-    {
-      id: 3,
-      name: 'Minh Nguyen',
-      avatar: MinhNguyen,
-      poisiton: 'Mechanical Engineer',
-    },
-    {
-      id: 4,
-      name: 'Hieu Nguyen',
-      avatar: HieuNguyen,
-      poisiton: 'Mechanical Engineer',
-    },
-    {
-      id: 5,
-      name: 'Duc Nguyen',
-      avatar: DucNguyen,
-      poisiton: 'Administrator, Lead Artist',
-    },
-    {
-      id: 6,
-      name: 'Duong Cao',
-      avatar: DuongCao,
-      poisiton: 'Developer',
-    },
-  ];
-  return (
-    <>
-      <h3 className='heading text-center text-h3 uppercase font-bold'>
-        Meet The Team
-      </h3>
-      <div className='slide-show mt-8'>
-        <VisionSlider data={teams} />
-      </div>
-    </>
-  );
+VisionSlider.propTypes = {
+  data: PropTypes.array.isRequired,
 };
 
-const VisionSlider = ({ data }) => {
+function VisionSlider({ data }) {
   return (
     <div>
       {/* For large screen  */}
@@ -139,9 +86,6 @@ const VisionSlider = ({ data }) => {
       </Swiper>
     </div>
   );
-};
-VisionSlider.propTypes = {
-  data: PropTypes.array.isRequired,
-};
+}
 
-export default MeetTheTeam;
+export default VisionSlider;

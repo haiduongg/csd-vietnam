@@ -1,9 +1,9 @@
 import { BiRightArrowAlt } from 'react-icons/bi';
 import { Button } from 'antd';
 import LastNewsList from './LastNewsList';
-import thumbnail from '../assets/images/Login/3Dbg.webp';
+import thumbnail from '../../../assets/images/Login/3Dbg.webp';
 
-function LastNews() {
+export default function LastNews() {
   const lastNewsList = [
     {
       id: 1,
@@ -50,5 +50,3 @@ function LastNews() {
     </div>
   );
 }
-
-export default LastNews;

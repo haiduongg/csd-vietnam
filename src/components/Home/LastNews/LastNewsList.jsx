@@ -3,8 +3,7 @@ import PropTypes from 'prop-types';
 LastNewsList.propTypes = {
   dataList: PropTypes.array.isRequired,
 };
-
-function LastNewsList({ dataList }) {
+export default function LastNewsList({ dataList }) {
   return (
     <ul className='flex item-start justify-between'>
       {dataList?.map((blog) => (
@@ -31,5 +30,3 @@ function LastNewsList({ dataList }) {
     </ul>
   );
 }
-
-export default LastNewsList;

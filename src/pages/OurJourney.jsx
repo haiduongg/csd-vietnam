@@ -1,9 +1,9 @@
 import { Helmet } from 'react-helmet';
 import { BiSolidTimeFive } from 'react-icons/bi';
-import Timeline from '../components/Timeline';
+import Timeline from '../components/OurJourney/Timeline';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
-import FloatingButton from '../components/FloatingButton';
+import FloatingButton from '../components/SocialFloatButton';
 
 const Heading = () => {
   return (

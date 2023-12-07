@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import DetailPageSlider from '../components/DetailPageSlider';
+import DetailPageSlider from '../DetailPageSlider';
 
 ServiceDetailContent.propTypes = {
   dataService: PropTypes.object.isRequired,

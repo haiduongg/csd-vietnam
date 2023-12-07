@@ -36,37 +36,37 @@ export default [
       {
         id: 'services:1',
         label: '3D Modeling & Rendering',
-        href: '/services/3d-modeling-rendering',
+        href: '/service/3d-modeling-rendering',
         icon: TbBoxModel,
       },
       {
         id: 'services:2',
         label: 'Steel Structure & Landscape',
-        href: '/services/steel-structure-landscape',
+        href: '/service/steel-structure-landscape',
         icon: CgGhostCharacter,
       },
       {
         id: 'services:3',
         label: 'Simulation & Rendering',
-        href: '/services/simulation-rendering',
+        href: '/service/simulation-rendering',
         icon: AiOutlineCodepen,
       },
       {
         id: 'services:4',
         label: '3D Artist & 3D Printing',
-        href: '/services/3d-artist-3d-printing',
+        href: '/service/3d-artist-3d-printing',
         icon: AiOutlineMacCommand,
       },
       {
         id: 'services:5',
         label: 'Portraits & Caricatures',
-        href: '/services/portraits-caricatures',
+        href: '/service/portraits-caricatures',
         icon: PiTreeStructureDuotone,
       },
       {
         id: 'services:6',
         label: 'Logo Design',
-        href: '/services/logo-design',
+        href: '/service/logo-design',
         icon: GiTeleport,
       },
       {

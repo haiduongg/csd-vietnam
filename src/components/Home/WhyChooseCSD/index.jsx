@@ -1,33 +1,12 @@
-import PropTypes from 'prop-types';
-import experience from '../assets/gifs/best-customer-experience.gif';
-import service from '../assets/gifs/customer-service.gif';
-import premium from '../assets/gifs/premium.gif';
-import innovation from '../assets/gifs/innovation.gif';
-import learning from '../assets/gifs/learning.gif';
-import delivery from '../assets/gifs/delivery-truck.gif';
-import satisfaction from '../assets/gifs/customer-satisfaction.gif';
-import dollar from '../assets/gifs/dollar.gif';
-
-const ReasonCard = ({ data }) => {
-  return (
-    <div className='group p-4 border-[1px] border-solid border-gray-300 rounded-xl hover:border-text dark:hover:border-primary hover:shadow-xl duration-300'>
-      <img
-        src={data.icon}
-        alt={data.title}
-        width='70'
-        height='70'
-        className='mx-auto my-6'
-      />
-      <p className='text-center font-bold'>{data.title}</p>
-      <p className='mt-2 text-sm leading-normal group-hover:text-text dark:group-hover:text-primary-900 opacity-80 text-center'>
-        {data.description}
-      </p>
-    </div>
-  );
-};
-ReasonCard.propTypes = {
-  data: PropTypes.object.isRequired,
-};
+import ReasonCard from './ReasonCard';
+import experience from '../../../assets/gifs/best-customer-experience.gif';
+import service from '../../../assets/gifs/customer-service.gif';
+import premium from '../../../assets/gifs/premium.gif';
+import innovation from '../../../assets/gifs/innovation.gif';
+import learning from '../../../assets/gifs/learning.gif';
+import delivery from '../../../assets/gifs/delivery-truck.gif';
+import satisfaction from '../../../assets/gifs/customer-satisfaction.gif';
+import dollar from '../../../assets/gifs/dollar.gif';
 
 const WhyChooseCSD = () => {
   const reasons = [

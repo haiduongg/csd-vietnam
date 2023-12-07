@@ -1,12 +1,15 @@
 import { Helmet } from 'react-helmet';
 import { useEffect } from 'react';
-import VisionCard from '../components/VisionCard';
-import Focus1 from '../assets/images/Vision/Focus_1.png';
-import MeetTheTeam from '../components/MeetTheTeam';
-import worldwideBackground from '../assets/images/Vision/WorldwideBackground.png';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import FloatingButton from '../components/FloatingButton';
+import Focus1 from '/assets/img/vision/Focus_1.png';
+import worldwideBackground from '/assets/img/vision/WorldwideBackground.png';
+import {
+  Header,
+  Footer,
+  MeetTheTeam,
+  PageHeading,
+  VisionCard,
+  SocialFloatButton,
+} from '../components';
 
 const AboutPage = () => {
   useEffect(() => {
@@ -21,10 +24,15 @@ const AboutPage = () => {
         <meta name='description' content='Helmet application' />
       </Helmet>
       <Header />
-      <FloatingButton />
+      <SocialFloatButton />
       <main className='py-[72px]'>
         <section>
-          <AboutHeading />
+          <PageHeading
+            title='Why Choose CSD'
+            description='" We are a highly skilled and experienced group of mechanical
+            engineers passionate about turning innovative ideas into tangible
+            reality "'
+          />
         </section>
         <div className='container'>
           <section>

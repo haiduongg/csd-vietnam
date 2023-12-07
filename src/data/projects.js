@@ -1,11 +1,11 @@
-import image1 from '../assets/images/Projects/1. 3D Modeling _ 2D Drawings.png';
-import image2 from '../assets/images/Projects/2. Simulation _ Rendering.png';
-import image3 from '../assets/images/Projects/3. Steel Structure _ Landscape.png';
-import image4 from '../assets/images/Projects/4. Steel Stucture _ Lanscape.png';
-import image5 from '../assets/images/Projects/5. 3D Modeling _ 2D Drawings.png';
-import image6 from '../assets/images/Projects/6. 3D Modeling _ 2D Drawings.png';
-import image7 from '../assets/images/Projects/7. 3D Artist _ 3D Printing.png';
-import image8 from '../assets/images/Projects/8. Logo Design.png';
+import image1 from '/assets/img/projects/1. 3D Modeling _ 2D Drawings.png';
+import image2 from '/assets/img/projects/2. Simulation _ Rendering.png';
+import image3 from '/assets/img/projects/3. Steel Structure _ Landscape.png';
+import image4 from '/assets/img/projects/4. Steel Stucture _ Lanscape.png';
+import image5 from '/assets/img/projects/5. 3D Modeling _ 2D Drawings.png';
+import image6 from '/assets/img/projects/6. 3D Modeling _ 2D Drawings.png';
+import image7 from '/assets/img/projects/7. 3D Artist _ 3D Printing.png';
+import image8 from '/assets/img/projects/8. Logo Design.png';
 
 export default [
   {

@@ -1,20 +1,20 @@
 import { useContext } from 'react';
 import { Button } from 'flowbite-react';
 import { motion } from 'framer-motion';
-import HeroSlideShow from './HeroSlideShow';
-import P061 from '../assets/images/hero/FIVERR.P082-000-FA-000_White.png';
-import P066 from '../assets/images/hero/FIVERR.P066-000-FA-000_White.png';
-import P082 from '../assets/images/hero/FIVERR.P082-000-FA-000_White.png';
-import P128 from '../assets/images/hero/FIVERR.P128-000-FA-001_White.png';
-import P135 from '../assets/images/hero/FIVERR.P135-000-FA-001_White.png';
-import HM from '../assets/images/hero/HM_White.png';
-import darkP061 from '../assets/images/hero/FIVERR.P061-001-FA-001_Dark.png';
-import darkP066 from '../assets/images/hero/FIVERR.P066-000-FA-000_Dark.png';
-import darkP082 from '../assets/images/hero/FIVERR.P082-000-FA-000_Dark.png';
-import darkP128 from '../assets/images/hero/FIVERR.P128-000-FA-001_Dark.png';
-import darkP135 from '../assets/images/hero/FIVERR.P135-000-FA-001_Dark.png';
-import darkHM from '../assets/images/hero/HM_Dark.png';
-import ThemeContext from '../context/ThemeContext';
+import HeroSlideImage from './HeroSlideImage';
+import P061 from '/assets/img/hero/FIVERR.P082-000-FA-000_White.png';
+import P066 from '/assets/img/hero/FIVERR.P066-000-FA-000_White.png';
+import P082 from '/assets/img/hero/FIVERR.P082-000-FA-000_White.png';
+import P128 from '/assets/img/hero/FIVERR.P128-000-FA-001_White.png';
+import P135 from '/assets/img/hero/FIVERR.P135-000-FA-001_White.png';
+import HM from '/assets/img/hero/HM_White.png';
+import darkP061 from '/assets/img/hero/FIVERR.P061-001-FA-001_Dark.png';
+import darkP066 from '/assets/img/hero/FIVERR.P066-000-FA-000_Dark.png';
+import darkP082 from '/assets/img/hero/FIVERR.P082-000-FA-000_Dark.png';
+import darkP128 from '/assets/img/hero/FIVERR.P128-000-FA-001_Dark.png';
+import darkP135 from '/assets/img/hero/FIVERR.P135-000-FA-001_Dark.png';
+import darkHM from '/assets/img/hero/HM_Dark.png';
+import ThemeContext from '../../../context/ThemeContext';
 
 const Hero = () => {
   const { darkMode } = useContext(ThemeContext);
@@ -54,7 +54,7 @@ const Hero = () => {
           We are CSD Vietnam
         </motion.h1>
         <div className='w-[200px] sm:w-[400px] select-none block lg:hidden mx-auto'>
-          <HeroSlideShow dataImg={darkMode ? darkImages : images} />
+          <HeroSlideImage dataImg={darkMode ? darkImages : images} />
         </div>
         <motion.div
           animate={{ x: 0, opacity: 1 }}
@@ -90,7 +90,7 @@ const Hero = () => {
         </motion.div>
       </div>
       <div className='w-[500px] select-none hidden lg:block'>
-        <HeroSlideShow dataImg={darkMode ? darkImages : images} />
+        <HeroSlideImage dataImg={darkMode ? darkImages : images} />
       </div>
     </div>
   );

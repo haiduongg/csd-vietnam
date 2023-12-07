@@ -1,5 +1,5 @@
 import 'react-loading-skeleton/dist/skeleton.css';
-import projectData from '../data/projects';
+import projectData from '../../data/projects';
 
 const ProjectsList = () => {
   return (

@@ -1,4 +1,4 @@
-import logoWhite from '../../assets/images/logo-white.webp';
+import logoWhite from '/assets/img/logo-white.webp';
 import Social from './Social';
 import Fanpage from './Fanpage';
 

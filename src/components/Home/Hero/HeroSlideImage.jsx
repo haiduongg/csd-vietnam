@@ -12,7 +12,7 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import 'swiper/css/scrollbar';
 
-const SlideShow = ({ dataImg }) => {
+const HeroSlideImage = ({ dataImg }) => {
   return (
     <Swiper
       modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
@@ -22,8 +22,6 @@ const SlideShow = ({ dataImg }) => {
         delay: 2000,
         disableOnInteraction: false,
       }}
-      // navigation
-      // pagination={{ clickable: true }}
       className='flex items-center justify-center'
     >
       {dataImg?.map((image) => (
@@ -37,9 +35,8 @@ const SlideShow = ({ dataImg }) => {
     </Swiper>
   );
 };
-
-SlideShow.propTypes = {
+HeroSlideImage.propTypes = {
   dataImg: PropTypes.array.isRequired,
 };
 
-export default SlideShow;
+export default HeroSlideImage;

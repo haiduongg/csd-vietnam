@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
-import procedureImg from '../assets/images/procedure.png';
+import procedureImg from '../../assets/images/procedure.png';
 import { MdStar } from 'react-icons/md';
-import { Button } from 'antd';
 
 const ProcedureContent = ({ dataProcedure }) => {
   return (
@@ -28,7 +27,7 @@ ProcedureContent.propTypes = {
   dataProcedure: PropTypes.array.isRequired,
 };
 
-function Procedure() {
+export default function HowDoWeWork() {
   const procedure = [
     {
       id: 1,
@@ -90,5 +89,3 @@ function Procedure() {
     </div>
   );
 }
-
-export default Procedure;

@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-const BreadCrumbs = ({ type, name, href }) => {
+export default function BreadCrumbs({ type, name, href }) {
   return (
     <div className='bg-black-100 dark:bg-black-800'>
       <div className='container py-2'>
@@ -8,9 +8,11 @@ const BreadCrumbs = ({ type, name, href }) => {
           <li className="after:content-['_/'] after:ml-1">
             <span>Home</span>
           </li>
-          {type && <li className="after:content-['_/'] after:ml-1">
-            <span>{type}</span>
-          </li>}
+          {type && (
+            <li className="after:content-['_/'] after:ml-1">
+              <span>{type}</span>
+            </li>
+          )}
           <li>
             <a href={`/services/${href || '#'}`} className='opacity-75'>
               {name}
@@ -20,14 +22,9 @@ const BreadCrumbs = ({ type, name, href }) => {
       </div>
     </div>
   );
-};
+}
 BreadCrumbs.propTypes = {
   type: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
   href: PropTypes.string,
 };
-BreadCrumbs.defaultProps = {
-  serviceHref: '',
-};
-
-export default BreadCrumbs;

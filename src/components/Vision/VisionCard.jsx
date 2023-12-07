@@ -1,8 +1,8 @@
 import { BiSolidUser } from 'react-icons/bi';
 import { MdLocationOn } from 'react-icons/md';
-import avatar from '../assets/images/card-avatar.webp';
+import avatar from '../../assets/images/customer/fiverr.png';
 
-const VisionCard = () => {
+export default function VisionCard() {
   const informations = {
     name: 'CAD SERVICES COMPANY',
     secondaryName: 'contact.us@csdvietnam.com',
@@ -51,6 +51,4 @@ const VisionCard = () => {
       </div>
     </div>
   );
-};
-
-export default VisionCard;
+}

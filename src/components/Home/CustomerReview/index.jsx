@@ -1,15 +1,15 @@
-import CustomerCard from './CustomerCard';
-import Fiverr from '../assets/images/customer/fiverr.png';
-import dhruvalpatel113 from '../assets/images/customer/2.1.png';
-import alfrednorrls365 from '../assets/images/customer/5.1.png';
-import jonjapltana from '../assets/images/customer/8.1.png';
-import amara_vayder from '../assets/images/customer/9.1.png';
-import the7express from '../assets/images/customer/10.1.png';
-import novoal from '../assets/images/customer/12.1.png';
-import theaaronestrada from '../assets/images/customer/13.1.png';
-import jemueljeremlah from '../assets/images/customer/14.1.png';
+import Fiverr from '../../../assets/images/customer/fiverr.png';
+import dhruvalpatel113 from '../../../assets/images/customer/2.1.png';
+import alfrednorrls365 from '../../../assets/images/customer/5.1.png';
+import jonjapltana from '../../../assets/images/customer/8.1.png';
+import amara_vayder from '../../../assets/images/customer/9.1.png';
+import the7express from '../../../assets/images/customer/10.1.png';
+import novoal from '../../../assets/images/customer/12.1.png';
+import theaaronestrada from '../../../assets/images/customer/13.1.png';
+import jemueljeremlah from '../../../assets/images/customer/14.1.png';
+import CustomerSlider from './CustomerSlider';
 
-const CustomerReviewSlider = () => {
+export default function CustomerReview() {
   const reviews = [
     {
       id: 1,
@@ -139,13 +139,11 @@ const CustomerReviewSlider = () => {
     },
   ];
   return (
-    <div className='w-full'>
-      <h3 className='text-center font-bold uppercase'>{`Customer's Review`}</h3>
-      <div className='mt-6'>
-        <CustomerCard dataCustomers={reviews} />
+    <div className='pt-[75px]' id='Customer Review'>
+      <h3 className='font-bold text-center uppercase'>Customer Review</h3>
+      <div className='mt-12'>
+        <CustomerSlider dataSlide={reviews} />
       </div>
     </div>
   );
-};
-
-export default CustomerReviewSlider;
+}

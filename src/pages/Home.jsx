@@ -1,13 +1,15 @@
 import { Helmet } from 'react-helmet';
-import HeroSection from '../components/Hero';
-import ProjectsList from '../components/ProjectsList';
-import WhyChooseCSDSection from '../components/WhyChooseCSD';
-import CustomerReviewSection from '../components/CustomerReviewSlider';
-import Procedure from '../components/Procedure';
-import LastNews from '../components/LastNews';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
-import FloatingButton from '../components/FloatingButton';
+import {
+  Header,
+  Footer,
+  Hero,
+  SocialFloatButton,
+  PopularProjects,
+  WhyChooseCSD,
+  CustomerReview,
+  HowDoWeWork,
+  LastNews,
+} from '../components';
 
 const HomePage = () => {
   return (
@@ -17,22 +19,22 @@ const HomePage = () => {
         <meta name='description' content='Helmet application' />
       </Helmet>
       <Header />
-      <FloatingButton />
+      <SocialFloatButton />
       <main className='container py-[72px]'>
         <section className='pt-[50px] lg:pt-[100px]'>
-          <HeroSection />
+          <Hero />
         </section>
         <section className='mt-8'>
-          <ProjectsList />
+          <PopularProjects />
         </section>
         <section className='mt-20'>
-          <WhyChooseCSDSection />
+          <WhyChooseCSD />
         </section>
         <section className='mt-20'>
-          <CustomerReviewSection />
+          <CustomerReview />
         </section>
         <section className='mt-20'>
-          <Procedure />
+          <HowDoWeWork />
         </section>
         <section className='mt-20'>
           <LastNews />

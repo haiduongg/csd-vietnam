@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import FloatingButton from '../components/FloatingButton';
+import FloatingButton from '../components/SocialFloatButton';
 import { Helmet } from 'react-helmet';
 
 export default function ErrorPage() {

@@ -17,7 +17,7 @@ const variants = {
   },
 };
 
-const FloatingButton = () => {
+const SocialFloatButton = () => {
   const contacts = [
     {
       id: 1,
@@ -77,4 +77,4 @@ const FloatingButton = () => {
   );
 };
 
-export default FloatingButton;
+export default SocialFloatButton;
