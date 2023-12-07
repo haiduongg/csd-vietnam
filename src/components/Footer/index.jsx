@@ -7,7 +7,7 @@ const Footer = () => {
     <footer>
       <div className='bg-text dark:bg-gray-800 dark:border-t-2 dark:border-solid dark:border-gray-500'>
         <div className='container py-16'>
-          <a path='/' title='CSD Vietnam' className='block w-fit'>
+          <a href='/' title='CSD Vietnam' className='block w-fit'>
             <img src={logoWhite} alt='CSD Vietnam' width='200' height='90' />
           </a>
           <div className='mt-8 grid grid-cols-3 xl:grid-cols-3'>

@@ -13,7 +13,7 @@ export default function LastNewsList({ dataList }) {
         >
           <div className='flex gap-6'>
             <img
-              className='w-[90px] h-[90px]'
+              className='w-[90px] h-[90px] object-cover'
               src={blog.thumbnail}
               alt={blog.description}
               width={90}
