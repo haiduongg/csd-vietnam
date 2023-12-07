@@ -3,10 +3,24 @@ import { useState } from 'react';
 import { AiOutlineLeft, AiOutlineRight, AiOutlineClose } from 'react-icons/ai';
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
 import { motion } from 'framer-motion';
+import { useEffect } from 'react';
 
 export default function CategoryGallery({ dataCategory }) {
   const [currentImage, setCurrentImage] = useState({ img: null, i: 0 });
-  console.log(currentImage);
+  // ESC to exit modal
+  useEffect(() => {
+    const keyDownHandler = (event) => {
+      if (event.key === 'Escape') {
+        event.preventDefault();
+        setCurrentImage({ img: null, i: 0 });
+      }
+    };
+    document.addEventListener('keydown', keyDownHandler);
+    return () => {
+      document.removeEventListener('keydown', keyDownHandler);
+    };
+  }, []);
+
   function imgAction(action) {
     let index = currentImage.i;
     if (action === 'next') {
