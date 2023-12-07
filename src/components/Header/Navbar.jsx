@@ -65,8 +65,8 @@ function Navbar({ menuList, darkMode, setDarkMode }) {
       </ul>
 
       {/* Action */}
-      <div className='flex items-center justify-center gap-7'>
-        <div className='mr-3 h-7 w-px bg-gray-300 dark:bg-black-900-stroke 2xl:block 3xl:mx-7'></div>
+      <div className='flex items-center justify-center gap-3'>
+        <div className='mr-3 h-7 w-[1px] bg-gray-300 dark:bg-black-900-stroke 2xl:block 3xl:mx-7'></div>
         <motion.div
           onClick={() => {
             setDarkMode(!darkMode);
@@ -82,7 +82,7 @@ function Navbar({ menuList, darkMode, setDarkMode }) {
             size='sm'
             href='https://facebook.com/CSD.Vie'
             target='_blank'
-            className='bg-primary-900 dark:bg-primary-700 hover:opacity-75 uppercase focus:ring-0'
+            className='ml-3 bg-primary-900 dark:bg-primary-700 hover:opacity-75 uppercase focus:ring-0'
           >
             Contact
           </Button>

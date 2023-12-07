@@ -17,20 +17,44 @@ SliderReview.propTypes = {
 };
 export default function SliderReview({ dataSlide }) {
   return (
-    <Swiper
-      modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
-      spaceBetween={25}
-      slidesPerView={2}
-      autoplay={{
-        delay: 2200,
-        disableOnInteraction: false,
-      }}
-    >
-      {dataSlide.map((review, index) => (
-        <SwiperSlide key={index}>
-          <CustomerReviewCard dataCustomer={review} />
-        </SwiperSlide>
-      ))}
-    </Swiper>
+    <>
+      {/* On large screen */}
+      <div className='hidden lg:block'>
+        <Swiper
+          modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
+          spaceBetween={25}
+          slidesPerView={2}
+          autoplay={{
+            delay: 2200,
+            disableOnInteraction: false,
+          }}
+        >
+          {dataSlide.map((review, index) => (
+            <SwiperSlide key={index}>
+              <CustomerReviewCard dataCustomer={review} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+
+      {/* On small screen */}
+      <div className='block lg:hidden'>
+        <Swiper
+          modules={[Navigation, Pagination, Scrollbar, A11y, Autoplay]}
+          spaceBetween={25}
+          slidesPerView={1}
+          autoplay={{
+            delay: 2200,
+            disableOnInteraction: false,
+          }}
+        >
+          {dataSlide.map((review, index) => (
+            <SwiperSlide key={index}>
+              <CustomerReviewCard dataCustomer={review} />
+            </SwiperSlide>
+          ))}
+        </Swiper>
+      </div>
+    </>
   );
 }
