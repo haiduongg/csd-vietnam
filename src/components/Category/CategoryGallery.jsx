@@ -28,24 +28,23 @@ export default function CategoryGallery({ dataCategory }) {
         </p>
       </div>
       {currentImage.img && (
-        <div className='overflow-hidden fixed top-0 w-full h-full flex justify-between items-center backdrop-blur-2xl z-50 cursor-zoom-out'>
+        <div className='overflow-hidden fixed top-0 w-full h-full flex justify-between items-center backdrop-blur-2xl z-50'>
           {/* Close Btn */}
           <motion.div
             className='absolute top-0 right-0 text-black hover:text-primary-900 cursor-pointer p-5'
             whileHover={{ scale: 1.1 }}
+            onClick={() => setCurrentImage({ img: null, i: 0 })}
           >
-            <AiOutlineClose
-              size={40}
-              onClick={() => setCurrentImage({ img: null, i: 0 })}
-            />
+            <AiOutlineClose size={40} />
           </motion.div>
 
           {/* Previous Btn  */}
           <motion.div
             className='absolute left-0 text-black hover:text-primary-900 cursor-pointer p-5'
             whileHover={{ scale: 1.1 }}
+            onClick={() => imgAction('previous')}
           >
-            <AiOutlineLeft size={70} onClick={() => imgAction('previous')} />
+            <AiOutlineLeft size={70} />
           </motion.div>
 
           {/* Image */}
@@ -61,8 +60,9 @@ export default function CategoryGallery({ dataCategory }) {
           <motion.div
             className='absolute right-0 text-black hover:text-primary-900 cursor-pointer p-5'
             whileHover={{ scale: 1.1 }}
+            onClick={() => imgAction('next')}
           >
-            <AiOutlineRight size={70} onClick={() => imgAction('next')} />
+            <AiOutlineRight size={70} />
           </motion.div>
         </div>
       )}
