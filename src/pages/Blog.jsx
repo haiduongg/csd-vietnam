@@ -59,15 +59,15 @@ export default function NewsPage() {
                     href='#'
                     className={`${
                       showTag === tag.title
-                        ? 'bg-primary-900 hover:opacity-75 border-2 border-transparent'
-                        : 'text-black bg-transparent border-solid border-2 border-primary-900 dark:bg-primary-700 hover:bg-primary-900'
+                        ? 'bg-primary-900 dark:bg-primary-800 hover:opacity-75 border-2 border-transparent'
+                        : 'text-black bg-transparent border-solid border-2 border-primary-900 dark:bg-primary-700 hover:bg-primary-900 dark:bg-transparent'
                     } px-2 py-0 rounded-lg group focus:ring-0`}
                   >
                     <span
                       className={`${
                         showTag === tag.title
-                          ? 'text-white'
-                          : 'text-black-800 group-hover:text-white'
+                          ? 'text-white dark:text-white'
+                          : 'text-black-800 group-hover:text-white dark:text-white dark:group-hover:opacity-85'
                       } text-base font-semibold`}
                     >
                       {tag.title}
