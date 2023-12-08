@@ -14,7 +14,10 @@ export default function BreadCrumbs({ type, name, href }) {
             </li>
           )}
           <li>
-            <a href={`/services/${href || '#'}`} className='opacity-75'>
+            <a
+              href={`/${type.toLowerCase()}/${href || '#'}`}
+              className='opacity-75'
+            >
               {name}
             </a>
           </li>
