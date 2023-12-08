@@ -1,6 +1,6 @@
 import { BiSolidUser } from 'react-icons/bi';
 import { MdLocationOn } from 'react-icons/md';
-import avatar from '../../assets/images/customer/fiverr.png';
+import avatar from '/assets/img/card-avatar.webp';
 
 export default function VisionCard() {
   const informations = {
@@ -39,7 +39,7 @@ export default function VisionCard() {
         {informations.desc?.map((item) => (
           <div
             key={item}
-            className='flex justify-between items-center text-lg mb-4'
+            className='flex justify-between items-center text-base mb-4'
           >
             <div className='flex items-center'>
               <item.icon size={18} className='mr-3' />

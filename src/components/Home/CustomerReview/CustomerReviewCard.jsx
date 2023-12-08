@@ -27,13 +27,15 @@ export default function CustomerReviewCard({ dataCustomer }) {
       </div>
       {/* profile */}
       <div className='flex items-center justify-start gap-4'>
-        <img
-          src={dataCustomer.avatar}
-          alt={`avatar of ${dataCustomer.name}`}
-          width={90}
-          height={90}
-          className='rounded-full p-[2px] border-2 boder-solid border-primary-800'
-        />
+        <div className='w-24 h-24 flex items-center justify-center'>
+          <img
+            src={dataCustomer.avatar}
+            alt={`avatar of ${dataCustomer.name}`}
+            width={90}
+            height={90}
+            className='rounded-full p-[1px] border-2 boder-solid border-primary-800 object-cover aspect-square'
+          />
+        </div>
         {/* information */}
         <div className='flex flex-col'>
           <span className='font-bold'>{dataCustomer.name}</span>
