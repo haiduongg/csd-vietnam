@@ -1,9 +1,8 @@
-import PropTypes from 'prop-types';
-import { useState } from 'react';
-import { AiOutlineLeft, AiOutlineRight, AiOutlineClose } from 'react-icons/ai';
-import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
+import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { useEffect } from 'react';
+import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
+import { AiOutlineLeft, AiOutlineRight, AiOutlineClose } from 'react-icons/ai';
+import PropTypes from 'prop-types';
 
 export default function CategoryGallery({ dataCategory }) {
   const [currentImage, setCurrentImage] = useState({ img: null, i: 0 });

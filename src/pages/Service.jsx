@@ -1,12 +1,14 @@
+import { useEffect } from 'react';
 import { useParams } from 'react-router';
 import { Helmet } from 'react-helmet';
-import ServiceDetailContent from '../components/Service/ServiceDetailContent';
-import BreadCrumbs from '../components/BreadCrumbs';
-import Header from '../components/Header';
-import FloatingButton from '../components/SocialFloatButton';
-import Footer from '../components/Footer';
 import servicesData from '../data/services';
-import { useEffect } from 'react';
+import {
+  Header,
+  Footer,
+  SocialFloatButton,
+  BreadCrumb,
+  ServiceDetailContent,
+} from '../components';
 
 export default function Service() {
   const { href } = useParams();
@@ -26,9 +28,9 @@ export default function Service() {
         <meta name='description' content='Helmet application' />
       </Helmet>
       <Header />
-      <FloatingButton />
+      <SocialFloatButton />
       <main className='py-[72px]'>
-        <BreadCrumbs type='Service' name={service.name} href={service.href} />
+        <BreadCrumb type='Service' name={service.name} href={service.href} />
         <section className='mt-10'>
           <ServiceDetailContent dataService={service} />
         </section>

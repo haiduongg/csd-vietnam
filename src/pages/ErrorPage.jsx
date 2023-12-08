@@ -1,6 +1,6 @@
 import { Link } from 'react-router-dom';
-import FloatingButton from '../components/SocialFloatButton';
 import { Helmet } from 'react-helmet';
+import { SocialFloatButton } from '../components';
 
 export default function ErrorPage() {
   return (
@@ -10,7 +10,7 @@ export default function ErrorPage() {
         <title>404 Not Found</title>
         <meta name='description' content='Helmet application' />
       </Helmet>
-      <FloatingButton />
+      <SocialFloatButton />
       <div className='flex items-center justify-center w-screen h-screen'>
         <div className='px-4 lg:py-12'>
           <div className='lg:gap-4 lg:flex'>

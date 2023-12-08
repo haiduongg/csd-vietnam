@@ -34,16 +34,18 @@ export default function Header() {
               />
             </a>
           </motion.div>
-          <motion.div
-            onClick={() => {
-              setDarkMode(!darkMode);
-              localStorage.setItem('dark-theme', JSON.stringify(!darkMode));
-            }}
-            className='cursor-pointer opacity-60 hover:opacity-90 duration-300 block lg:hidden w-12 h-12 flex items-center justify-center'
-            whileTap={{ scale: 0.95 }}
-          >
-            {darkMode ? <RiSunFill size={24} /> : <RiMoonFill size={24} />}
-          </motion.div>
+          <div className='block lg:hidden'>
+            <motion.div
+              onClick={() => {
+                setDarkMode(!darkMode);
+                localStorage.setItem('dark-theme', JSON.stringify(!darkMode));
+              }}
+              className='cursor-pointer opacity-60 hover:opacity-90 duration-300  w-12 h-12 flex items-center justify-center'
+              whileTap={{ scale: 0.95 }}
+            >
+              {darkMode ? <RiSunFill size={24} /> : <RiMoonFill size={24} />}
+            </motion.div>
+          </div>
         </div>
         <nav className='navbar w-full'>
           {/* For large screen  */}

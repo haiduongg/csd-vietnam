@@ -42,7 +42,7 @@ const SocialFloatButton = () => {
     },
   ];
   return (
-    <div className='fixed bottom-[2%] right-3 lg:bottom-[5%] z-10'>
+    <div className='fixed bottom-5 right-4 lg:bottom-20 lg:right-8 z-10'>
       <motion.div initial='hidden' animate='show' variants={variants}>
         {contacts.map((contact) => (
           <motion.div

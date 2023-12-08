@@ -6,7 +6,7 @@ import {
 } from 'react-vertical-timeline-component';
 import 'react-vertical-timeline-component/style.min.css';
 
-const Timeline = ({ dataTimeline }) => {
+export default function Timeline({ dataTimeline }) {
   useEffect(() => {
     // 👇️ scroll to top on page load
     window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
@@ -37,9 +37,7 @@ const Timeline = ({ dataTimeline }) => {
       </div>
     </>
   );
-};
+}
 Timeline.propTypes = {
   dataTimeline: PropTypes.array.isRequired,
 };
-
-export default Timeline;
