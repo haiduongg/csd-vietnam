@@ -131,8 +131,8 @@ export default [
       },
       {
         id: 'news:2',
-        label: 'Blogs',
-        href: '/blogs',
+        label: 'Blog',
+        href: '/blog',
         icon: LuBadgeCheck,
       },
     ],

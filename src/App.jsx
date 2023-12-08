@@ -3,7 +3,7 @@ import { Route, Routes } from 'react-router';
 import ThemeContext from './context/ThemeContext';
 import HomePage from './pages/Home';
 import Vision from './pages/Vision';
-import NewsPage from './pages/News';
+import BlogPage from './pages/Blog';
 import ErrorPage from './pages/ErrorPage';
 import OurJourney from './pages/OurJourney';
 import Category from './pages/Category.jsx';
@@ -29,7 +29,7 @@ function App() {
           <Route path='our-journey' element={<OurJourney />} />
           <Route path='service/:href' element={<Service />} />
           <Route path='category/:href' element={<Category />} />
-          <Route path='blog' element={<NewsPage />} />
+          <Route path='blog' element={<BlogPage />} />
           <Route path='*' element={<ErrorPage />} />
         </Routes>
       </div>

@@ -1,10 +1,8 @@
-/* eslint-disable react/prop-types */
-import { useState } from 'react';
 import { PiCaretRightBold, PiDotOutlineThin } from 'react-icons/pi';
-import Button from './Button';
+import PropTypes from 'prop-types';
 import blogs from '../data/blogs';
 
-const Timeline = ({ tag }) => {
+export default function BlogList({ tag }) {
   return (
     <div className='max-w-[1040px] mx-auto select-none'>
       <div>
@@ -26,7 +24,7 @@ const Timeline = ({ tag }) => {
                   <span>{blog.createAt}</span>
                 </div>
                 <div className='BlogItem hover:bg-black-100 hover:dark:bg-black-800 p-6 rounded-2xl cursor-pointer'>
-                  <a href={`/blogs/${blog.link}`}>
+                  <a href={`/blog/${blog.link}`}>
                     <p className='mb-2'>
                       <span className='font-semibold'>{blog.title}</span>
                     </p>
@@ -45,52 +43,7 @@ const Timeline = ({ tag }) => {
       </div>
     </div>
   );
+}
+BlogList.propTypes = {
+  tag: PropTypes.string.isRequired,
 };
-
-const BlogList = () => {
-  const [showTag, setShowTag] = useState('All');
-  const tags = [
-    { id: 1, name: 'All', ref: 'news-&-media' },
-    { id: 2, name: 'machinal', ref: 'machinal' },
-    { id: 3, name: 'design', ref: 'design' },
-    { id: 4, name: 'web', ref: 'web' },
-    { id: 5, name: 'dev', ref: 'dev' },
-    { id: 6, name: 'life', ref: 'life' },
-    { id: 7, name: 'about-us', ref: 'about-us' },
-  ];
-  return (
-    <div className='py-16'>
-      <div className='heading'>
-        <div>
-          <h1 className='font-bold text-center'>
-            {showTag !== 'All'
-              ? `Tag #${showTag} | CSD Vietnam`
-              : 'News & Media'}
-          </h1>
-          <h2 className='text-center'>
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit
-          </h2>
-        </div>
-        <div className='mx-auto max-w-[900px] h-14'>
-          <ul className='flex flex-wrap items-center justify-center gap-3 h-full'>
-            {tags.map((tag) => (
-              <li key={tag.name} onClick={() => setShowTag(tag.name)}>
-                <Button
-                  name={tag.name}
-                  // link={`/tags/${tag.ref}`}
-                  type='outline'
-                  show={showTag === tag.name ? true : false}
-                />
-              </li>
-            ))}
-          </ul>
-        </div>
-      </div>
-      <div>
-        <Timeline tag={showTag} />
-      </div>
-    </div>
-  );
-};
-
-export default BlogList;
