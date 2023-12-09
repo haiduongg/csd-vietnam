@@ -139,7 +139,7 @@ export default function CustomerReview() {
     },
   ];
   return (
-    <div className='pt-[75px]' id='Customer Review'>
+    <div className='w-full' id='Customer Review'>
       <h3 className='font-bold text-center uppercase'>Customer Review</h3>
       <div className='mt-12'>
         <CustomerSlider dataSlide={reviews} />

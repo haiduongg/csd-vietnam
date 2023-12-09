@@ -1,7 +1,7 @@
 import 'react-loading-skeleton/dist/skeleton.css';
 import projectData from '../../data/projects';
 
-const ProjectsList = () => {
+export default function ProjectsList() {
   return (
     <div className='mx-auto'>
       <h3 className='font-bold text-center uppercase'>Popular Projects</h3>
@@ -22,6 +22,4 @@ const ProjectsList = () => {
       </div>
     </div>
   );
-};
-
-export default ProjectsList;
+}

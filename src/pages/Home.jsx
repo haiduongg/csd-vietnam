@@ -1,15 +1,20 @@
+import React from 'react';
 import { Helmet } from 'react-helmet';
 import {
   Header,
   Footer,
   Hero,
   SocialFloatButton,
-  PopularProjects,
+  // PopularProjects,
   WhyChooseCSD,
   CustomerReview,
   HowDoWeWork,
-  LastNews,
+  // LastNews,
 } from '../components';
+
+const LazyPopularProjects = React.lazy(() =>
+  import('../components/Home/PopularProjects')
+);
 
 const HomePage = () => {
   return (
@@ -21,11 +26,13 @@ const HomePage = () => {
       <Header />
       <SocialFloatButton />
       <main className='container py-[72px]'>
-        <section className='pt-[50px] lg:pt-[100px]'>
+        <section className='pt-[50px] lg:pt-[100px] '>
           <Hero />
         </section>
         <section className='mt-8'>
-          <PopularProjects />
+          <React.Suspense fallback='Loading..'>
+            <LazyPopularProjects />
+          </React.Suspense>
         </section>
         <section className='mt-20'>
           <WhyChooseCSD />
@@ -36,9 +43,9 @@ const HomePage = () => {
         <section className='mt-20'>
           <HowDoWeWork />
         </section>
-        <section className='mt-20'>
+        {/* <section className='mt-20'>
           <LastNews />
-        </section>
+        </section> */}
       </main>
       <Footer />
     </>
