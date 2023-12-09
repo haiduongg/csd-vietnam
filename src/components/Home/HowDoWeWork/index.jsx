@@ -52,7 +52,7 @@ export default function TestHowDoWeWork() {
       <p className='text-center opacity-85 text-base'>Hover to see details</p>
       <div className='mt-12'>
         <div className='flex items-center justify-center'>
-          <div className='grid grid-cols-5 gap-2'>
+          <div className='grid grid-cols-1 xl:grid-cols-5 gap-2'>
             {diagrams.map((diagram) => (
               <div key={diagram.id}>
                 <DiagramItem diagram={diagram} />
