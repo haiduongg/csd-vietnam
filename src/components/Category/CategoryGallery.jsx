@@ -33,42 +33,53 @@ export default function CategoryGallery({ dataCategory }) {
   return (
     <div className='relative'>
       {currentImage.img && (
-        <div className='overflow-hidden fixed top-0 w-full h-full flex justify-between items-center backdrop-blur-2xl z-50'>
+        <div className='overflow-hidden fixed top-0 w-screen h-screen flex justify-between items-center z-50'>
+          <div
+            className='absolute w-screen h-screen bg-white opacity-95'
+            onClick={() => setCurrentImage({ img: null, i: 0 })}
+          ></div>
           {/* Close Btn */}
           <motion.div
-            className='absolute top-0 right-0 text-black hover:text-primary-900 cursor-pointer p-5'
-            whileHover={{ scale: 1.1 }}
+            className='absolute top-3 right-3 text-black cursor-pointer bg-white w-12 aspect-square flex items-center justify-center rounded-full shadow-md shadow-black-300 hover:shadow-black-400'
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.9 }}
             onClick={() => setCurrentImage({ img: null, i: 0 })}
           >
-            <AiOutlineClose size={40} />
+            <AiOutlineClose size={20} className='opacity-70' />
           </motion.div>
 
           {/* Previous Btn  */}
-          <motion.div
-            className='absolute left-0 text-black hover:text-primary-900 cursor-pointer p-5'
-            whileHover={{ scale: 1.1 }}
-            onClick={() => imgAction('previous')}
-          >
-            <AiOutlineLeft size={70} />
-          </motion.div>
+          <div className='hidden md:block'>
+            <motion.div
+              className='absolute left-3 text-black cursor-pointer bg-white w-12 aspect-square flex items-center justify-center rounded-full shadow-md shadow-black-300 hover:shadow-black-400'
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.9 }}
+              onClick={() => imgAction('previous')}
+            >
+              <AiOutlineLeft size={20} className='opacity-70' />
+            </motion.div>
+          </div>
 
           {/* Image */}
-          <div className='w-full h-full flex items-center justify-center select-none'>
+          <div className='max-w-[95%] md:max-w-[85%] max-h-[95%] flex items-center justify-center select-none z-40'>
             <img
               src={currentImage.img}
               alt={`image`}
-              className='max-w-[85%] max-h-[90%] rounded-lg cursor-pointer'
+              className='max-w-[95%] md:max-w-[85%] max-h-[95%] rounded-lg'
             />
           </div>
 
           {/* Next Btn  */}
-          <motion.div
-            className='absolute right-0 text-black hover:text-primary-900 cursor-pointer p-5'
-            whileHover={{ scale: 1.1 }}
-            onClick={() => imgAction('next')}
-          >
-            <AiOutlineRight size={70} />
-          </motion.div>
+          <div className='hidden md:block'>
+            <motion.div
+              className='absolute right-3 text-black cursor-pointer bg-white w-12 aspect-square flex items-center justify-center rounded-full shadow-md shadow-black-300 hover:shadow-black-400'
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.9 }}
+              onClick={() => imgAction('next')}
+            >
+              <AiOutlineRight size={20} className='opacity-70' />
+            </motion.div>
+          </div>
         </div>
       )}
       <div className='mx-5 sm:mx-10 xl:mx-16'>
@@ -82,7 +93,7 @@ export default function CategoryGallery({ dataCategory }) {
                   key={index}
                   src={image}
                   alt={`image ${index}`}
-                  className='w-full shadow-lg cursor-zoom-in select-none'
+                  className='w-full shadow-lg cursor-pointer select-none rounded-md'
                   onClick={() => setCurrentImage({ img: image, i: index })}
                   whileHover={{ scale: 1.04 }}
                 />

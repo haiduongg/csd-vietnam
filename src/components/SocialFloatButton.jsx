@@ -47,7 +47,7 @@ const SocialFloatButton = () => {
         {contacts.map((contact) => (
           <motion.div
             key={contact.id}
-            className='group p-2 lg:pl-3 lg:pr-6 lg:py-2 mb-3 bg-white dark:bg-black-900 rounded-xl shadow-lg dark:shadow-slate-700 select-none'
+            className='group p-2 lg:pl-3 lg:pr-6 lg:py-2 mb-3 bg-white dark:bg-black-900 rounded-xl shadow-lg dark:shadow-black-full dark:border dark:border-solid dark:border-gray-900 select-none'
             whileTap={{ scale: 0.95 }}
             whileHover={{ x: -10 }}
             initial={{ x: 0 }}
