@@ -38,7 +38,7 @@ export default function Header() {
             whileTap={{ scale: 0.95 }}
             className='w-[90px] sm:w-[120px]'
           >
-            <a href='/'>
+            <a href={'/'} title='Go to the homepage'>
               <img
                 src={darkMode ? LogoCsdWhite : LogoCsd}
                 alt='logo'

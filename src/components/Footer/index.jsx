@@ -19,8 +19,8 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className='h-[50px] leading-[50px] text-center bg-gradient-to-r from-secondary-900 to-secondary-800 dark:from-black-900 dark:to-black-800 text-white text-base'>
-          <span>
+        <div className='border-t-[1px] border-solid border-secondary-600 dark:border-gray-700 py-4 text-center bg-gradient-to-r from-secondary-900 to-secondary-800 dark:from-black-900 dark:to-black-800 text-white text-base'>
+          <p className='inline-block'>
             Copyright @ 2023 by{' '}
             <a
               href='https://facebook.com/CSD.Vie'
@@ -28,9 +28,10 @@ const Footer = () => {
               className='hover:opacity-70 duration-200'
             >
               CADSQUAD
-            </a>{' '}
-            - All Right Reserved
-          </span>
+            </a>
+          </p>
+          <span className='hidden sm:inline-block mx-2'> - </span>
+          <span className='block sm:inline-block mt-1'>All Right Reserved</span>
         </div>
       </div>
     </footer>
