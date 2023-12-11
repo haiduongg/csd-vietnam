@@ -12,10 +12,10 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import CustomerReviewCard from './CustomerReviewCard';
 
-SliderReview.propTypes = {
+CustomerSlider.propTypes = {
   dataSlide: PropTypes.array.isRequired,
 };
-export default function SliderReview({ dataSlide }) {
+export default function CustomerSlider({ dataSlide }) {
   return (
     <>
       {/* On large screen */}

@@ -32,6 +32,9 @@ export default function Service() {
       <main className='py-[72px]'>
         <BreadCrumb type='Service' name={service.name} href={service.href} />
         <section className='mt-10'>
+          <h1 className='text-center font-extrabold my-10 text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl'>
+            {service.name}
+          </h1>
           <ServiceDetailContent dataService={service} />
         </section>
       </main>

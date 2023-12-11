@@ -5,7 +5,7 @@ import Fanpage from './Fanpage';
 const Footer = () => {
   return (
     <footer>
-      <div className='bg-text dark:bg-gray-800 dark:border-t-2 dark:border-solid dark:border-gray-500'>
+      <div className='bg-gradient-to-tl from-secondary-700 via-secondary-900 to-secondary-700 dark:from-black-900 dark:via-black-800 dark:to-black-900 dark:border-solid dark:border-gray-500'>
         <div className='container py-16'>
           <a href='/' title='CSD Vietnam' className='block w-fit'>
             <img src={logoWhite} alt='CSD Vietnam' width='200' height='90' />
@@ -19,8 +19,18 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className='h-[50px] leading-[50px] text-center bg-[#130e49] text-white dark:bg-[#191f27] text-lg'>
-          <span>Copyright @ 2023 by CADSQUAD - All Right Reserved</span>
+        <div className='h-[50px] leading-[50px] text-center bg-gradient-to-r from-secondary-900 to-secondary-800 dark:from-black-900 dark:to-black-800 text-white text-base'>
+          <span>
+            Copyright @ 2023 by{' '}
+            <a
+              href='https://facebook.com/CSD.Vie'
+              target='_'
+              className='hover:opacity-70 duration-200'
+            >
+              CADSQUAD
+            </a>{' '}
+            - All Right Reserved
+          </span>
         </div>
       </div>
     </footer>

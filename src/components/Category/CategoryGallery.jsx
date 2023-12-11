@@ -32,14 +32,6 @@ export default function CategoryGallery({ dataCategory }) {
 
   return (
     <div className='relative'>
-      <div className='heading container mt-8 mb-6'>
-        <h1 className='text-center font-bold mb-3'>
-          Category {dataCategory.name}
-        </h1>
-        <p className='text-center'>
-          This is category {dataCategory.name} image gallery.
-        </p>
-      </div>
       {currentImage.img && (
         <div className='overflow-hidden fixed top-0 w-full h-full flex justify-between items-center backdrop-blur-2xl z-50'>
           {/* Close Btn */}
@@ -79,7 +71,7 @@ export default function CategoryGallery({ dataCategory }) {
           </motion.div>
         </div>
       )}
-      <div className='mx-24'>
+      <div className='mx-5 sm:mx-10 xl:mx-16'>
         {dataCategory.images && (
           <ResponsiveMasonry
             columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}

@@ -139,10 +139,16 @@ export default function CustomerReview() {
     },
   ];
   return (
-    <div className='w-full' id='Customer Review'>
-      <h3 className='font-bold text-center uppercase'>Customer Review</h3>
-      <div className='mt-12'>
-        <CustomerSlider dataSlide={reviews} />
+    <div className='border-b border-solid border-gray-200 dark:border-gray-700 bg-gradient-to-b from-black-none to-black-50 dark:from-black-900 dark:to-black-800'>
+      <div className='container w-full py-20'>
+        <h3 className='font-bold text-center uppercase text-2xl sm:text-3xl xl:text-4xl'>
+          <span className='bg-gradient-to-b from-black-700 to-black-900 dark:from-black-none dark:to-black-200 inline-block text-transparent bg-clip-text'>
+            Customer Review
+          </span>
+        </h3>
+        <div className='mt-10 mb-6 sm:mt-16 sm:mb-12 lg:mt-20 lg:mb-16 xl:mt-24 xl:mb-20'>
+          <CustomerSlider dataSlide={reviews} />
+        </div>
       </div>
     </div>
   );

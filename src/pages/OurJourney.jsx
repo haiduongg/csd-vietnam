@@ -1,6 +1,12 @@
 import { Helmet } from 'react-helmet';
 import { BiSolidTimeFive } from 'react-icons/bi';
-import { Header, Footer, SocialFloatButton, Timeline } from '../components';
+import {
+  Header,
+  Footer,
+  SocialFloatButton,
+  Timeline,
+  PageHeading,
+} from '../components';
 
 export default function OurJourney() {
   const timelines = [
@@ -38,13 +44,13 @@ export default function OurJourney() {
       <Header />
       <SocialFloatButton />
       <main className='py-[72px]'>
-        <section className='w-full bg-text text-white py-12'>
-          <h2 className='text-center font-semibold uppercase '>Our Journey</h2>
-          <p className='mt-3 text-center'>
-            &quot; We are a highly skilled and experienced group of mechanical
+        <section className='w-full'>
+          <PageHeading
+            title='Our Journey'
+            description='" We are a highly skilled and experienced group of mechanical
             engineers passionate about turning innovative ideas into tangible
-            reality &quot;
-          </p>
+            reality "'
+          />
         </section>
         <div className='container'>
           <section>

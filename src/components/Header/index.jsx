@@ -11,9 +11,22 @@ import ThemeContext from '../../context/ThemeContext';
 
 export default function Header() {
   const { darkMode, setDarkMode } = useContext(ThemeContext);
+  const [navbar, setNavbar] = useState(false);
   const [openMenu, setOpenMenu] = useState(false);
+  const showBorder = () => {
+    if (window.scrollY >= 10) {
+      setNavbar(true);
+    } else {
+      setNavbar(false);
+    }
+  };
+  window.addEventListener('scroll', showBorder);
   return (
-    <header className='header fixed w-full z-50 bg-white dark:bg-black-900 border-b-[1px] border-solid border-gray-200 lg:border-none'>
+    <header
+      className={`${
+        navbar ? 'border-solid' : 'border-none'
+      } header fixed w-full z-50 bg-white dark:bg-black-900 border-b border-gray-200`}
+    >
       <div className='container relative py-2 lg:flex lg:items-center lg:justify-start'>
         <div className='flex items-center justify-between'>
           <div className='block lg:hidden cursor-pointer'>

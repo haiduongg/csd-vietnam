@@ -34,12 +34,18 @@ const Hero = () => {
     { id: 5, src: darkP135 },
     { id: 6, src: darkHM },
   ];
+  const list = [
+    'Professional CAD Services',
+    'Unique and creative',
+    'Reaching the world',
+  ];
+
   return (
-    <div className='flex items-start justify-between'>
+    <div className='container flex items-start justify-between'>
       <div className='w-full text-center lg:text-left flex flex-col items-center justify-center lg:items-start lg:justify-between'>
         <motion.h2
-          className='font-semibold'
-          animate={{ x: 0, opacity: 1 }}
+          className='font-bold text-3xl sm:text-4xl md:text-5xl mb-0 md:mb-5'
+          animate={{ x: 0, opacity: 0.8 }}
           initial={{ x: -200, opacity: 0 }}
           transition={{ type: 'spring', delay: 0.05 }}
         >
@@ -49,11 +55,13 @@ const Hero = () => {
           animate={{ x: 0, opacity: 1 }}
           initial={{ x: -200, opacity: 0 }}
           transition={{ type: 'spring' }}
-          className='font-bold mt-2 text-primary-900 dark:text-primary-700'
+          className='font-extrabold mt-2 text-primary-900 dark:text-primary-700 text-4xl sm:text-5xl md:text-6xl xl:text-7xl mb-6'
         >
-          We are CSD Vietnam
+          <span className='bg-gradient-to-b from-primary-800 to-primary-900 dark:from-primary-600 dark:via-primary-700 dark:to-primary-800 inline-block text-transparent bg-clip-text'>
+            We are CSD Vietnam
+          </span>
         </motion.h1>
-        <div className='w-[200px] sm:w-[400px] select-none block lg:hidden mx-auto'>
+        <div className='w-full select-none block lg:hidden mx-auto my-3'>
           <HeroSlideImage dataImg={darkMode ? darkImages : images} />
         </div>
         <motion.div
@@ -61,27 +69,25 @@ const Hero = () => {
           initial={{ x: -200, opacity: 0 }}
           transition={{ type: 'spring', delay: 0.05 }}
         >
-          <ul className='m-0 mx-10 list-disc'>
-            <li className='my-4'>
-              <h4>Professional CAD Services</h4>
-            </li>
-            <li className='my-4'>
-              <h4>Unique and creative</h4>
-            </li>
-            <li className='my-4'>
-              <h4>Reaching the world</h4>
-            </li>
+          <ul className='m-0 lg:ml-20 list-none lg:list-disc'>
+            {list.map((item, index) => (
+              <li key={index} className='my-3'>
+                <h4 className='text-base sm:text-lg md:text-2xl font-semibold opacity-80'>
+                  <span>{item}</span>
+                </h4>
+              </li>
+            ))}
           </ul>
           <motion.div
             whileTap={{ scale: 0.95 }}
-            className='w-32 mx-auto lg:mx-0'
+            className='mt-10 w-48 mx-auto lg:mx-0'
           >
             <motion.div whileHover={{ scale: 0.97 }} whileTap={{ scale: 0.95 }}>
               <Button
                 size='lg'
                 href='https://facebook.com/CSD.Vie'
                 target='_blank'
-                className='bg-primary-900 dark:bg-primary-700 hover:opacity-75 uppercase focus:ring-0 text-xl rounded-xl'
+                className='bg-gradient-to-r hover:bg-gradient-to-l from-primary-800 to-primary-900 uppercase focus:ring-0 text-xl rounded-xl'
               >
                 Contact
               </Button>

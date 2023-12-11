@@ -28,7 +28,7 @@ const AboutPage = () => {
       <main className='py-[72px]'>
         <section>
           <PageHeading
-            title='Why Choose CSD'
+            title='Who we are ?'
             description='" We are a highly skilled and experienced group of mechanical
             engineers passionate about turning innovative ideas into tangible
             reality "'

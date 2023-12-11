@@ -47,39 +47,47 @@ export default function TestHowDoWeWork() {
     },
   ];
   return (
-    <div id='How Do We Work'>
-      <h3 className='font-bold text-center uppercase'>How Do We Work</h3>
-      <p className='text-center opacity-85 text-base'>Hover to see details</p>
-      <div className='mt-12'>
-        <div className='flex items-center justify-center'>
-          <div className='grid grid-cols-1 xl:grid-cols-5 gap-2'>
-            {diagrams.map((diagram) => (
-              <div key={diagram.id}>
-                <DiagramItem diagram={diagram} />
-              </div>
-            ))}
+    <div className='border-b border-gray-200 dark:border-gray-700 border-solid bg-gradient-to-b from-black-none to-black-50 dark:from-black-900 dark:to-black-800'>
+      <div className='container w-full pt-20 pb-32'>
+        <h3 className='font-bold text-center uppercase text-2xl sm:text-3xl xl:text-4xl'>
+          <span className='bg-gradient-to-b from-black-700 to-black-900 dark:from-black-none dark:to-black-200 inline-block text-transparent bg-clip-text'>
+            How Do We Work
+          </span>
+        </h3>
+        <p className='text-center opacity-80 text-base mt-2'>
+          Hover to see details
+        </p>
+        <div className='mt-5 sm:mt-8 md:mt-10 lg:mt-12 xl:mt-14'>
+          <div className='flex items-center justify-center'>
+            <div className='grid grid-cols-1 xl:grid-cols-5 gap-2'>
+              {diagrams.map((diagram) => (
+                <div key={diagram.id}>
+                  <DiagramItem diagram={diagram} />
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className='mt-5 px-10 font-semibold text-center'>
+            <p className='text-primary-900'>
+              Please note that the last two stages, Production and Acceptance
+              Testing, are flexible and can be adjusted to suit the specific
+              demands and preferences of our clients. Our commitment is to work
+              closely with you throughout the process to achieve the best
+              possible outcome for your project.
+            </p>
           </div>
         </div>
-        <div className='mt-5 px-10 font-semibold text-center'>
-          <p className='text-primary-900'>
-            Please note that the last two stages, Production and Acceptance
-            Testing, are flexible and can be adjusted to suit the specific
-            demands and preferences of our clients. Our commitment is to work
-            closely with you throughout the process to achieve the best possible
-            outcome for your project.
-          </p>
-        </div>
+        <motion.div whileHover={{ scale: 0.97 }} whileTap={{ scale: 0.95 }}>
+          <Button
+            size='md'
+            href='https://res.cloudinary.com/dqx1guyc0/image/upload/v1702146134/CSD%20Vietnam/mpq1zdzddrgfbuen3cva.png'
+            target='_blank'
+            className='mx-auto w-[200px] mt-8 bg-primary-900 dark:bg-primary-700 hover:opacity-75 uppercase focus:ring-0'
+          >
+            See diagram
+          </Button>
+        </motion.div>
       </div>
-      <motion.div whileHover={{ scale: 0.97 }} whileTap={{ scale: 0.95 }}>
-        <Button
-          size='md'
-          href='https://res.cloudinary.com/dqx1guyc0/image/upload/v1702146134/CSD%20Vietnam/mpq1zdzddrgfbuen3cva.png'
-          target='_blank'
-          className='mx-auto w-[200px] mt-8 bg-primary-900 dark:bg-primary-700 hover:opacity-75 uppercase focus:ring-0'
-        >
-          See diagram
-        </Button>
-      </motion.div>
     </div>
   );
 }

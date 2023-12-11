@@ -12,7 +12,7 @@ export default function CustomerReviewCard({ dataCustomer }) {
   return (
     <div className='w-full flex flex-col items-center justify-center'>
       {/* Review  */}
-      <div className='relative border- shadow-lg py-14 px-10 rounded-lg z-20'>
+      <div className='relative shadow-lg dark:shadow-md dark:shadow-black-900 py-14 px-10 rounded-lg z-20'>
         <div className='absolute top-3 left-7 text-primary-800 opacity-60'>
           <ImQuotesLeft size={30} />
         </div>
@@ -22,7 +22,7 @@ export default function CustomerReviewCard({ dataCustomer }) {
         </div>
       </div>
       {/* Triangle */}
-      <div className='mt-[-35px] inline-block mb-[-10px] text-primary-800 z-0 opacity-60'>
+      <div className='mt-[-35px] inline-block mb-[-10px] text-primary-800 z-0 opacity-80'>
         <GoTriangleDown size={100} />
       </div>
       {/* profile */}

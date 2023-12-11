@@ -82,7 +82,7 @@ function Navbar({ menuList, darkMode, setDarkMode }) {
             size='sm'
             href='https://facebook.com/CSD.Vie'
             target='_blank'
-            className='ml-3 bg-primary-900 dark:bg-primary-700 hover:opacity-75 uppercase focus:ring-0'
+            className='bg-gradient-to-r hover:bg-gradient-to-l from-primary-800 to-primary-900 ml-3 uppercase focus:ring-0'
           >
             Contact
           </Button>

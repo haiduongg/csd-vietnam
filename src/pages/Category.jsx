@@ -32,6 +32,11 @@ export default function Category() {
       <main className='py-[72px]'>
         <BreadCrumb type='Category' name={category.name} href={category.href} />
         <section className='mt-10'>
+          <div className='heading container my-14'>
+            <h1 className='text-center font-bold mb-3 text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl'>
+              Category {category.name}
+            </h1>
+          </div>
           <CategoryGallery dataCategory={category} />
         </section>
       </main>

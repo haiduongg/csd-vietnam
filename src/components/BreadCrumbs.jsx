@@ -4,7 +4,7 @@ export default function BreadCrumbs({ type, name, href }) {
   return (
     <div className='bg-black-100 dark:bg-black-800'>
       <div className='container py-2'>
-        <ul className='flex gap-2 text-sm md:text-base'>
+        <ul className='flex items-center justify-start gap-2 text-sm md:text-base truncate'>
           <li className="after:content-['_/'] after:ml-1">
             <span>Home</span>
           </li>
