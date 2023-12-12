@@ -58,7 +58,7 @@ const Hero = () => {
           className='font-extrabold mt-2 text-primary-900 dark:text-primary-700 text-4xl sm:text-5xl md:text-6xl xl:text-7xl mb-6'
         >
           <span className='bg-gradient-to-b from-primary-800 to-primary-900 dark:from-primary-600 dark:via-primary-700 dark:to-primary-800 inline-block text-transparent bg-clip-text'>
-            We are CSD Vietnam
+            ư
           </span>
         </motion.h1>
         <div className='w-full select-none block lg:hidden mx-auto my-3'>

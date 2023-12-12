@@ -6,7 +6,7 @@ ServiceDetailContent.propTypes = {
 };
 function ServiceDetailContent({ dataService }) {
   return (
-    <div className='container'>
+    <div className='container w-full'>
       <ServiceImageSlider
         dataImg={dataService.images ?? []}
         dataVideo={dataService.videos ?? []}
