@@ -12,6 +12,7 @@
   "dependencies": {
     "@ckeditor/ckeditor5-build-classic": "^40.0.0",
     "@ckeditor/ckeditor5-react": "^6.1.0",
+    "@emailjs/browser": "^3.11.0",
     "@headlessui/react": "^1.7.17",
     "antd": "^5.10.3",
     "axios": "^1.6.0",

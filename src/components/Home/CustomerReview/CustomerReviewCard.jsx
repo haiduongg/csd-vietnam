@@ -5,7 +5,7 @@ import { GoTriangleDown } from 'react-icons/go';
 import style from './CustomerReviewCard.module.css';
 
 CustomerReviewCard.propTypes = {
-  dataCustomer: PropTypes.array.isRequired,
+  dataCustomer: PropTypes.object.isRequired,
 };
 
 export default function CustomerReviewCard({ dataCustomer }) {

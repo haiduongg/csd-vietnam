@@ -1,14 +1,16 @@
 import { useState, useEffect } from 'react';
 import { Route, Routes } from 'react-router';
+import {
+  HomePage,
+  Vision,
+  OurJourney,
+  Service,
+  Category,
+  BlogPage,
+  Carrers,
+  ErrorPage,
+} from './pages';
 import ThemeContext from './context/ThemeContext';
-import HomePage from './pages/Home';
-import Vision from './pages/Vision';
-import BlogPage from './pages/Blog';
-import Carrers from './pages/Carrers.jsx';
-import ErrorPage from './pages/ErrorPage';
-import OurJourney from './pages/OurJourney';
-import Category from './pages/Category.jsx';
-import Service from './pages/Service';
 
 function App() {
   const get = JSON.parse(localStorage.getItem('dark-theme'));

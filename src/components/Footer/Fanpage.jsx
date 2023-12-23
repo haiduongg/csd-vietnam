@@ -6,7 +6,7 @@ export default function Fanpage() {
         width='500'
         height='300'
         style={{ border: 0, overflow: 'hidden' }}
-        allowfullscreen={true}
+        allowFullScreen={true}
         loading='lazy'
       ></iframe>
     </div>
