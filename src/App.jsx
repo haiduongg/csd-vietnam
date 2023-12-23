@@ -4,6 +4,7 @@ import ThemeContext from './context/ThemeContext';
 import HomePage from './pages/Home';
 import Vision from './pages/Vision';
 import BlogPage from './pages/Blog';
+import Carrers from './pages/Carrers.jsx';
 import ErrorPage from './pages/ErrorPage';
 import OurJourney from './pages/OurJourney';
 import Category from './pages/Category.jsx';
@@ -30,6 +31,7 @@ function App() {
           <Route path='service/:href' element={<Service />} />
           <Route path='category/:href' element={<Category />} />
           <Route path='blog' element={<BlogPage />} />
+          <Route path='carrers' element={<Carrers />} />
           <Route path='*' element={<ErrorPage />} />
         </Routes>
       </div>

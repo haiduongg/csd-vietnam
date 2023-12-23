@@ -20,19 +20,13 @@ export default function OurJourney() {
       year: '06/2023',
       icon: BiSolidTimeFive,
       title: 'Lv.1 Seller on Fiverr',
-      description: 'Channel Founder',
+      description: 'More than 50 customers',
     },
     {
       year: '09/2023',
       icon: BiSolidTimeFive,
       title: 'Lv.2 Seller on Fiverr',
-      description: 'Channel Founder',
-    },
-    {
-      year: '10/2023',
-      icon: BiSolidTimeFive,
-      title: 'Lv.1 Seller on Fiverr ',
-      description: 'Channel CSD',
+      description: 'More than 100 customers',
     },
   ];
   return (

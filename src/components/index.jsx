@@ -17,6 +17,7 @@ import CategoryGallery from './Category/CategoryGallery';
 import ServiceDetailContent from './Service/ServiceDetailContent';
 import ServiceImageSlider from './Service/ServiceImageSlider';
 import Timeline from './OurJourney/Timeline';
+import CarrersContent from './Carrers/CarrersContent';
 
 export {
   Header,
@@ -38,4 +39,5 @@ export {
   ServiceDetailContent,
   ServiceImageSlider,
   Timeline,
+  CarrersContent,
 };

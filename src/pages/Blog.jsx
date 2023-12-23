@@ -31,7 +31,7 @@ export default function NewsPage() {
   return (
     <>
       <Helmet>
-        <title>News & Media | CSD Vietnam</title>
+        <title>Blog | CSD Vietnam</title>
         <meta name='description' content='Helmet application' />
       </Helmet>
       <Header />

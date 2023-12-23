@@ -126,7 +126,7 @@ export default [
       {
         id: 'news:1',
         label: 'Carrers',
-        href: '/news/carrers',
+        href: '/carrers',
         icon: LuBadgeCheck,
       },
       {

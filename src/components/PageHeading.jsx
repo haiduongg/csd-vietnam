@@ -6,11 +6,13 @@ export default function PageHeading({ title, description }) {
       <h2 className=' text-center font-extrabold uppercase text-4xl lg:text-5xl'>
         {title}
       </h2>
-      <p className='mt-5 text-center text-lg opacity-95'>{description}</p>
+      {description && (
+        <p className='mt-5 text-center text-lg opacity-95'>{description}</p>
+      )}
     </div>
   );
 }
 PageHeading.propTypes = {
   title: PropTypes.string.isRequired,
-  description: PropTypes.string.isRequired,
+  description: PropTypes.string,
 };

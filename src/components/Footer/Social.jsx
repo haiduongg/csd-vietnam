@@ -44,7 +44,7 @@ export default function Social() {
     {
       icon: GrSkype,
       name: 'live:.cid.484f3503905e6563',
-      path: 'https://www.facebook.com/CSD.Vie',
+      path: 'skype:live:.cid.484f3503905e6563',
     },
     {
       icon: GrYoutube,
