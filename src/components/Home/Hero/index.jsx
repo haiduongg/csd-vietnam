@@ -87,9 +87,9 @@ const Hero = () => {
                 size='lg'
                 href='https://facebook.com/CSD.Vie'
                 target='_blank'
-                className='bg-gradient-to-r hover:bg-gradient-to-l from-primary-800 to-primary-900 uppercase focus:ring-0 text-xl rounded-xl'
+                className='bg-gradient-to-r hover:bg-gradient-to-l from-primary-800 to-primary-900 focus:ring-0 text-xl rounded-xl'
               >
-                Contact
+                Let{"'"}s talk
               </Button>
             </motion.div>
           </motion.div>

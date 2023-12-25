@@ -8,6 +8,7 @@ import {
   WhyChooseCSD,
   CustomerReview,
   HowDoWeWork,
+  ContactUs,
   // LastNews,
 } from '../components';
 
@@ -35,6 +36,9 @@ const HomePage = () => {
         </section>
         <section>
           <HowDoWeWork />
+        </section>
+        <section>
+          <ContactUs />
         </section>
         {/* <section>
           <LastNews />

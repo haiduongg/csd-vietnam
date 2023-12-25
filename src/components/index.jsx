@@ -10,6 +10,7 @@ import PopularProjects from './Home/PopularProjects';
 import CustomerReview from './Home/CustomerReview';
 import WhyChooseCSD from './Home/WhyChooseCSD';
 import HowDoWeWork from './Home/HowDoWeWork';
+import ContactUs from './Home/ContactUs';
 import LastNews from './Home/LastNews';
 import MeetTheTeam from './Vision/MeetTheTeam';
 import VisionCard from './Vision/VisionCard';
@@ -28,6 +29,7 @@ export {
   PageHeading,
   Hero,
   CustomerReview,
+  ContactUs,
   WhyChooseCSD,
   HowDoWeWork,
   PopularProjects,
