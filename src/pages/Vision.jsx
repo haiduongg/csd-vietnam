@@ -1,5 +1,4 @@
 import { Helmet } from 'react-helmet';
-import { useEffect } from 'react';
 import Focus1 from '/assets/img/vision/Focus_1.png';
 import worldwideBackground from '/assets/img/vision/WorldwideBackground.png';
 import {
@@ -12,10 +11,6 @@ import {
 } from '../components';
 
 const AboutPage = () => {
-  useEffect(() => {
-    // 👇️ scroll to top on page load
-    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
-  }, []);
   return (
     <>
       <Helmet>
@@ -45,19 +40,6 @@ const AboutPage = () => {
       </main>
       <Footer />
     </>
-  );
-};
-
-const AboutHeading = () => {
-  return (
-    <section className='w-full bg-text text-white py-12'>
-      <h2 className='text-center font-semibold uppercase '>Who are we ?</h2>
-      <p className='mt-3 text-center'>
-        &quot; We are a highly skilled and experienced group of mechanical
-        engineers passionate about turning innovative ideas into tangible
-        reality &quot;
-      </p>
-    </section>
   );
 };
 

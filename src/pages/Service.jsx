@@ -1,4 +1,3 @@
-import { useEffect } from 'react';
 import { useParams } from 'react-router';
 import { Helmet } from 'react-helmet';
 import servicesData from '../data/services';
@@ -12,10 +11,6 @@ import {
 
 export default function Service() {
   const { href } = useParams();
-  useEffect(() => {
-    // 👇️ scroll to top on page load
-    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
-  }, []);
   const service =
     servicesData?.find((x) => {
       return x.href === href;

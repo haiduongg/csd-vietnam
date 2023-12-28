@@ -6,6 +6,7 @@ import ErrorPage from './ErrorPage';
 import OurJourney from './OurJourney';
 import Category from './Category.jsx';
 import Service from './Service';
+import BlogDetail from './BlogDetail.jsx';
 
 export {
   HomePage,
@@ -16,4 +17,5 @@ export {
   OurJourney,
   Category,
   Service,
+  BlogDetail,
 };

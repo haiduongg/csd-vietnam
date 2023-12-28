@@ -1,6 +1,7 @@
 import { PiCaretRightBold, PiDotOutlineThin } from 'react-icons/pi';
 import PropTypes from 'prop-types';
-import blogs from '../data/blogs';
+import blogs from '../../data/blogs';
+import { Link } from 'react-router-dom';
 
 export default function BlogList({ tag }) {
   return (
@@ -24,18 +25,18 @@ export default function BlogList({ tag }) {
                   <span>{blog.createAt}</span>
                 </div>
                 <div className='BlogItem hover:bg-black-100 hover:dark:bg-black-800 p-6 rounded-2xl cursor-pointer'>
-                  <a href={`/blog/${blog.link}`}>
+                  <Link to={`/blog/${blog.url}`}>
                     <p className='mb-2'>
                       <span className='font-semibold'>{blog.title}</span>
                     </p>
                     <p className='opacity-75 max-h-[50px] overflow-hidden text-ellipsis'>
-                      {blog.description}
+                      {blog.description.slice(0, 140)}
                     </p>
                     <div className='flex items-center justify-start text-primary-900 font-semibold leading-none mt-4'>
                       <span className='mr-1'>See more</span>
                       <PiCaretRightBold className='text-sm' />
                     </div>
-                  </a>
+                  </Link>
                 </div>
               </div>
             </div>

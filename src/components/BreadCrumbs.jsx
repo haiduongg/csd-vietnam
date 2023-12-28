@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 
-export default function BreadCrumbs({ type, name, href }) {
+export default function BreadCrumbs({ type, name }) {
   return (
     <div className='bg-black-100 dark:bg-black-800'>
       <div className='container py-2'>
@@ -27,5 +27,4 @@ export default function BreadCrumbs({ type, name, href }) {
 BreadCrumbs.propTypes = {
   type: PropTypes.string.isRequired,
   name: PropTypes.string.isRequired,
-  href: PropTypes.string,
 };

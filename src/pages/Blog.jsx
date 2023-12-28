@@ -2,8 +2,7 @@ import { Helmet } from 'react-helmet';
 import { useState } from 'react';
 import { Button } from 'flowbite-react';
 import { motion } from 'framer-motion';
-import BlogList from '../components/BlogList';
-import { Header, Footer, SocialFloatButton } from '../components';
+import { Header, Footer, SocialFloatButton, BlogList } from '../components';
 
 export default function NewsPage() {
   const [showTag, setShowTag] = useState('All');

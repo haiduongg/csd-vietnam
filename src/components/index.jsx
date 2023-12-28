@@ -2,7 +2,7 @@ import Header from './Header';
 import Footer from './Footer';
 import SocialFloatButton from './SocialFloatButton';
 import PageHeading from './PageHeading';
-import BlogList from './BlogList';
+import BlogList from './Blogs/BlogList';
 import BreadCrumb from './BreadCrumbs';
 import ButtonScrollToTop from './ButtonScrollToTop';
 import Hero from './Home/Hero';
@@ -19,6 +19,7 @@ import ServiceDetailContent from './Service/ServiceDetailContent';
 import ServiceImageSlider from './Service/ServiceImageSlider';
 import Timeline from './OurJourney/Timeline';
 import CarrersContent from './Carrers/CarrersContent';
+import BlogPost from './Blogs/BlogPost';
 
 export {
   Header,
@@ -42,4 +43,5 @@ export {
   ServiceImageSlider,
   Timeline,
   CarrersContent,
+  BlogPost,
 };

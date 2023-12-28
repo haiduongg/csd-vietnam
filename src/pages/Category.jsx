@@ -1,5 +1,4 @@
 import { useParams } from 'react-router';
-import { useEffect } from 'react';
 import { Helmet } from 'react-helmet';
 import categoriesData from '../data/category';
 import {
@@ -12,10 +11,6 @@ import {
 
 export default function Category() {
   const { href } = useParams();
-  useEffect(() => {
-    // 👇️ scroll to top on page load
-    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
-  }, []);
   const category =
     categoriesData?.find((x) => {
       return x.href === href;
