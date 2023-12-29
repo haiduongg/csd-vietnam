@@ -2,7 +2,7 @@ import { Helmet } from 'react-helmet';
 import { useState } from 'react';
 import { Button } from 'flowbite-react';
 import { motion } from 'framer-motion';
-import { Header, Footer, SocialFloatButton, BlogList } from '../components';
+import { Header, Footer, FloatButton, BlogList } from '../components';
 
 export default function NewsPage() {
   const [showTag, setShowTag] = useState('All');
@@ -34,7 +34,7 @@ export default function NewsPage() {
         <meta name='description' content='Helmet application' />
       </Helmet>
       <Header />
-      <SocialFloatButton />
+      <FloatButton />
       <main className='container pt-[60px]'>
         <section
           id='heading'

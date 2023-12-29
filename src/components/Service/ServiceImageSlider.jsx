@@ -1,11 +1,6 @@
 import PropTypes from 'prop-types';
 import { Carousel } from 'flowbite-react';
 
-ServiceImageSlider.propTypes = {
-  dataImg: PropTypes.array.isRequired,
-  dataVideo: PropTypes.array.isRequired,
-};
-
 export default function ServiceImageSlider({ dataImg, dataVideo }) {
   return (
     <div className='w-full h-44 sm:h-80 md:h-96 lg:h-[450px] xl:h-[550px]'>
@@ -24,3 +19,7 @@ export default function ServiceImageSlider({ dataImg, dataVideo }) {
     </div>
   );
 }
+ServiceImageSlider.propTypes = {
+  dataImg: PropTypes.array.isRequired,
+  dataVideo: PropTypes.array.isRequired,
+};

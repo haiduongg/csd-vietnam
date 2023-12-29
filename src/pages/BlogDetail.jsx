@@ -1,6 +1,6 @@
 import { Helmet } from 'react-helmet';
 import { useParams } from 'react-router-dom';
-import { Header, Footer, SocialFloatButton, BlogPost } from '../components';
+import { Header, Footer, FloatButton, BlogPost } from '../components';
 import blogsData from '../data/blogs';
 
 export default function BlogDetail() {
@@ -17,8 +17,8 @@ export default function BlogDetail() {
         <meta name='description' content='Helmet application' />
       </Helmet>
       <Header />
-      <SocialFloatButton />
-      <main className='py-[72px] bg-black-50 dark:bg-black-800 dark:text-white'>
+      <FloatButton />
+      <main className='py-[72px] bg-gradient-to-b from-black-50 to-black-none dark:bg-black-800 dark:text-white'>
         <section className='container mt-10'>
           <BlogPost blog={blog} />
         </section>

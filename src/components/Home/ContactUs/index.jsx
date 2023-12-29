@@ -41,19 +41,26 @@ export default function ContactUs() {
           </p>
         </div>
         {/* Main */}
-        <div className='flex gap-6 w-full rounded-xl shadow-lg border border-solid border-gray-100'>
-          <div className='w-[60%] bg-blue-500 h-full rounded-xl py-12 pl-14 text-white shadow-lg'>
+        <div className='flex flex-col lg:flex-row gap-6 w-full rounded-xl shadow-lg border border-solid border-gray-100'>
+          <div className='w-full lg:w-[65%] bg-blue-500 h-full rounded-xl py-5 px-5 lg:py-12 md:pl-8 lg:pl-10 xl:pl-14 text-white shadow-lg'>
             <h4>
               <span className='font-semibold'>Contact Information</span>
             </h4>
             <p className='mt-2 opacity-80'>
               Say something to start a live chat!
             </p>
-            <ul className='mt-14'>
+            <ul className='mt-10 lg:mt-14 md:mt-6 md:grid md:grid-cols-2 lg:block'>
               {contactInformation.map((item, index) => (
-                <li key={index} className='flex items-center gap-4 my-7'>
+                <li
+                  key={index}
+                  className='md:flex md:items-center gap-4 my-6 md:my-4 lg:my-7 overflow-hidden'
+                >
                   <item.icon size={25} />
-                  <a href={item.path} target='_' className='text-base'>
+                  <a
+                    href={item.path}
+                    target='_'
+                    className='text-base overflow-hidden'
+                  >
                     {item.name}
                   </a>
                 </li>

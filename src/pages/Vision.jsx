@@ -7,7 +7,7 @@ import {
   MeetTheTeam,
   PageHeading,
   VisionCard,
-  SocialFloatButton,
+  FloatButton,
 } from '../components';
 
 const AboutPage = () => {
@@ -19,7 +19,7 @@ const AboutPage = () => {
         <meta name='description' content='Helmet application' />
       </Helmet>
       <Header />
-      <SocialFloatButton />
+      <FloatButton />
       <main className='py-[72px]'>
         <section>
           <PageHeading

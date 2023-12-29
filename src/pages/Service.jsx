@@ -4,7 +4,7 @@ import servicesData from '../data/services';
 import {
   Header,
   Footer,
-  SocialFloatButton,
+  FloatButton,
   BreadCrumb,
   ServiceDetailContent,
 } from '../components';
@@ -23,7 +23,7 @@ export default function Service() {
         <meta name='description' content='Helmet application' />
       </Helmet>
       <Header />
-      <SocialFloatButton />
+      <FloatButton />
       <main className='py-[72px]'>
         <BreadCrumb type='Service' name={service.name} href={service.href} />
         <section className='mt-10'>

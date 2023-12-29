@@ -3,7 +3,7 @@ import {
   Header,
   Footer,
   Hero,
-  SocialFloatButton,
+  FloatButton,
   PopularProjects,
   WhyChooseCSD,
   CustomerReview,
@@ -20,7 +20,7 @@ const HomePage = () => {
         <meta name='description' content='Helmet application' />
       </Helmet>
       <Header />
-      <SocialFloatButton />
+      <FloatButton />
       <main className='pt-[72px]'>
         <section className='pt-12 lg:pt-36'>
           <Hero />

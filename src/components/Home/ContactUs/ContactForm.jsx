@@ -1,7 +1,6 @@
 import { useRef } from 'react';
 import { motion } from 'framer-motion';
 import emailjs from '@emailjs/browser';
-import { useForm } from 'react-hook-form';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import TextInput from '../../TextInput';
@@ -36,18 +35,20 @@ export default function ContactForm() {
   };
   return (
     <form ref={form} onSubmit={sendEmail}>
-      <div className='mt-2 grid grid-cols-2 gap-x-14 gap-y-9'>
+      <div className='mt-2 lg:grid lg:grid-cols-2 gap-x-14 gap-y-9'>
         <TextInput
           label='Name'
           placeholder={'Ex: Cao Hai Duong'}
           inputName='user_name'
         />
-        <TextInput
-          label='Email'
-          placeholder={'Ex: caohaiduong@gmail.com'}
-          inputName='user_email'
-        />
-        <div className='col-span-2'>
+        <div className='lg:mt-0 mt-8'>
+          <TextInput
+            label='Email'
+            placeholder={'Ex: caohaiduong@gmail.com'}
+            inputName='user_email'
+          />
+        </div>
+        <div className='lg:mt-0 mt-8 col-span-2'>
           <TextInput
             label='Message'
             placeholder={'Write your message'}
@@ -57,7 +58,7 @@ export default function ContactForm() {
         <motion.div
           whileHover={{ scale: 0.97 }}
           whileTap={{ scale: 0.95 }}
-          className='col-span-2 mx-auto mt-10'
+          className='col-span-2 mx-auto mt-10 w-fit'
         >
           <input
             type='submit'

@@ -1,10 +1,5 @@
 import { Helmet } from 'react-helmet';
-import {
-  Header,
-  Footer,
-  SocialFloatButton,
-  CarrersContent,
-} from '../components';
+import { Header, Footer, FloatButton, CarrersContent } from '../components';
 import imageRecruitCllaborators from '../assets/images/Carrers/Recruit Cllaborators.jpg';
 
 export default function Carrers() {
@@ -15,7 +10,7 @@ export default function Carrers() {
         <meta name='description' content='Helmet application' />
       </Helmet>
       <Header />
-      <SocialFloatButton />
+      <FloatButton />
       <main className='pt-[72px]'>
         <section className=' pt-5 pb-14 container'>
           <CarrersContent dataImage={imageRecruitCllaborators} />

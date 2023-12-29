@@ -4,7 +4,7 @@ import categoriesData from '../data/category';
 import {
   Header,
   Footer,
-  SocialFloatButton,
+  FloatButton,
   CategoryGallery,
   BreadCrumb,
 } from '../components';
@@ -23,7 +23,7 @@ export default function Category() {
         <meta name='description' content='Helmet application' />
       </Helmet>
       <Header />
-      <SocialFloatButton />
+      <FloatButton />
       <main className='py-[72px]'>
         <BreadCrumb type='Category' name={category.name} href={category.href} />
         <section className='mt-10'>

@@ -1,10 +1,9 @@
 import Header from './Header';
 import Footer from './Footer';
-import SocialFloatButton from './SocialFloatButton';
+import FloatButton from './FloatButton';
 import PageHeading from './PageHeading';
 import BlogList from './Blogs/BlogList';
 import BreadCrumb from './BreadCrumbs';
-import ButtonScrollToTop from './ButtonScrollToTop';
 import Hero from './Home/Hero';
 import PopularProjects from './Home/PopularProjects';
 import CustomerReview from './Home/CustomerReview';
@@ -20,12 +19,13 @@ import ServiceImageSlider from './Service/ServiceImageSlider';
 import Timeline from './OurJourney/Timeline';
 import CarrersContent from './Carrers/CarrersContent';
 import BlogPost from './Blogs/BlogPost';
+import SwiperNavButton from './SwiperNavButton';
 
 export {
   Header,
   Footer,
   BlogList,
-  SocialFloatButton,
+  FloatButton,
   BreadCrumb,
   PageHeading,
   Hero,
@@ -38,10 +38,10 @@ export {
   MeetTheTeam,
   VisionCard,
   CategoryGallery,
-  ButtonScrollToTop,
   ServiceDetailContent,
   ServiceImageSlider,
   Timeline,
   CarrersContent,
   BlogPost,
+  SwiperNavButton,
 };

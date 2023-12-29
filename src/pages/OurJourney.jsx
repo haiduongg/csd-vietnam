@@ -3,7 +3,7 @@ import { BiSolidTimeFive } from 'react-icons/bi';
 import {
   Header,
   Footer,
-  SocialFloatButton,
+  FloatButton,
   Timeline,
   PageHeading,
 } from '../components';
@@ -36,7 +36,7 @@ export default function OurJourney() {
         <meta name='description' content='Helmet application' />
       </Helmet>
       <Header />
-      <SocialFloatButton />
+      <FloatButton />
       <main className='py-[72px]'>
         <section className='w-full'>
           <PageHeading
