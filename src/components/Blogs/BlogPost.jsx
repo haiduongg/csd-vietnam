@@ -20,7 +20,7 @@ export default function BlogPost({ blog }) {
           className='h-full w-full object-cover rounded-xl'
         />
       </div>
-      <div id='Content' className='relative mt-[-200px] w-full z-10'>
+      <div id='Content' className='relative mt-[-200px] w-full z-[9]'>
         <div className='max-w-4xl bg-black-none dark:bg-black-900 mx-auto py-14 px-16 rounded-3xl shadow-xl'>
           <Link
             to='/blog'

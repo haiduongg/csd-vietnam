@@ -14,7 +14,7 @@ export default function BlogList({ tag }) {
               key={blog.id}
               className='flex flex-row items-start justify-between mt-6 relative'
             >
-              <div className='hidden sm:block'>
+              <div className='hidden xl:block'>
                 <div className='absolute top-0 left-[-900px] mt-2 sm:top-[-10px] sm:left-[95px] xl:mt-4 flex flex-col items-center justify-center opacity-10 mr-1 '>
                   <PiDotOutlineThin size={60} className='inline' />
                   <div className='h-[250px] w-[2px] xl:h-[172px] bg-black-900 dark:bg-white mt-[-24px]'></div>

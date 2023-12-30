@@ -27,25 +27,45 @@ export default function CarrersContent({ dataImage }) {
     },
   ];
   return (
-    <div className='flex justify-start items-start gap-10'>
+    <div className='flex flex-col lg:flex-row justify-start items-start gap-5 lg:gap-10'>
+      {/* Mobile Title */}
+      <div className='block lg:hidden'>
+        <div className='flex items-center gap-3'>
+          <div className='inline-block uppercase font-bold text-2xl leading-relaxed'>
+            <p className='inline-block'>
+              <div className='w-14 h-[38px] inline-block mr-2'>
+                <Lottie animationData={Send} loop={true} />
+              </div>
+              Cộng tác viên đồng hành cùng{' '}
+              <span className='ml-1 text-primary-900'>CADSQUAD</span>
+            </p>
+          </div>
+        </div>
+      </div>
+      {/* Image */}
       <img
         src={dataImage}
         alt='Carrer Photo'
         width={400}
-        className='rounded-xl'
+        className='rounded-xl w-full lg:w-[400px]'
       />
       <div id='content' className='mt-3 leading-loose'>
-        <p>
+        {/* Title */}
+        <div className='hidden lg:block'>
           <div className='flex items-center gap-3'>
-            <div className='w-14'>
-              <Lottie animationData={Send} loop={true} />
-            </div>
-            <div className='inline-block uppercase font-bold text-2xl'>
-              <span>Cộng tác viên đồng hành cùng</span>
+            <div className='inline-block uppercase font-bold text-2xl leading-relaxed'>
+              <p className='inline-block'>
+                <div className='w-14 h-[38px] inline-block mr-2'>
+                  <Lottie animationData={Send} loop={true} />
+                </div>
+                Cộng tác viên đồng hành cùng
+              </p>
               <span className='ml-1 text-primary-900'>CADSQUAD</span>
             </div>
           </div>
-          <br />
+        </div>
+        {/* Content */}
+        <p className='lg:mt-3'>
           Chúng tôi đang tìm kiếm các bạn Engineering Freelancers có đam mê và
           tài năng trong các lĩnh vực: Industrial & Product Design, 3D Modeling
           & Rendering, 3D printing, ...
@@ -93,8 +113,7 @@ export default function CarrersContent({ dataImage }) {
           <ul className='list-disc ml-10 leading-loose'>
             {contact.map((item) => (
               <li key={item.id}>
-                <span>{item.title}</span>
-                <span>:</span>
+                {item.title} :
                 <a
                   href={item.href}
                   className='ml-1 border-b-2 border-solid border-gray-400 hover:border-primary-900 hover:text-primary-900 duration-100'

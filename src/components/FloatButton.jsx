@@ -23,7 +23,7 @@ const variants = {
 };
 
 export default function FloatButton() {
-  const [show, setShow] = useState(true);
+  const [show, setShow] = useState(false);
   const [enableScroll, setEnableScroll] = useState(false);
   useEffect(() => {
     window.addEventListener('scroll', controlShow);
@@ -64,7 +64,7 @@ export default function FloatButton() {
   return (
     <>
       {/* Scroll to top */}
-      <div className='hidden lg:block fixed bottom-7 right-12 z-10'>
+      <div className='hidden lg:block fixed bottom-6 right-24 xl:bottom-24 xl:right-28 z-10'>
         <Tooltip content='Scroll to top' placement='left'>
           <motion.button
             className={`${
@@ -81,10 +81,10 @@ export default function FloatButton() {
         </Tooltip>
       </div>
       {/* Button show menu  */}
-      <div className='fixed bottom-6 right-2 sm:bottom-10 sm:right-6 lg:bottom-24 lg:right-12 z-10'>
+      <div className='fixed bottom-6 right-2 sm:bottom-6 sm:right-6 xl:bottom-24 xl:right-12 z-10'>
         <Tooltip
           content={!show ? 'Show social menu' : 'Close social menu'}
-          placement='left'
+          placement='bottom-start'
         >
           <motion.button
             className='p-3 bg-white dark:bg-black-900 rounded-full shadow-lg dark:shadow-black-full hover:text-primary-900'
@@ -97,7 +97,7 @@ export default function FloatButton() {
         </Tooltip>
       </div>
       {/* Social menu  */}
-      <div className='fixed bottom-20 right-2 sm:bottom-24 sm:right-6 lg:bottom-[10rem] lg:right-8 z-10'>
+      <div className='fixed bottom-20 right-2 sm:bottom-24 sm:right-6 xl:bottom-40 xl:right-8 z-10'>
         {show && (
           <motion.div initial='hidden' animate='show' variants={variants}>
             {contacts.map((contact) => (
@@ -114,9 +114,9 @@ export default function FloatButton() {
                     alt={contact.title}
                     width='40'
                     height='40'
-                    className='mr-0 md:mr-3'
+                    className='mr-3'
                   />
-                  <p className='hidden md:block dark:text-white'>
+                  <p className='dark:text-white'>
                     <span className='group-hover:text-primary-900 font-semibold'>
                       {contact.title}
                     </span>

@@ -38,20 +38,18 @@ export default function NewsPage() {
       <main className='container pt-[60px]'>
         <section
           id='heading'
-          className='max-w-[1440px] mx-auto pt-[120px] lg:pt-[75px] px-8 xl:px-0'
+          className='max-w-[1440px] mx-auto mt-10 lg:mt-14 px-8 xl:px-0'
         >
-          <div>
-            <h1 className='font-bold text-center'>
-              {showTag !== 'All'
-                ? `Tag #${showTag} | CSD Vietnam`
-                : 'News & Media'}
+          <div id='title'>
+            <h1 className='text-center font-extrabold text-2xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl'>
+              {showTag !== 'All' ? `Tag #${showTag}` : 'News & Media'}
             </h1>
-            <h5 className='text-center mt-2 mb-12 opacity-80'>
+            <h5 className='text-center md:mt-1 xl:mt-3 mb-5 xl:mb-8 opacity-80 text-base md:text-lg xl:text-xl'>
               All our articles
             </h5>
           </div>
-          <div className='mx-auto max-w-[900px] h-14'>
-            <ul className='flex flex-wrap items-center justify-center gap-5 h-full'>
+          <div className='mx-auto xl:max-w-4xl'>
+            <ul className='flex flex-wrap items-center justify-center gap-5'>
               {tags.map((tag, index) => (
                 <motion.li key={index} onClick={() => setShowTag(tag.title)}>
                   <Button
