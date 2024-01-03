@@ -1,11 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 export default {
   darkMode: 'class',
-  content: [
-    './index.html',
-    './src/**/*.{js,ts,jsx,tsx}',
-    'node_modules/flowbite-react/**/*.{js,jsx,ts,tsx}',
-  ],
+  content: ['./index.html', './src/**/*.{js,ts,jsx,tsx}'],
   theme: {
     screens: {
       sm: '480px',
@@ -22,6 +18,9 @@ export default {
     },
 
     extend: {
+      gridTemplateColumns: {
+        14: 'repeat(14, minmax(0, 1fr))',
+      },
       colors: {
         black: {
           none: '#fff',
@@ -79,5 +78,5 @@ export default {
       },
     },
   },
-  plugins: [require('flowbite/plugin')],
+  plugins: [],
 };

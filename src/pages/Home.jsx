@@ -9,6 +9,7 @@ import {
   CustomerReview,
   HowDoWeWork,
   ContactUs,
+  LastNews,
   // LastNews,
 } from '../components';
 
@@ -38,11 +39,11 @@ const HomePage = () => {
           <HowDoWeWork />
         </section>
         <section>
+          <LastNews />
+        </section>
+        <section>
           <ContactUs />
         </section>
-        {/* <section>
-          <LastNews />
-        </section> */}
       </main>
       <Footer />
     </>

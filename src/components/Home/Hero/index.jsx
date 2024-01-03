@@ -1,5 +1,4 @@
 import { useContext } from 'react';
-import { Button } from 'flowbite-react';
 import { motion } from 'framer-motion';
 import HeroSlideImage from './HeroSlideImage';
 import P061 from '/assets/img/hero/FIVERR.P061-001-FA-001_White.webp';
@@ -15,6 +14,8 @@ import darkP128 from '/assets/img/hero/FIVERR.P128-000-FA-001_Dark.webp';
 import darkP135 from '/assets/img/hero/FIVERR.P135-000-FA-001_Dark.webp';
 import darkHM from '/assets/img/hero/HM_Dark.webp';
 import ThemeContext from '../../../context/ThemeContext';
+import { Button } from '@chakra-ui/react';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
   const { darkMode } = useContext(ThemeContext);
@@ -82,15 +83,21 @@ const Hero = () => {
             whileTap={{ scale: 0.95 }}
             className='mt-10 w-48 mx-auto lg:mx-0'
           >
-            <motion.div whileHover={{ scale: 0.97 }} whileTap={{ scale: 0.95 }}>
-              <Button
-                size='lg'
-                href='https://facebook.com/CSD.Vie'
-                target='_blank'
-                className='bg-gradient-to-r hover:bg-gradient-to-l from-primary-800 to-primary-900 focus:ring-0 text-xl rounded-xl'
-              >
-                Let{"'"}s talk
-              </Button>
+            <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+              <Link to={'https://facebook.com/CSD.Vie'} target='_blank'>
+                <Button
+                  size='lg'
+                  bg='#f47920'
+                  color='#fff'
+                  _hover={{ bg: '#f47920' }}
+                  _active={{ bg: '#f47920' }}
+                  ml='5'
+                  px='10'
+                  title='Go to fanpage'
+                >
+                  {"Let's Talk"}
+                </Button>
+              </Link>
             </motion.div>
           </motion.div>
         </motion.div>

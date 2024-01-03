@@ -1,5 +1,6 @@
 import { useState, useEffect, useLayoutEffect } from 'react';
 import { Route, Routes, useLocation } from 'react-router';
+import { ChakraProvider } from '@chakra-ui/react';
 import {
   HomePage,
   Vision,
@@ -10,6 +11,7 @@ import {
   Carrers,
   ErrorPage,
   BlogDetail,
+  CreatePost,
 } from './pages';
 import ThemeContext from './context/ThemeContext';
 
@@ -33,19 +35,22 @@ function App() {
 
   return (
     <ThemeContext.Provider value={{ darkMode, setDarkMode }}>
-      <div className='page dark:bg-black-900 dark:text-black-none duration-75'>
-        <Routes>
-          <Route index element={<HomePage />} />
-          <Route path='vision' element={<Vision />} />
-          <Route path='our-journey' element={<OurJourney />} />
-          <Route path='service/:href' element={<Service />} />
-          <Route path='category/:href' element={<Category />} />
-          <Route path='blog' element={<BlogPage />} />
-          <Route path='blog/:href' element={<BlogDetail />} />
-          <Route path='carrers' element={<Carrers />} />
-          <Route path='*' element={<ErrorPage />} />
-        </Routes>
-      </div>
+      <ChakraProvider>
+        <div className='page dark:bg-black-900 dark:text-black-none duration-75'>
+          <Routes>
+            <Route index element={<HomePage />} />
+            <Route path='vision' element={<Vision />} />
+            <Route path='our-journey' element={<OurJourney />} />
+            <Route path='service/:href' element={<Service />} />
+            <Route path='category/:href' element={<Category />} />
+            <Route path='blog' element={<BlogPage />} />
+            <Route path='blog/:href' element={<BlogDetail />} />
+            <Route path='carrers' element={<Carrers />} />
+            <Route path='create' element={<CreatePost />} />
+            <Route path='*' element={<ErrorPage />} />
+          </Routes>
+        </div>
+      </ChakraProvider>
     </ThemeContext.Provider>
   );
 }

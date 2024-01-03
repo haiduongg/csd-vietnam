@@ -9,6 +9,17 @@ export default function BlogDetail() {
     blogsData?.find((x) => {
       return x.url === href;
     }) ?? {};
+  let temp = [];
+  blog.tag?.forEach((tag) => {
+    blogsData.forEach((post) => {
+      let postTag = post.tag.toString();
+      if (postTag.indexOf(tag) !== -1) {
+        temp.push(post);
+      }
+    });
+  });
+  const relatedPosts = temp.filter((post) => post.id !== blog.id);
+  console.log(relatedPosts);
   return (
     <>
       <Helmet>
@@ -18,9 +29,9 @@ export default function BlogDetail() {
       </Helmet>
       <Header />
       <FloatButton />
-      <main className='py-[72px] bg-gradient-to-b from-black-50 to-black-none dark:bg-black-800 dark:text-white'>
-        <section className='container mt-10'>
-          <BlogPost blog={blog} />
+      <main className='py-[72px] dark:text-white pb-32'>
+        <section className='container'>
+          <BlogPost blog={blog} relatedPosts={relatedPosts} />
         </section>
       </main>
       <Footer />

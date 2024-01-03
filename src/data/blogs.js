@@ -1,114 +1,56 @@
-export default [
+const blogs = [
   {
     id: 1,
     createAt: '2023-08-24',
-    title: 'Setup dự án Node.js với TypeScript ESLint Prettier',
+    title: 'Là lập trình viên thì có nên chỉ viết code thôi không ?',
+    img: 'https://res.cloudinary.com/dqx1guyc0/image/upload/v1704240145/CSD%20Vietnam/Blog/pfbtgwf5iq6d2gk5kgee.jpg ',
     description:
-      'Trong bài viết này, mình sẽ hướng dẫn các bạn cách setup dự án Node.js với TypeScript, cũng như cách sử dụng ESLint Prettier để check code.',
-    url: 'setup-du-an-nodejs-voi-typescript-eslint-prettier',
-    content:
-      '<p>Tr&ograve; chuy&#7879;n c&ugrave;ng CSD: H&agrave;nh tr&igrave;nh &#273;&#7841;t th&agrave;nh t&iacute;ch xu&#7845;t s&#7855;c  t&#7841;i k&#7923; thi tay ngh&#7873; th&agrave;nh ph&#7889; HCM v&agrave; WorldSkills Samsung 2023  Hi c&#7843; nh&agrave;! H&ocirc;m nay, ch&uacute;ng ta h&atilde;y c&ugrave;ng l&#7855;ng nghe c&acirc;u chuy&#7879;n &#273;&#7847;y c&#7843;m h&#7913;ng c&#7911;a tuy&#7875;n tay ngh&#7873; thi&#7871;t k&#7871; k&#7929; thu&#7853;t c&#417; kh&iacute; - CAD &#273;&atilde; v&#432;&#7907;t qua m&#7885;i kh&oacute; kh&#259;n &#273;&#7875; &#273;&#7841;t th&agrave;nh t&iacute;ch xu&#7845;t s&#7855;c t&#7841;i k&#7923; thi tay ngh&#7873; th&agrave;nh ph&#7889; HCM v&agrave; WorldSkills Samsung!  C&ugrave;ng CSD chia s&#7867; video n&agrave;y &#273;&#7875; lan t&#7887;a c&#7843;m h&#7913;ng v&agrave; &#273;&#7897;ng vi&ecirc;n cho nh&#7919;ng t&agrave;i n&#259;ng tr&#7867; c&#7911;a ch&uacute;ng ta!  Video https://youtu.be/6NiVKpMprOs #TayNgh&#7873;HCM #WorldSkillsSamsung #Ng&#432;&#7901;iH&ugrave;ngTayNgh&#7873; #S&aacute;ngT&#7841;oKh&ocirc;ngGi&#7899;iH&#7841;n #c&#7843;mh&#7913;ngt&#7915;&#273;amm&ecirc;</p>',
-    tag: 'dev, web, blog, me',
+      'Các bạn nên tìm tòi học hỏi thêm nhiều thứ khác để có thể nâng cao kiến thức và cải thiện thêm nhiều kỹ năng khác nữa. Từ đó có thể tạo ra thêm thu nhập hoặc ít nhất là có kiến thức rộng hơn.',
+    content: '#Hello\n*test*',
+    tag: ['dev', 'about-us'],
   },
   {
     id: 2,
-    createAt: '2023-01-30',
-    title: 'Setup React Typescript với Webpack & Babel & ESLint',
+    createAt: '2024-03-01',
+    title: 'Trò chuyện cùng CSD - WorldSkills 2023',
+    img: 'https://res.cloudinary.com/dqx1guyc0/image/upload/v1704245858/CSD%20Vietnam/Blog/cfklalf9rfukkwrg8znb.jpg',
     description:
-      'Trong bài viết này chúng ta sẽ học cách setup một dự án ReactJs hoàn chỉnh với Webpack, Typescript kết hợp Babel, Prettier, ESLint.',
-    url: 'setup-react-typescript-voi-webpack-babel-eslint',
+      'Hi cả nhà! Hôm nay, chúng ta hãy cùng lắng nghe câu chuyện đầy cảm hứng của tuyển tay nghề thiết kế kỹ thuật cơ khí.',
     content:
-      '<p>Tr&ograve; chuy&#7879;n c&ugrave;ng CSD: H&agrave;nh tr&igrave;nh &#273;&#7841;t th&agrave;nh t&iacute;ch xu&#7845;t s&#7855;c  t&#7841;i k&#7923; thi tay ngh&#7873; th&agrave;nh ph&#7889; HCM v&agrave; WorldSkills Samsung 2023  Hi c&#7843; nh&agrave;! H&ocirc;m nay, ch&uacute;ng ta h&atilde;y c&ugrave;ng l&#7855;ng nghe c&acirc;u chuy&#7879;n &#273;&#7847;y c&#7843;m h&#7913;ng c&#7911;a tuy&#7875;n tay ngh&#7873; thi&#7871;t k&#7871; k&#7929; thu&#7853;t c&#417; kh&iacute; - CAD &#273;&atilde; v&#432;&#7907;t qua m&#7885;i kh&oacute; kh&#259;n &#273;&#7875; &#273;&#7841;t th&agrave;nh t&iacute;ch xu&#7845;t s&#7855;c t&#7841;i k&#7923; thi tay ngh&#7873; th&agrave;nh ph&#7889; HCM v&agrave; WorldSkills Samsung!  C&ugrave;ng CSD chia s&#7867; video n&agrave;y &#273;&#7875; lan t&#7887;a c&#7843;m h&#7913;ng v&agrave; &#273;&#7897;ng vi&ecirc;n cho nh&#7919;ng t&agrave;i n&#259;ng tr&#7867; c&#7911;a ch&uacute;ng ta!  Video https://youtu.be/6NiVKpMprOs #TayNgh&#7873;HCM #WorldSkillsSamsung #Ng&#432;&#7901;iH&ugrave;ngTayNgh&#7873; #S&aacute;ngT&#7841;oKh&ocirc;ngGi&#7899;iH&#7841;n #c&#7843;mh&#7913;ngt&#7915;&#273;amm&ecirc;</p>',
-    tag: 'web',
-  },
-  {
-    id: 3,
-    createAt: '2021-05-02',
-    title: 'Tâm sự chuyện nghề - Tại sao bạn học code',
-    description:
-      'Lý do bạn đến với ngành IT là gì, tại sao bạn lại học code, tại sao bạn lại làm dev, các ngã rẽ của nghề lập trình viên như thế nào? Hôm nay cùng mình chém gió một tí nhé.',
-    url: 'tam-su-chuyen-nghe-tai-sao-ban-hoc-code',
-    content:
-      '<p>Tr&ograve; chuy&#7879;n c&ugrave;ng CSD: H&agrave;nh tr&igrave;nh &#273;&#7841;t th&agrave;nh t&iacute;ch xu&#7845;t s&#7855;c  t&#7841;i k&#7923; thi tay ngh&#7873; th&agrave;nh ph&#7889; HCM v&agrave; WorldSkills Samsung 2023  Hi c&#7843; nh&agrave;! H&ocirc;m nay, ch&uacute;ng ta h&atilde;y c&ugrave;ng l&#7855;ng nghe c&acirc;u chuy&#7879;n &#273;&#7847;y c&#7843;m h&#7913;ng c&#7911;a tuy&#7875;n tay ngh&#7873; thi&#7871;t k&#7871; k&#7929; thu&#7853;t c&#417; kh&iacute; - CAD &#273;&atilde; v&#432;&#7907;t qua m&#7885;i kh&oacute; kh&#259;n &#273;&#7875; &#273;&#7841;t th&agrave;nh t&iacute;ch xu&#7845;t s&#7855;c t&#7841;i k&#7923; thi tay ngh&#7873; th&agrave;nh ph&#7889; HCM v&agrave; WorldSkills Samsung!  C&ugrave;ng CSD chia s&#7867; video n&agrave;y &#273;&#7875; lan t&#7887;a c&#7843;m h&#7913;ng v&agrave; &#273;&#7897;ng vi&ecirc;n cho nh&#7919;ng t&agrave;i n&#259;ng tr&#7867; c&#7911;a ch&uacute;ng ta!  Video https://youtu.be/6NiVKpMprOs #TayNgh&#7873;HCM #WorldSkillsSamsung #Ng&#432;&#7901;iH&ugrave;ngTayNgh&#7873; #S&aacute;ngT&#7841;oKh&ocirc;ngGi&#7899;iH&#7841;n #c&#7843;mh&#7913;ngt&#7915;&#273;amm&ecirc;</p>',
-    tag: 'about-us',
-  },
-  {
-    id: 4,
-    createAt: '2023-01-06',
-    title: '📔Ebook thôi miên nhà tuyển dụng bằng nghệ thuật ngôn từ',
-    description:
-      'Phần quà này gửi tặng các bạn học viên của mình. Đây là những kinh nghiệm mình học hỏi và đúc kết được trong những năm đi làm và nó đã giúp mình chưa fail vòng CV nào từ khi áp dụng. Ngoài ra khi áp dụng những mẹo này còn giúp mình deal được mức lương như mong muốn.',
-    url: 'ebook-thoi-mien-nha-tuyen-dung-bang-nghe-thuat-ngon-tu',
-    content:
-      '<p>Tr&ograve; chuy&#7879;n c&ugrave;ng CSD: H&agrave;nh tr&igrave;nh &#273;&#7841;t th&agrave;nh t&iacute;ch xu&#7845;t s&#7855;c  t&#7841;i k&#7923; thi tay ngh&#7873; th&agrave;nh ph&#7889; HCM v&agrave; WorldSkills Samsung 2023  Hi c&#7843; nh&agrave;! H&ocirc;m nay, ch&uacute;ng ta h&atilde;y c&ugrave;ng l&#7855;ng nghe c&acirc;u chuy&#7879;n &#273;&#7847;y c&#7843;m h&#7913;ng c&#7911;a tuy&#7875;n tay ngh&#7873; thi&#7871;t k&#7871; k&#7929; thu&#7853;t c&#417; kh&iacute; - CAD &#273;&atilde; v&#432;&#7907;t qua m&#7885;i kh&oacute; kh&#259;n &#273;&#7875; &#273;&#7841;t th&agrave;nh t&iacute;ch xu&#7845;t s&#7855;c t&#7841;i k&#7923; thi tay ngh&#7873; th&agrave;nh ph&#7889; HCM v&agrave; WorldSkills Samsung!  C&ugrave;ng CSD chia s&#7867; video n&agrave;y &#273;&#7875; lan t&#7887;a c&#7843;m h&#7913;ng v&agrave; &#273;&#7897;ng vi&ecirc;n cho nh&#7919;ng t&agrave;i n&#259;ng tr&#7867; c&#7911;a ch&uacute;ng ta!  Video https://youtu.be/6NiVKpMprOs #TayNgh&#7873;HCM #WorldSkillsSamsung #Ng&#432;&#7901;iH&ugrave;ngTayNgh&#7873; #S&aacute;ngT&#7841;oKh&ocirc;ngGi&#7899;iH&#7841;n #c&#7843;mh&#7913;ngt&#7915;&#273;amm&ecirc;</p>',
-    tag: 'life',
-  },
-  {
-    id: 5,
-    createAt: '2023-08-24',
-    title: 'Setup dự án Node.js với TypeScript ESLint Prettier',
-    description:
-      'Trong bài viết này, mình sẽ hướng dẫn các bạn cách setup dự án Node.js với TypeScript, cũng như cách sử dụng ESLint Prettier để check code.',
-    url: 'setup-du-an-nodejs-voi-typescript-eslint-prettier',
-    content:
-      '<p>Tr&ograve; chuy&#7879;n c&ugrave;ng CSD: H&agrave;nh tr&igrave;nh &#273;&#7841;t th&agrave;nh t&iacute;ch xu&#7845;t s&#7855;c  t&#7841;i k&#7923; thi tay ngh&#7873; th&agrave;nh ph&#7889; HCM v&agrave; WorldSkills Samsung 2023  Hi c&#7843; nh&agrave;! H&ocirc;m nay, ch&uacute;ng ta h&atilde;y c&ugrave;ng l&#7855;ng nghe c&acirc;u chuy&#7879;n &#273;&#7847;y c&#7843;m h&#7913;ng c&#7911;a tuy&#7875;n tay ngh&#7873; thi&#7871;t k&#7871; k&#7929; thu&#7853;t c&#417; kh&iacute; - CAD &#273;&atilde; v&#432;&#7907;t qua m&#7885;i kh&oacute; kh&#259;n &#273;&#7875; &#273;&#7841;t th&agrave;nh t&iacute;ch xu&#7845;t s&#7855;c t&#7841;i k&#7923; thi tay ngh&#7873; th&agrave;nh ph&#7889; HCM v&agrave; WorldSkills Samsung!  C&ugrave;ng CSD chia s&#7867; video n&agrave;y &#273;&#7875; lan t&#7887;a c&#7843;m h&#7913;ng v&agrave; &#273;&#7897;ng vi&ecirc;n cho nh&#7919;ng t&agrave;i n&#259;ng tr&#7867; c&#7911;a ch&uacute;ng ta!  Video https://youtu.be/6NiVKpMprOs #TayNgh&#7873;HCM #WorldSkillsSamsung #Ng&#432;&#7901;iH&ugrave;ngTayNgh&#7873; #S&aacute;ngT&#7841;oKh&ocirc;ngGi&#7899;iH&#7841;n #c&#7843;mh&#7913;ngt&#7915;&#273;amm&ecirc;</p>',
-    tag: 'web',
-  },
-  {
-    id: 6,
-    createAt: '2023-08-24',
-    title: 'Setup dự án Node.js với TypeScript ESLint Prettier',
-    description:
-      'Trong bài viết này, mình sẽ hướng dẫn các bạn cách setup dự án Node.js với TypeScript, cũng như cách sử dụng ESLint Prettier để check code.',
-    url: 'setup-du-an-nodejs-voi-typescript-eslint-prettier',
-    content:
-      '<p>Tr&ograve; chuy&#7879;n c&ugrave;ng CSD: H&agrave;nh tr&igrave;nh &#273;&#7841;t th&agrave;nh t&iacute;ch xu&#7845;t s&#7855;c  t&#7841;i k&#7923; thi tay ngh&#7873; th&agrave;nh ph&#7889; HCM v&agrave; WorldSkills Samsung 2023  Hi c&#7843; nh&agrave;! H&ocirc;m nay, ch&uacute;ng ta h&atilde;y c&ugrave;ng l&#7855;ng nghe c&acirc;u chuy&#7879;n &#273;&#7847;y c&#7843;m h&#7913;ng c&#7911;a tuy&#7875;n tay ngh&#7873; thi&#7871;t k&#7871; k&#7929; thu&#7853;t c&#417; kh&iacute; - CAD &#273;&atilde; v&#432;&#7907;t qua m&#7885;i kh&oacute; kh&#259;n &#273;&#7875; &#273;&#7841;t th&agrave;nh t&iacute;ch xu&#7845;t s&#7855;c t&#7841;i k&#7923; thi tay ngh&#7873; th&agrave;nh ph&#7889; HCM v&agrave; WorldSkills Samsung!  C&ugrave;ng CSD chia s&#7867; video n&agrave;y &#273;&#7875; lan t&#7887;a c&#7843;m h&#7913;ng v&agrave; &#273;&#7897;ng vi&ecirc;n cho nh&#7919;ng t&agrave;i n&#259;ng tr&#7867; c&#7911;a ch&uacute;ng ta!  Video https://youtu.be/6NiVKpMprOs #TayNgh&#7873;HCM #WorldSkillsSamsung #Ng&#432;&#7901;iH&ugrave;ngTayNgh&#7873; #S&aacute;ngT&#7841;oKh&ocirc;ngGi&#7899;iH&#7841;n #c&#7843;mh&#7913;ngt&#7915;&#273;amm&ecirc;</p>',
-    tag: 'web',
-  },
-  {
-    id: 7,
-    createAt: '2023-08-24',
-    title: 'Setup dự án Node.js với TypeScript ESLint Prettier',
-    description:
-      'Trong bài viết này, mình sẽ hướng dẫn các bạn cách setup dự án Node.js với TypeScript, cũng như cách sử dụng ESLint Prettier để check code.',
-    url: 'setup-du-an-nodejs-voi-typescript-eslint-prettier',
-    content:
-      '<p>Tr&ograve; chuy&#7879;n c&ugrave;ng CSD: H&agrave;nh tr&igrave;nh &#273;&#7841;t th&agrave;nh t&iacute;ch xu&#7845;t s&#7855;c  t&#7841;i k&#7923; thi tay ngh&#7873; th&agrave;nh ph&#7889; HCM v&agrave; WorldSkills Samsung 2023  Hi c&#7843; nh&agrave;! H&ocirc;m nay, ch&uacute;ng ta h&atilde;y c&ugrave;ng l&#7855;ng nghe c&acirc;u chuy&#7879;n &#273;&#7847;y c&#7843;m h&#7913;ng c&#7911;a tuy&#7875;n tay ngh&#7873; thi&#7871;t k&#7871; k&#7929; thu&#7853;t c&#417; kh&iacute; - CAD &#273;&atilde; v&#432;&#7907;t qua m&#7885;i kh&oacute; kh&#259;n &#273;&#7875; &#273;&#7841;t th&agrave;nh t&iacute;ch xu&#7845;t s&#7855;c t&#7841;i k&#7923; thi tay ngh&#7873; th&agrave;nh ph&#7889; HCM v&agrave; WorldSkills Samsung!  C&ugrave;ng CSD chia s&#7867; video n&agrave;y &#273;&#7875; lan t&#7887;a c&#7843;m h&#7913;ng v&agrave; &#273;&#7897;ng vi&ecirc;n cho nh&#7919;ng t&agrave;i n&#259;ng tr&#7867; c&#7911;a ch&uacute;ng ta!  Video https://youtu.be/6NiVKpMprOs #TayNgh&#7873;HCM #WorldSkillsSamsung #Ng&#432;&#7901;iH&ugrave;ngTayNgh&#7873; #S&aacute;ngT&#7841;oKh&ocirc;ngGi&#7899;iH&#7841;n #c&#7843;mh&#7913;ngt&#7915;&#273;amm&ecirc;</p>',
-    tag: 'web',
-  },
-  {
-    id: 8,
-    createAt: '2023-08-24',
-    title: 'Setup dự án Node.js với TypeScript ESLint Prettier',
-    description:
-      'Trong bài viết này, mình sẽ hướng dẫn các bạn cách setup dự án Node.js với TypeScript, cũng như cách sử dụng ESLint Prettier để check code.',
-    url: 'setup-du-an-nodejs-voi-typescript-eslint-prettier',
-    content:
-      '<p>Tr&ograve; chuy&#7879;n c&ugrave;ng CSD: H&agrave;nh tr&igrave;nh &#273;&#7841;t th&agrave;nh t&iacute;ch xu&#7845;t s&#7855;c  t&#7841;i k&#7923; thi tay ngh&#7873; th&agrave;nh ph&#7889; HCM v&agrave; WorldSkills Samsung 2023  Hi c&#7843; nh&agrave;! H&ocirc;m nay, ch&uacute;ng ta h&atilde;y c&ugrave;ng l&#7855;ng nghe c&acirc;u chuy&#7879;n &#273;&#7847;y c&#7843;m h&#7913;ng c&#7911;a tuy&#7875;n tay ngh&#7873; thi&#7871;t k&#7871; k&#7929; thu&#7853;t c&#417; kh&iacute; - CAD &#273;&atilde; v&#432;&#7907;t qua m&#7885;i kh&oacute; kh&#259;n &#273;&#7875; &#273;&#7841;t th&agrave;nh t&iacute;ch xu&#7845;t s&#7855;c t&#7841;i k&#7923; thi tay ngh&#7873; th&agrave;nh ph&#7889; HCM v&agrave; WorldSkills Samsung!  C&ugrave;ng CSD chia s&#7867; video n&agrave;y &#273;&#7875; lan t&#7887;a c&#7843;m h&#7913;ng v&agrave; &#273;&#7897;ng vi&ecirc;n cho nh&#7919;ng t&agrave;i n&#259;ng tr&#7867; c&#7911;a ch&uacute;ng ta!  Video https://youtu.be/6NiVKpMprOs #TayNgh&#7873;HCM #WorldSkillsSamsung #Ng&#432;&#7901;iH&ugrave;ngTayNgh&#7873; #S&aacute;ngT&#7841;oKh&ocirc;ngGi&#7899;iH&#7841;n #c&#7843;mh&#7913;ngt&#7915;&#273;amm&ecirc;</p>',
-    tag: 'web',
-  },
-  {
-    id: 9,
-    createAt: '2023-08-24',
-    title: 'Setup dự án Node.js với TypeScript ESLint Prettier',
-    description:
-      'Trong bài viết này, mình sẽ hướng dẫn các bạn cách setup dự án Node.js với TypeScript, cũng như cách sử dụng ESLint Prettier để check code.',
-    url: 'setup-du-an-nodejs-voi-typescript-eslint-prettier',
-    content:
-      '<p>Tr&ograve; chuy&#7879;n c&ugrave;ng CSD: H&agrave;nh tr&igrave;nh &#273;&#7841;t th&agrave;nh t&iacute;ch xu&#7845;t s&#7855;c  t&#7841;i k&#7923; thi tay ngh&#7873; th&agrave;nh ph&#7889; HCM v&agrave; WorldSkills Samsung 2023  Hi c&#7843; nh&agrave;! H&ocirc;m nay, ch&uacute;ng ta h&atilde;y c&ugrave;ng l&#7855;ng nghe c&acirc;u chuy&#7879;n &#273;&#7847;y c&#7843;m h&#7913;ng c&#7911;a tuy&#7875;n tay ngh&#7873; thi&#7871;t k&#7871; k&#7929; thu&#7853;t c&#417; kh&iacute; - CAD &#273;&atilde; v&#432;&#7907;t qua m&#7885;i kh&oacute; kh&#259;n &#273;&#7875; &#273;&#7841;t th&agrave;nh t&iacute;ch xu&#7845;t s&#7855;c t&#7841;i k&#7923; thi tay ngh&#7873; th&agrave;nh ph&#7889; HCM v&agrave; WorldSkills Samsung!  C&ugrave;ng CSD chia s&#7867; video n&agrave;y &#273;&#7875; lan t&#7887;a c&#7843;m h&#7913;ng v&agrave; &#273;&#7897;ng vi&ecirc;n cho nh&#7919;ng t&agrave;i n&#259;ng tr&#7867; c&#7911;a ch&uacute;ng ta!  Video https://youtu.be/6NiVKpMprOs #TayNgh&#7873;HCM #WorldSkillsSamsung #Ng&#432;&#7901;iH&ugrave;ngTayNgh&#7873; #S&aacute;ngT&#7841;oKh&ocirc;ngGi&#7899;iH&#7841;n #c&#7843;mh&#7913;ngt&#7915;&#273;amm&ecirc;</p>',
-
-    tag: 'web',
-  },
-  {
-    id: 10,
-    createAt: '2023-08-24',
-    title: 'Setup dự án Node.js với TypeScript ESLint Prettier',
-    description:
-      'Trong bài viết này, mình sẽ hướng dẫn các bạn cách setup dự án Node.js với TypeScript, cũng như cách sử dụng ESLint Prettier để check code.',
-    url: 'setup-du-an-nodejs-voi-typescript-eslint-prettier',
-    content:
-      '<p>Tr&ograve; chuy&#7879;n c&ugrave;ng CSD: H&agrave;nh tr&igrave;nh &#273;&#7841;t th&agrave;nh t&iacute;ch xu&#7845;t s&#7855;c  t&#7841;i k&#7923; thi tay ngh&#7873; th&agrave;nh ph&#7889; HCM v&agrave; WorldSkills Samsung 2023  Hi c&#7843; nh&agrave;! H&ocirc;m nay, ch&uacute;ng ta h&atilde;y c&ugrave;ng l&#7855;ng nghe c&acirc;u chuy&#7879;n &#273;&#7847;y c&#7843;m h&#7913;ng c&#7911;a tuy&#7875;n tay ngh&#7873; thi&#7871;t k&#7871; k&#7929; thu&#7853;t c&#417; kh&iacute; - CAD &#273;&atilde; v&#432;&#7907;t qua m&#7885;i kh&oacute; kh&#259;n &#273;&#7875; &#273;&#7841;t th&agrave;nh t&iacute;ch xu&#7845;t s&#7855;c t&#7841;i k&#7923; thi tay ngh&#7873; th&agrave;nh ph&#7889; HCM v&agrave; WorldSkills Samsung!  C&ugrave;ng CSD chia s&#7867; video n&agrave;y &#273;&#7875; lan t&#7887;a c&#7843;m h&#7913;ng v&agrave; &#273;&#7897;ng vi&ecirc;n cho nh&#7919;ng t&agrave;i n&#259;ng tr&#7867; c&#7911;a ch&uacute;ng ta!  Video https://youtu.be/6NiVKpMprOs #TayNgh&#7873;HCM #WorldSkillsSamsung #Ng&#432;&#7901;iH&ugrave;ngTayNgh&#7873; #S&aacute;ngT&#7841;oKh&ocirc;ngGi&#7899;iH&#7841;n #c&#7843;mh&#7913;ngt&#7915;&#273;amm&ecirc;</p>',
-
-    tag: 'web',
+      'H\u00e0nh tr\u00ecnh \u0111\u1ea1t th\u00e0nh t\u00edch xu\u1ea5t s\u1eafc t\u1ea1i k\u1ef3 thi tay ngh\u1ec1 th\u00e0nh ph\u1ed1 HCM v\u00e0 WorldSkills Samsung 2023\n\nHi c\u1ea3 nh\u00e0 ! H\u00f4m nay, ch\u00fang ta h\u00e3y c\u00f9ng l\u1eafng nghe c\u00e2u chuy\u1ec7n \u0111\u1ea7y c\u1ea3m h\u1ee9ng\nc\u1ee7a tuy\u1ec3n tay ngh\u1ec1 thi\u1ebft k\u1ebf k\u1ef9 thu\u1eadt c\u01a1 kh\u00ed - CAD \u0111\u00e3 v\u01b0\u1ee3t qua m\u1ecdi kh\u00f3\nkh\u0103n \u0111\u1ec3 \u0111\u1ea1t th\u00e0nh t\u00edch xu\u1ea5t s\u1eafc t\u1ea1i k\u1ef3 thi tay ngh\u1ec1 th\u00e0nh ph\u1ed1 HCM v\u00e0\nWorldSkills Samsung!\n\nLet\u2019s go\n\nC\u00f9ng CSD chia s\u1ebb video n\u00e0y \u0111\u1ec3 lan t\u1ecfa c\u1ea3m h\u1ee9ng v\u00e0 \u0111\u1ed9ng vi\u00ean cho nh\u1eefng\nt\u00e0i n\u0103ng tr\u1ebb c\u1ee7a ch\u00fang ta!',
+    tag: ['about-us'],
   },
 ];
+
+function chuyenDauThanhKhongDau(str) {
+  const dauCoDau =
+    'àáảãạăắằẳẵặâấầẩẫậèéẻẽẹêếềểễệìíỉĩịòóỏõọôốồổỗộơớờởỡợùúủũụưứừửữựỳýỷỹỵđ';
+  const dauKhongDau =
+    'aaaaaaaaaaaaaaaaaeeeeeeeeeeeiiiiiooooooooooooooooouuuuuuuuuuuyyyyyd';
+
+  for (let i = 0; i < dauCoDau.length; i++) {
+    const charRegExp = new RegExp(dauCoDau[i], 'g');
+    str = str.replace(charRegExp, dauKhongDau[i]);
+  }
+
+  return str;
+}
+
+const result = blogs.map((blog) => ({
+  ...blog,
+  url: chuyenDauThanhKhongDau(blog.title)
+    .toLowerCase()
+    .trim()
+    .replaceAll(' ?', '')
+    .replaceAll('. ', '')
+    .replaceAll('?', '')
+    .replaceAll(', ', '')
+    .replaceAll(': ', '')
+    .replaceAll(' !', '')
+    .replaceAll(' :', '')
+    .replaceAll(' &', '')
+    .replaceAll(' -', '')
+    .replaceAll(' ', '-'),
+}));
+
+export default result;

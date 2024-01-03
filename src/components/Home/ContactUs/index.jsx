@@ -4,6 +4,9 @@ import { FaFonticons } from 'react-icons/fa';
 import ContactForm from './ContactForm';
 
 export default function ContactUs() {
+  const handleSubmit = (values) => {
+    console.log('Form Submit: ', values);
+  };
   const contactInformation = [
     {
       icon: BiSolidPhoneCall,
@@ -68,7 +71,7 @@ export default function ContactUs() {
             </ul>
           </div>
           <div className='p-8 w-full'>
-            <ContactForm />
+            <ContactForm onSubmit={handleSubmit} />
           </div>
         </div>
       </div>

@@ -1,51 +1,37 @@
 import { BiRightArrowAlt } from 'react-icons/bi';
-import { Button } from 'antd';
+import { Link } from 'react-router-dom';
+import blogs from '../../../data/blogs.js';
 import LastNewsList from './LastNewsList';
-import thumbnail from '/assets/img/logo.webp';
 
 export default function LastNews() {
-  const lastNewsList = [
-    {
-      id: 1,
-      createAt: '2023, 10th October',
-      thumbnail: thumbnail,
-      tag: 'New orders',
-      description: 'Rolling mill revamping at CMC Poland',
-    },
-    {
-      id: 2,
-      createAt: '2023, 10th October',
-      thumbnail: thumbnail,
-      tag: 'New orders',
-      description: 'Rolling mill revamping at CMC Poland',
-    },
-    {
-      id: 3,
-      createAt: '2023, 10th October',
-      thumbnail: thumbnail,
-      tag: 'New orders',
-      description: 'Rolling mill revamping at CMC Poland',
-    },
-  ];
+  const lastPost = blogs
+    .slice(blogs.length - 1, blogs.length)
+    .reduce((prev, curr) => ({ ...prev, ...curr }), {});
+  const dataBlogs =
+    blogs.slice(blogs.length - 4, blogs.length - 1) ??
+    blogs.slice(blogs.length - 3, blogs.length - 1) ??
+    blogs.slice(blogs.length - 2, blogs.length - 1);
   return (
-    <div>
-      <div className='heading flex items-center justify-between'>
-        <div className='flex items-center justify-start gap-5'>
-          <div className='w-12 h-1 bg-black'></div>
-          <h4 className='font-bold uppercase text-center'>Last News</h4>
+    <div className='border-b border-gray-200 dark:border-gray-700 border-solid bg-gradient-to-b from-black-none to-black-50 dark:from-black-900 dark:to-black-800'>
+      <div className='container w-full pt-20 pb-32'>
+        <div className='heading flex items-center justify-between'>
+          <h3 className='font-bold text-center uppercase text-2xl sm:text-3xl xl:text-4xl'>
+            <p className='bg-gradient-to-b from-black-700 to-black-900 dark:from-black-none dark:to-black-200 inline-block text-transparent bg-clip-text'>
+              Last <span className='text-primary-900'>News</span>
+            </p>
+          </h3>
+          <Link
+            to='/blog'
+            className='flex items-center justify-start gap-2 dark:text-white opacity-80 hover:opacity-100'
+            title='View all news'
+          >
+            <span>View all news</span>
+            <BiRightArrowAlt size={25} />
+          </Link>
         </div>
-        <Button
-          type='text'
-          size='large'
-          className='font-bold flex items-center justify-center gap-3'
-          href='https://blogs.csdvietnam.com'
-        >
-          <span>View all news</span>
-          <BiRightArrowAlt size={25} />
-        </Button>
-      </div>
-      <div className='mt-6'>
-        <LastNewsList dataList={lastNewsList} />
+        <div className='mt-14'>
+          <LastNewsList lastPost={lastPost} dataBlogs={dataBlogs} />
+        </div>
       </div>
     </div>
   );

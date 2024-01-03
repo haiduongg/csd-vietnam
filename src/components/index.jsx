@@ -15,11 +15,11 @@ import MeetTheTeam from './Vision/MeetTheTeam';
 import VisionCard from './Vision/VisionCard';
 import CategoryGallery from './Category/CategoryGallery';
 import ServiceDetailContent from './Service/ServiceDetailContent';
-import ServiceImageSlider from './Service/ServiceImageSlider';
 import Timeline from './OurJourney/Timeline';
 import CarrersContent from './Carrers/CarrersContent';
 import BlogPost from './Blogs/BlogPost';
 import SwiperNavButton from './SwiperNavButton';
+import InputFeild from './InputFeild';
 
 export {
   Header,
@@ -39,9 +39,9 @@ export {
   VisionCard,
   CategoryGallery,
   ServiceDetailContent,
-  ServiceImageSlider,
   Timeline,
   CarrersContent,
   BlogPost,
   SwiperNavButton,
+  InputFeild,
 };

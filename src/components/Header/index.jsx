@@ -8,6 +8,7 @@ import LogoCsd from '/assets/img/logo.webp';
 import LogoCsdWhite from '/assets/img/logo-white.webp';
 import navigationList from '../../data/navigations';
 import ThemeContext from '../../context/ThemeContext';
+import { Link } from 'react-router-dom';
 
 export default function Header() {
   const { darkMode, setDarkMode } = useContext(ThemeContext);
@@ -38,14 +39,14 @@ export default function Header() {
             whileTap={{ scale: 0.95 }}
             className='w-[90px] sm:w-[120px]'
           >
-            <a href={'/'} title='Go to the homepage'>
+            <Link to={'/'} title='Go to the homepage'>
               <img
                 src={darkMode ? LogoCsdWhite : LogoCsd}
                 alt='logo'
                 width={120}
                 height={52}
               />
-            </a>
+            </Link>
           </motion.div>
           <div className='block lg:hidden'>
             <motion.div

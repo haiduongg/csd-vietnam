@@ -1,14 +1,16 @@
 import { PiCaretRightBold, PiDotOutlineThin } from 'react-icons/pi';
 import PropTypes from 'prop-types';
-import blogs from '../../data/blogs';
+import dataBlogs from '../../data/blogs';
 import { Link } from 'react-router-dom';
 
 export default function BlogList({ tag }) {
   return (
     <div className='max-w-[1040px] mx-auto select-none'>
       <div>
-        {blogs
-          .filter((blog) => (tag === 'All' ? blog : blog.tag === tag))
+        {dataBlogs
+          .filter((blog) =>
+            tag === 'All' ? blog : blog.tag.toString().indexOf(tag) !== -1
+          )
           ?.map((blog) => (
             <div
               key={blog.id}

@@ -53,10 +53,10 @@ ol {
   background-color: #fafafa;
 }
 ::-webkit-scrollbar-thumb {
-  background-color: #8f8f8f;
+  background-color: #e2e2e2;
   border-radius: 20px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background-color: #b1b1b1;
+  background-color: #f8b62b;
 }

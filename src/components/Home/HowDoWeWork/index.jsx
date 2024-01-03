@@ -1,7 +1,8 @@
-import { Button } from 'flowbite-react';
 import { FaUser, FaPenRuler } from 'react-icons/fa6';
 import { motion } from 'framer-motion';
 import DiagramItem from './DiagramItem';
+import { Button, Center } from '@chakra-ui/react';
+import { Link } from 'react-router-dom';
 
 export default function TestHowDoWeWork() {
   const diagrams = [
@@ -77,16 +78,33 @@ export default function TestHowDoWeWork() {
             </p>
           </div>
         </div>
-        <motion.div whileHover={{ scale: 0.97 }} whileTap={{ scale: 0.95 }}>
-          <Button
-            size='md'
-            href='https://res.cloudinary.com/dqx1guyc0/image/upload/v1702146134/CSD%20Vietnam/mpq1zdzddrgfbuen3cva.png'
-            target='_blank'
-            className='mx-auto w-[200px] mt-8 bg-primary-900 dark:bg-primary-700 hover:opacity-75 uppercase focus:ring-0'
+        <Center>
+          <motion.div
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className='mt-10 w-fit'
           >
-            See diagram
-          </Button>
-        </motion.div>
+            <Link
+              to={
+                'https://res.cloudinary.com/dqx1guyc0/image/upload/v1702146134/CSD%20Vietnam/mpq1zdzddrgfbuen3cva.png'
+              }
+              target='_blank'
+            >
+              <Button
+                size='md'
+                bg='#f47920'
+                color='#fff'
+                _hover={{ bg: '#f47920' }}
+                _active={{ bg: '#f47920' }}
+                ml='5'
+                px='10'
+                title='Go to fanpage'
+              >
+                {"Let's Talk"}
+              </Button>
+            </Link>
+          </motion.div>
+        </Center>
       </div>
     </div>
   );

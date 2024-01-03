@@ -1,82 +1,59 @@
-import { useRef } from 'react';
-import { motion } from 'framer-motion';
-import emailjs from '@emailjs/browser';
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
-import TextInput from '../../TextInput';
+import { useState } from 'react';
+import { Box, Button, Center, Text, Textarea } from '@chakra-ui/react';
+import { InputFeild } from '../../../components';
+import { useForm } from 'react-hook-form';
+import PropTypes from 'prop-types';
 
-ContactForm.propTypes = {};
+ContactForm.propTypes = {
+  onSubmit: PropTypes.func,
+};
+export default function ContactForm(props) {
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [message, setMessage] = useState('');
 
-export default function ContactForm() {
-  const notifySucess = () => toast.success('Send message sucessfully!');
-  const notifyError = () => toast.error('Send message failed!');
-  const form = useRef();
-
-  const sendEmail = (e) => {
-    e.preventDefault();
-
-    emailjs
-      .sendForm(
-        'service_euyqvd6',
-        'template_3lwj4t1',
-        form.current,
-        'RL_HWhqaWeDC367ts'
-      )
-      .then(
-        (result) => {
-          console.log(result.text);
-          notifySucess();
-        },
-        (error) => {
-          console.log(error.text);
-          notifyError();
-        }
-      );
-  };
+  // const form = useForm({
+  //   defaultValues: {
+  //     title: '',
+  //   },
+  // });
+  // const handleSubmit = (values) => {
+  //   console.log('Form: ', values);
+  // };
   return (
-    <form ref={form} onSubmit={sendEmail}>
-      <div className='mt-2 lg:grid lg:grid-cols-2 gap-x-14 gap-y-9'>
-        <TextInput
-          label='Name'
-          placeholder={'Ex: Cao Hai Duong'}
-          inputName='user_name'
+    <form>
+      <Box className='mt-2 lg:grid lg:grid-cols-2 gap-x-3 gap-y-9'>
+        <InputFeild
+          label='Your Name'
+          placeholder={'Input your name'}
+          name='title'
+          value={name}
+          onChange={(e) => setName(e.target.value)}
         />
-        <div className='lg:mt-0 mt-8'>
-          <TextInput
-            label='Email'
-            placeholder={'Ex: caohaiduong@gmail.com'}
-            inputName='user_email'
-          />
-        </div>
-        <div className='lg:mt-0 mt-8 col-span-2'>
-          <TextInput
-            label='Message'
-            placeholder={'Write your message'}
-            inputName='message'
-          />
-        </div>
-        <motion.div
-          whileHover={{ scale: 0.97 }}
-          whileTap={{ scale: 0.95 }}
-          className='col-span-2 mx-auto mt-10 w-fit'
-        >
-          <input
-            type='submit'
-            value='Send'
-            className='font-semibold text-white cursor-pointer bg-red-300 px-10 py-2  uppercase rounded-xl bg-gradient-to-r hover:bg-gradient-to-l from-primary-800 to-primary-900'
-          />
-        </motion.div>
-        <ToastContainer
-          position='top-right'
-          autoClose={2500}
-          hideProgressBar={false}
-          newestOnTop={false}
-          closeOnClick
-          rtl={false}
-          pauseOnFocusLoss
-          draggable
+        <InputFeild
+          label='Your Email'
+          name='email'
+          placeholder={'Input your email'}
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
         />
-      </div>
+        <Box className='col-span-2'>
+          <Text mb='18px' fontWeight={'semibold'} fontSize={'20px'}>
+            Message
+          </Text>
+          <Textarea
+            placeholder='Write something to us'
+            name='message'
+            value={message}
+            onChange={(e) => setMessage(e.target.value)}
+          />
+        </Box>
+        <Center className='col-span-2'>
+          <Button colorScheme='green' variant='solid' size={'md'} type='submit'>
+            Send
+          </Button>
+        </Center>
+      </Box>
     </form>
   );
 }
