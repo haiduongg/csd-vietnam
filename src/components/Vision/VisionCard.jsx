@@ -36,9 +36,9 @@ export default function VisionCard() {
         <span className='font-bold text-xl'>{informations.name}</span>
       </div>
       <div className='border-t-2 border-solid pt-5'>
-        {informations.desc?.map((item) => (
+        {informations.desc?.map((item, index) => (
           <div
-            key={item}
+            key={index}
             className='flex justify-between items-center text-base mb-4'
           >
             <div className='flex items-center'>

@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { useParams } from 'react-router-dom';
 import { Header, Footer, FloatButton, BlogPost } from '../components';
 import blogsData from '../data/blogs';
@@ -21,7 +21,7 @@ export default function BlogDetail() {
   const relatedPosts = temp.filter((post) => post.id !== blog.id);
   console.log(relatedPosts);
   return (
-    <>
+    <HelmetProvider>
       <Helmet>
         <link rel='icon' type='image/svg+xml' href='../../public/favicon.ico' />
         <title>{blog.title ? `${blog.title} | CSD Vietnam` : ''}</title>
@@ -35,6 +35,6 @@ export default function BlogDetail() {
         </section>
       </main>
       <Footer />
-    </>
+    </HelmetProvider>
   );
 }

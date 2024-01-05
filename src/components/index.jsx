@@ -20,6 +20,7 @@ import CarrersContent from './Carrers/CarrersContent';
 import BlogPost from './Blogs/BlogPost';
 import SwiperNavButton from './SwiperNavButton';
 import InputFeild from './InputFeild';
+import InputFeildControl from './form-controls/InputFeildControl';
 
 export {
   Header,
@@ -44,4 +45,5 @@ export {
   BlogPost,
   SwiperNavButton,
   InputFeild,
+  InputFeildControl,
 };

@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 import Focus1 from '/assets/img/vision/Focus_1.png';
 import worldwideBackground from '/assets/img/vision/WorldwideBackground.png';
 import {
@@ -10,9 +10,9 @@ import {
   FloatButton,
 } from '../components';
 
-const AboutPage = () => {
+export default function Vision() {
   return (
-    <>
+    <HelmetProvider>
       <Helmet>
         <link rel='icon' type='image/svg+xml' href='../../public/favicon.ico' />
         <title>Vision | CSD Vietnam</title>
@@ -39,9 +39,9 @@ const AboutPage = () => {
         </div>
       </main>
       <Footer />
-    </>
+    </HelmetProvider>
   );
-};
+}
 
 const Content = () => {
   return (
@@ -101,5 +101,3 @@ const Content = () => {
     </div>
   );
 };
-
-export default AboutPage;

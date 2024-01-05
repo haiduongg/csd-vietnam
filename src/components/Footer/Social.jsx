@@ -54,9 +54,9 @@ export default function Social() {
   ];
   return (
     <div className='text-white grid lg:grid-cols-2'>
-      {social.map((item) => {
+      {social.map((item, index) => {
         return (
-          <div className='flex items-center my-3' key={item.name}>
+          <div className='flex items-center my-3' key={index}>
             <item.icon size={25} className='mr-4' />
             <a
               href={item.path}

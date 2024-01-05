@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 import {
   Header,
   Footer,
@@ -10,12 +10,11 @@ import {
   HowDoWeWork,
   ContactUs,
   LastNews,
-  // LastNews,
 } from '../components';
 
 const HomePage = () => {
   return (
-    <>
+    <HelmetProvider>
       <Helmet>
         <title>CSD Vietnam | Highly skilled and experienced group</title>
         <meta name='description' content='Helmet application' />
@@ -38,15 +37,15 @@ const HomePage = () => {
         <section>
           <HowDoWeWork />
         </section>
-        <section>
+        {/* <section>
           <LastNews />
         </section>
         <section>
           <ContactUs />
-        </section>
+        </section> */}
       </main>
       <Footer />
-    </>
+    </HelmetProvider>
   );
 };
 

@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { Button, Center, Stack, Text } from '@chakra-ui/react';
 import { Header, Footer, FloatButton, InputFeild } from '../components';
 import ReactQuill from 'react-quill';
@@ -59,9 +59,9 @@ const PostForm = () => {
 
 export default function CreatePost() {
   return (
-    <>
+    <HelmetProvider>
       <Helmet>
-        <title>CSD Vietnam | Highly skilled and experienced group</title>
+        <title>Create New Post</title>
         <meta name='description' content='Helmet application' />
       </Helmet>
       <Header />
@@ -75,6 +75,6 @@ export default function CreatePost() {
         </section>
       </main>
       <Footer />
-    </>
+    </HelmetProvider>
   );
 }

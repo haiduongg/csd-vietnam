@@ -19,9 +19,9 @@ export default function Timeline({ dataTimeline }) {
     <>
       <div className='mt-32'>
         <VerticalTimeline lineColor={'black'}>
-          {dataTimeline?.map((timeline) => (
+          {dataTimeline?.map((timeline, index) => (
             <VerticalTimelineElement
-              key={timeline.year}
+              key={index}
               className='vertical-timeline-element--work'
               contentStyle={{ background: '#f58535', color: { color } }}
               contentArrowStyle={{

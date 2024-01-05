@@ -1,5 +1,5 @@
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { useParams } from 'react-router';
-import { Helmet } from 'react-helmet';
 import servicesData from '../data/services';
 import {
   Header,
@@ -16,7 +16,7 @@ export default function Service() {
       return x.href === href;
     }) ?? {};
   return (
-    <>
+    <HelmetProvider>
       <Helmet>
         <link rel='icon' type='image/svg+xml' href='../../public/favicon.ico' />
         <title>{service.name ? `${service.name} | CSD Vietnam` : ''}</title>
@@ -34,6 +34,6 @@ export default function Service() {
         </section>
       </main>
       <Footer />
-    </>
+    </HelmetProvider>
   );
 }

@@ -1,5 +1,5 @@
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { useParams } from 'react-router';
-import { Helmet } from 'react-helmet';
 import categoriesData from '../data/category';
 import {
   Header,
@@ -16,7 +16,7 @@ export default function Category() {
       return x.href === href;
     }) ?? {};
   return (
-    <>
+    <HelmetProvider>
       <Helmet>
         <link rel='icon' type='image/svg+xml' href='/favicon.ico' />
         <title>{category.name ? `${category.name} | CSD Vietnam` : ''}</title>
@@ -36,6 +36,6 @@ export default function Category() {
         </section>
       </main>
       <Footer />
-    </>
+    </HelmetProvider>
   );
 }

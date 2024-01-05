@@ -1,4 +1,4 @@
-import { Helmet } from 'react-helmet';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { useState } from 'react';
 import { motion } from 'framer-motion';
 import { Header, Footer, FloatButton, BlogList } from '../components';
@@ -8,7 +8,7 @@ export default function NewsPage() {
   const [showTag, setShowTag] = useState('All');
   const tags = ['All', 'machinal', 'design', 'web', 'dev', 'life', 'about-us'];
   return (
-    <>
+    <HelmetProvider>
       <Helmet>
         <title>Blog | CSD Vietnam</title>
         <meta name='description' content='Helmet application' />
@@ -56,6 +56,6 @@ export default function NewsPage() {
         </section>
       </main>
       <Footer />
-    </>
+    </HelmetProvider>
   );
 }

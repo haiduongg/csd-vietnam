@@ -1,59 +1,98 @@
-import { useState } from 'react';
-import { Box, Button, Center, Text, Textarea } from '@chakra-ui/react';
-import { InputFeild } from '../../../components';
 import { useForm } from 'react-hook-form';
-import PropTypes from 'prop-types';
+import {
+  FormErrorMessage,
+  FormLabel,
+  FormControl,
+  Input,
+  Button,
+  Textarea,
+  Stack,
+  Center,
+} from '@chakra-ui/react';
+import { useState } from 'react';
 
-ContactForm.propTypes = {
-  onSubmit: PropTypes.func,
-};
-export default function ContactForm(props) {
-  const [name, setName] = useState('');
-  const [email, setEmail] = useState('');
-  const [message, setMessage] = useState('');
+export default function ContactForm() {
+  const feilds = [
+    {
+      id: 1,
+      label: 'Your Name',
+      name: 'name',
+      placeholder: 'Name',
+      errorMessage: 'This is required',
+    },
+    {
+      id: 2,
+      label: 'Your Email',
+      name: 'email',
+      placeholder: 'Email',
+      errorMessage: 'This is required',
+    },
+  ];
+  const initValues = {
+    name: '',
+    email: '',
+    message: '',
+  };
+  const [initialValue, setInitialValue] = useState(initValues);
+  const {
+    handleSubmit,
+    register,
+    formState: { errors, isSubmitting },
+  } = useForm();
 
-  // const form = useForm({
-  //   defaultValues: {
-  //     title: '',
-  //   },
-  // });
-  // const handleSubmit = (values) => {
-  //   console.log('Form: ', values);
-  // };
+  function onSubmit(values) {
+    return new Promise((resolve) => {
+      setTimeout(() => {
+        alert(JSON.stringify(values, null, 2));
+        resolve();
+      }, 1500);
+    });
+  }
+
   return (
-    <form>
-      <Box className='mt-2 lg:grid lg:grid-cols-2 gap-x-3 gap-y-9'>
-        <InputFeild
-          label='Your Name'
-          placeholder={'Input your name'}
-          name='title'
-          value={name}
-          onChange={(e) => setName(e.target.value)}
-        />
-        <InputFeild
-          label='Your Email'
-          name='email'
-          placeholder={'Input your email'}
-          value={email}
-          onChange={(e) => setEmail(e.target.value)}
-        />
-        <Box className='col-span-2'>
-          <Text mb='18px' fontWeight={'semibold'} fontSize={'20px'}>
-            Message
-          </Text>
+    <form onSubmit={handleSubmit(onSubmit)}>
+      <Stack spacing={3}>
+        {feilds?.map((feild) => (
+          <FormControl isInvalid={errors.name} key={feild.id} isRequired>
+            <FormLabel htmlFor={feild.name}>{feild.label}</FormLabel>
+            <Input
+              id={feild.name}
+              placeholder={feild.placeholder}
+              {...register(feild.name, {
+                required: feild.errorMessage,
+                minLength: { value: 4, message: 'Minimum length should be 4' },
+              })}
+            />
+            <FormErrorMessage>
+              {errors.name && errors.name.message}
+            </FormErrorMessage>
+          </FormControl>
+        ))}
+        <FormControl isInvalid={errors.name} isRequired>
+          <FormLabel htmlFor='message'>Message</FormLabel>
           <Textarea
-            placeholder='Write something to us'
-            name='message'
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
+            id='message'
+            placeholder='Write something'
+            {...register('message', {
+              required: 'This is required',
+              minLength: { value: 4, message: 'Minimum length should be 4' },
+            })}
           />
-        </Box>
-        <Center className='col-span-2'>
-          <Button colorScheme='green' variant='solid' size={'md'} type='submit'>
-            Send
-          </Button>
-        </Center>
-      </Box>
+          <FormErrorMessage>
+            {errors.name && errors.name.message}
+          </FormErrorMessage>
+        </FormControl>
+      </Stack>
+      <Center mt={3}>
+        <Button
+          mt={4}
+          colorScheme='teal'
+          isLoading={isSubmitting}
+          type='submit'
+        >
+          Submit
+        </Button>
+      </Center>
     </form>
   );
 }

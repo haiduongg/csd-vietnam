@@ -1,10 +1,10 @@
-import { Helmet } from 'react-helmet';
+import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { Header, Footer, FloatButton, CarrersContent } from '../components';
 import imageRecruitCllaborators from '../assets/images/Carrers/Recruit Cllaborators.jpg';
 
 export default function Carrers() {
   return (
-    <>
+    <HelmetProvider>
       <Helmet>
         <title>Carrers | CSD Vietnam</title>
         <meta name='description' content='Helmet application' />
@@ -17,6 +17,6 @@ export default function Carrers() {
         </section>
       </main>
       <Footer />
-    </>
+    </HelmetProvider>
   );
 }
