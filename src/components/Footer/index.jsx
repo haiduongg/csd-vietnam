@@ -21,7 +21,7 @@ const Footer = () => {
         </div>
         <div className='border-t-[1px] border-solid border-secondary-600 dark:border-gray-700 py-4 text-center bg-gradient-to-r from-secondary-900 to-secondary-800 dark:from-black-900 dark:to-black-800 text-white text-base'>
           <p className='inline-block'>
-            Copyright @ 2023 by{' '}
+            Copyright @ 2024 by{' '}
             <a
               href='https://facebook.com/CSD.Vie'
               target='_'
