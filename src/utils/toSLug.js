@@ -1,27 +1,30 @@
-export default function toSlug(title) {
-  // Chuyển hết sang chữ thường
-  title = title.toLowerCase();
+function chuyenDauThanhKhongDau(str) {
+  const dauCoDau =
+    'àáảãạăắằẳẵặâấầẩẫậèéẻẽẹêếềểễệìíỉĩịòóỏõọôốồổỗộơớờởỡợùúủũụưứừửữựỳýỷỹỵđ';
+  const dauKhongDau =
+    'aaaaaaaaaaaaaaaaaeeeeeeeeeeeiiiiiooooooooooooooooouuuuuuuuuuuyyyyyd';
 
-  // xóa dấu
-  title = title
-    .normalize('NFD') // chuyển chuỗi sang unicode tổ hợp
-    .replace(/[\u0300-\u036f]/g, ''); // xóa các ký tự dấu sau khi tách tổ hợp
+  for (let i = 0; i < dauCoDau.length; i++) {
+    const charRegExp = new RegExp(dauCoDau[i], 'g');
+    str = str.replace(charRegExp, dauKhongDau[i]);
+  }
 
-  // Thay ký tự đĐ
-  title = title.replace(/[đĐ]/g, 'd');
+  return str;
+}
 
-  // Xóa ký tự đặc biệt
-  title = title.replace(/([^0-9a-z-\s])/g, '');
-
-  // Xóa khoảng trắng thay bằng ký tự -
-  title = title.replace(/(\s+)/g, '-');
-
-  // Xóa ký tự - liên tiếp
-  title = title.replace(/-+/g, '-');
-
-  // xóa phần dư - ở đầu & cuối
-  title = title.replace(/^-+|-+$/g, '');
-
-  // return
-  return title;
+export default function toSlug(str) {
+  const result = chuyenDauThanhKhongDau(str)
+    .toLowerCase()
+    .trim()
+    .replaceAll(' ?', '')
+    .replaceAll('. ', '')
+    .replaceAll('?', '')
+    .replaceAll(', ', '')
+    .replaceAll(': ', '')
+    .replaceAll(' !', '')
+    .replaceAll(' :', '')
+    .replaceAll(' &', '')
+    .replaceAll(' -', '')
+    .replaceAll(' ', '-');
+  return result;
 }

@@ -1,17 +1,31 @@
+import { useEffect, useState } from 'react';
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { useParams } from 'react-router-dom';
+import axios from 'axios';
 import { Header, Footer, FloatButton, BlogPost } from '../components';
-import blogsData from '../data/blogs';
+import toSlug from '../utils/toSLug';
+// import blogs from '../data/blogs';
 
 export default function BlogDetail() {
   const { href } = useParams();
+  const [blogs, setBlogs] = useState([]);
+  const API_URL = 'https://api-csd-vietnam.onrender.com/api/v1/blog';
+
+  useEffect(() => {
+    const getData = async () => {
+      const response = await axios.get(API_URL);
+      setBlogs(response.data);
+    };
+    getData();
+  }, []);
+
   const blog =
-    blogsData?.find((x) => {
-      return x.url === href;
+    blogs?.find((x) => {
+      return toSlug(x.title) === href;
     }) ?? {};
   let temp = [];
   blog.tag?.forEach((tag) => {
-    blogsData.forEach((post) => {
+    blogs.forEach((post) => {
       let postTag = post.tag.toString();
       if (postTag.indexOf(tag) !== -1) {
         temp.push(post);
@@ -19,7 +33,6 @@ export default function BlogDetail() {
     });
   });
   const relatedPosts = temp.filter((post) => post.id !== blog.id);
-  console.log(relatedPosts);
   return (
     <HelmetProvider>
       <Helmet>

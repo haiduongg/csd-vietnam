@@ -42,7 +42,7 @@ export default function ContactUs() {
         </div>
         {/* Main */}
         <div className='flex flex-col lg:flex-row gap-6 w-full rounded-xl shadow-lg border border-solid border-gray-100'>
-          <div className='w-full lg:w-[65%] bg-blue-500 h-full rounded-xl py-5 px-5 lg:py-12 md:pl-8 lg:pl-10 xl:pl-14 text-white shadow-lg'>
+          <div className='w-full lg:w-[65%] bg-blue-500 rounded-xl py-5 px-5 lg:py-12 md:pl-8 lg:pl-10 xl:pl-14 text-white shadow-lg'>
             <h4>
               <span className='font-semibold'>Contact Information</span>
             </h4>

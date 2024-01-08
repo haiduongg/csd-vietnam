@@ -39,10 +39,10 @@ const HomePage = () => {
         </section>
         {/* <section>
           <LastNews />
-        </section>
+        </section> */}
         <section>
           <ContactUs />
-        </section> */}
+        </section>
       </main>
       <Footer />
     </HelmetProvider>

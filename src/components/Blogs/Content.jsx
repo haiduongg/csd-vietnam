@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import { GoDotFill } from 'react-icons/go';
+import formatDate from '../../utils/formatDate';
 
 export default function Content({ blog }) {
   return (
@@ -8,14 +9,14 @@ export default function Content({ blog }) {
       <p className='flex items-center justify-start gap-2 mt-4 mb-5'>
         <span className='text-primary-900'>{blog.author ?? 'CSD Vietnam'}</span>
         <GoDotFill size={10} className='text-primary-900' />
-        <span>{blog.createAt}</span>
+        <span>{formatDate(blog.createdAt)}</span>
       </p>
       <img
-        src={blog.img}
+        src={blog.thumbnail}
         alt={`image of ${blog.title}`}
         className='mb-8 aspect-video rounded-lg object-cover'
       />
-      <div>{blog.content}</div>
+      <div dangerouslySetInnerHTML={{ __html: blog.content }} />
       <ul className='mt-5 flex items-center justify-start gap-2'>
         {blog.tag?.map((tag, index) => (
           <li key={index}>

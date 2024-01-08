@@ -1,98 +1,134 @@
-import { useForm } from 'react-hook-form';
+import { Field, Formik } from 'formik';
+import * as Yup from 'yup';
 import {
-  FormErrorMessage,
-  FormLabel,
-  FormControl,
-  Input,
   Button,
+  FormControl,
+  FormLabel,
+  Input,
   Textarea,
-  Stack,
-  Center,
+  VStack,
+  FormErrorMessage,
+  useToast,
 } from '@chakra-ui/react';
-import { useState } from 'react';
+import { useRef } from 'react';
+import emailjs from '@emailjs/browser';
 
 export default function ContactForm() {
-  const feilds = [
-    {
-      id: 1,
-      label: 'Your Name',
-      name: 'name',
-      placeholder: 'Name',
-      errorMessage: 'This is required',
-    },
-    {
-      id: 2,
-      label: 'Your Email',
-      name: 'email',
-      placeholder: 'Email',
-      errorMessage: 'This is required',
-    },
-  ];
-  const initValues = {
-    name: '',
-    email: '',
-    message: '',
-  };
-  const [initialValue, setInitialValue] = useState(initValues);
-  const {
-    handleSubmit,
-    register,
-    formState: { errors, isSubmitting },
-  } = useForm();
-
-  function onSubmit(values) {
-    return new Promise((resolve) => {
-      setTimeout(() => {
-        alert(JSON.stringify(values, null, 2));
-        resolve();
-      }, 1500);
-    });
-  }
-
+  const form = useRef();
+  const toast = useToast();
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
-      <Stack spacing={3}>
-        {feilds?.map((feild) => (
-          <FormControl isInvalid={errors.name} key={feild.id} isRequired>
-            <FormLabel htmlFor={feild.name}>{feild.label}</FormLabel>
-            <Input
-              id={feild.name}
-              placeholder={feild.placeholder}
-              {...register(feild.name, {
-                required: feild.errorMessage,
-                minLength: { value: 4, message: 'Minimum length should be 4' },
-              })}
+    <Formik
+      initialValues={{ name: '', email: '', message: '' }}
+      validationSchema={Yup.object({
+        name: Yup.string()
+          .required('Required')
+          .min(4, 'Must be 4 characters or more'),
+        email: Yup.string()
+          .required('Required')
+          .matches(/^\S+@\S+\.\S+$/, 'Please enter a valid email address'),
+        message: Yup.string()
+          .required('Required')
+          .min(10, 'Message must be too short'),
+      })}
+      onSubmit={(values, actions) => {
+        const sendMail = () => {
+          return new Promise((resolve, reject) => {
+            emailjs
+              .sendForm(
+                'service_euyqvd6',
+                'template_3lwj4t1',
+                form.current,
+                'RL_HWhqaWeDC367ts'
+              )
+              .then((response) => {
+                console.log('Email sent:', response);
+                resolve(response);
+              })
+              .catch((error) => {
+                console.error('Error sending email:', error);
+                reject(error);
+              });
+          });
+        };
+        toast.promise(sendMail(), {
+          success: {
+            position: 'top-right',
+            title: 'Successfully',
+            description: 'Your message sent successfully',
+          },
+          error: {
+            position: 'top-right',
+            title: 'Failed',
+            description: 'An error occurred',
+          },
+          loading: {
+            position: 'top-right',
+            title: 'Pending',
+            description: 'Please wait',
+          },
+        });
+
+        actions.resetForm();
+      }}
+    >
+      {(formik) => (
+        <VStack as='form' ref={form} spacing={5} onSubmit={formik.handleSubmit}>
+          <FormControl
+            isRequired
+            isInvalid={formik.errors.name && formik.touched.name}
+          >
+            <FormLabel htmlFor='name'>Your Name</FormLabel>
+            <Field
+              as={Input}
+              id='name'
+              name='name'
+              type='text'
+              value={formik.values.name}
+              onChange={formik.handleChange}
+              placeholder='Enter your name'
             />
-            <FormErrorMessage>
-              {errors.name && errors.name.message}
-            </FormErrorMessage>
+            <FormErrorMessage>{formik.errors.name}</FormErrorMessage>
           </FormControl>
-        ))}
-        <FormControl isInvalid={errors.name} isRequired>
-          <FormLabel htmlFor='message'>Message</FormLabel>
-          <Textarea
-            id='message'
-            placeholder='Write something'
-            {...register('message', {
-              required: 'This is required',
-              minLength: { value: 4, message: 'Minimum length should be 4' },
-            })}
-          />
-          <FormErrorMessage>
-            {errors.name && errors.name.message}
-          </FormErrorMessage>
-        </FormControl>
-      </Stack>
-      <Center mt={3}>
-        <Button
-          mt={4}
-          colorScheme='teal'
-          isLoading={isSubmitting}
-          type='submit'
-        >
-          Submit
-        </Button>
-      </Center>
-    </form>
+
+          <FormControl
+            isRequired
+            isInvalid={formik.errors.email && formik.touched.email}
+          >
+            <FormLabel htmlFor='email'>Email Address</FormLabel>
+            <Field
+              as={Input}
+              id='email'
+              name='email'
+              type='email'
+              value={formik.values.email}
+              onChange={formik.handleChange}
+              placeholder='Enter your email'
+            />
+            <FormErrorMessage>{formik.errors.email}</FormErrorMessage>
+          </FormControl>
+
+          <FormControl
+            isRequired
+            isInvalid={formik.errors.message && formik.touched.message}
+          >
+            <FormLabel htmlFor='message'>Message</FormLabel>
+            <Field
+              as={Textarea}
+              id='message'
+              name='message'
+              type='text'
+              value={formik.values.message}
+              onChange={formik.handleChange}
+              placeholder='Write something here'
+            />
+            <FormErrorMessage>{formik.errors.message}</FormErrorMessage>
+          </FormControl>
+
+          <Button colorScheme='green' type='submit'>
+            Send
+          </Button>
+        </VStack>
+      )}
+    </Formik>
   );
 }

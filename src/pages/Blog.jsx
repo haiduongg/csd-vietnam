@@ -1,8 +1,7 @@
 import { Helmet, HelmetProvider } from 'react-helmet-async';
 import { useState } from 'react';
-import { motion } from 'framer-motion';
-import { Header, Footer, FloatButton, BlogList } from '../components';
 import { Button } from '@chakra-ui/react';
+import { Header, Footer, FloatButton, BlogList } from '../components';
 
 export default function NewsPage() {
   const [showTag, setShowTag] = useState('All');
@@ -28,25 +27,14 @@ export default function NewsPage() {
           <div className='my-14 mx-auto xl:max-w-4xl'>
             <ul className='flex flex-wrap items-center justify-center gap-2'>
               {tags.map((tag, index) => (
-                <motion.li key={index} onClick={() => setShowTag(tag)}>
+                <li key={index} onClick={() => setShowTag(tag)}>
                   <Button
-                    className={`${
-                      showTag === tag
-                        ? 'bg-primary-900 dark:bg-primary-800 hover:opacity-75 border-2 border-transparent'
-                        : 'text-black bg-transparent border-solid border-2 border-primary-900 dark:bg-primary-700 hover:bg-primary-900 dark:bg-transparent'
-                    } rounded-lg group focus:ring-0`}
+                    colorScheme='orange'
+                    variant={showTag === tag ? 'solid' : 'outline'}
                   >
-                    <span
-                      className={`${
-                        showTag === tag
-                          ? 'text-white dark:text-white'
-                          : 'text-black-800 group-hover:text-white dark:text-white dark:group-hover:opacity-85'
-                      } text-base font-semibold`}
-                    >
-                      {tag}
-                    </span>
+                    <span className='font-semibold'>{tag}</span>
                   </Button>
-                </motion.li>
+                </li>
               ))}
             </ul>
           </div>

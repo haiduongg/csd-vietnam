@@ -1,47 +1,47 @@
-import { PiCaretRightBold, PiDotOutlineThin } from 'react-icons/pi';
-import PropTypes from 'prop-types';
-import dataBlogs from '../../data/blogs';
+import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import axios from 'axios';
+import toSlug from '../../utils/toSLug';
+import formatDate from '../../utils/formatDate';
 
 export default function BlogList({ tag }) {
+  const [blogs, setBlogs] = useState([]);
+  const API_URL = 'https://api-csd-vietnam.onrender.com/api/v1/blog';
+
+  useEffect(() => {
+    const getData = async () => {
+      const response = await axios.get(API_URL);
+      setBlogs(response.data);
+    };
+    getData();
+  }, []);
+
   return (
     <div className='max-w-[1040px] mx-auto select-none'>
       <div>
-        {dataBlogs
-          .filter((blog) =>
+        {blogs
+          ?.filter((blog) =>
             tag === 'All' ? blog : blog.tag.toString().indexOf(tag) !== -1
           )
           ?.map((blog) => (
-            <div
+            <Link
               key={blog.id}
-              className='flex flex-row items-start justify-between mt-6 relative'
+              to={`/blog/${toSlug(blog.title)}`}
+              className='group block max-w-6xl rounded-lg mt-6 py-3 px-5 hover:bg-black-100 duration-300'
             >
-              <div className='hidden xl:block'>
-                <div className='absolute top-0 left-[-900px] mt-2 sm:top-[-10px] sm:left-[95px] xl:mt-4 flex flex-col items-center justify-center opacity-10 mr-1 '>
-                  <PiDotOutlineThin size={60} className='inline' />
-                  <div className='h-[250px] w-[2px] xl:h-[172px] bg-black-900 dark:bg-white mt-[-24px]'></div>
+              <div className='flex flex-row items-start gap-12'>
+                <p className='mt-1'>{formatDate(blog.createdAt)}</p>
+                <div>
+                  <p className='group-hover:text-primary-900 mb-2 text-xl font-semibold'>
+                    {blog.title}
+                  </p>
+                  <p className='opacity-75 h-[50px] overflow-hidden text-ellipsis'>
+                    {blog.description?.slice(0, 140) ?? 'No description'}
+                  </p>
                 </div>
               </div>
-              <div className='flex flex-col xl:flex-row'>
-                <div className='Time mt-6 min-w-fit mr-11'>
-                  <span>{blog.createAt}</span>
-                </div>
-                <div className='BlogItem hover:bg-black-100 hover:dark:bg-black-800 p-6 rounded-2xl cursor-pointer'>
-                  <Link to={`/blog/${blog.url}`}>
-                    <p className='mb-2'>
-                      <span className='font-semibold'>{blog.title}</span>
-                    </p>
-                    <p className='opacity-75 max-h-[50px] overflow-hidden text-ellipsis'>
-                      {blog.description.slice(0, 140)}
-                    </p>
-                    <div className='flex items-center justify-start text-primary-900 font-semibold leading-none mt-4'>
-                      <span className='mr-1'>See more</span>
-                      <PiCaretRightBold className='text-sm' />
-                    </div>
-                  </Link>
-                </div>
-              </div>
-            </div>
+            </Link>
           ))}
       </div>
     </div>

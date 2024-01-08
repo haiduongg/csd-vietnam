@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import { MdOutlineArrowBackIos } from 'react-icons/md';
+import toSlug from '../../utils/toSLug';
 import Content from './Content';
 
 BlogPost.propTypes = {
@@ -87,7 +88,7 @@ export default function BlogPost({ blog, relatedPosts }) {
           <div className='mt-5'>
             {relatedPosts?.map((post, index) => (
               <Link
-                to={`/blog/${post.url}`}
+                to={`/blog/${toSlug(post.title)}`}
                 key={index}
                 className='group block my-4'
               >

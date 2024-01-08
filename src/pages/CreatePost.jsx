@@ -1,18 +1,44 @@
 import { Helmet, HelmetProvider } from 'react-helmet-async';
-import { Button, Center, Stack, Text } from '@chakra-ui/react';
+import { Button, Center, Stack, Text, Toast } from '@chakra-ui/react';
 import { Header, Footer, FloatButton, InputFeild } from '../components';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import { useState } from 'react';
+import axios from 'axios';
+import { useToast } from '@chakra-ui/react';
 
 const PostForm = () => {
   const [title, setTitle] = useState('');
   const [desription, setDesription] = useState('');
-  const [thumbnail, setThumbnail] = useState(null);
+  const [thumbnail, setThumbnail] = useState('');
   const [tag, setTag] = useState('');
   const [content, setContent] = useState('');
+
+  const API_URL = 'https://api-csd-vietnam.onrender.com/api/v1/blog';
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    let newPost = {
+      title: title,
+      desription: desription,
+      thumbnail: thumbnail,
+      tag: tag.split(', '),
+      content: content,
+    };
+
+    const sendPostRequest = async () => {
+      try {
+        const resp = await axios.post(API_URL, newPost);
+        console.log(resp.data);
+        alert('Successfully');
+      } catch (err) {
+        console.error(err);
+      }
+    };
+    sendPostRequest();
+  };
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <Stack spacing={8}>
         <InputFeild
           label='Title'
@@ -28,9 +54,9 @@ const PostForm = () => {
         />
         <InputFeild
           label='Thumbnail'
-          type='file'
+          type='text'
           value={thumbnail}
-          onChange={(e) => setThumbnail(e.target.file)}
+          onChange={(e) => setThumbnail(e.target.value)}
         />
         <InputFeild
           label='Tag'
@@ -50,7 +76,9 @@ const PostForm = () => {
           />
         </div>
         <Center mt='5px'>
-          <Button colorScheme='green'>Create Post</Button>
+          <Button colorScheme='green' type='submit'>
+            Create Post
+          </Button>
         </Center>
       </Stack>
     </form>
