@@ -4,8 +4,10 @@ import PropTypes from 'prop-types';
 import axios from 'axios';
 import toSlug from '../../utils/toSLug';
 import formatDate from '../../utils/formatDate';
+import { Box, Flex, Skeleton, Stack } from '@chakra-ui/react';
 
 export default function BlogList({ tag }) {
+  const [isLoading, setIsLoading] = useState(false);
   const [blogs, setBlogs] = useState([]);
   const API_URL = 'https://api-csd-vietnam.onrender.com/api/v1/blog';
 
@@ -13,14 +15,15 @@ export default function BlogList({ tag }) {
     const getData = async () => {
       const response = await axios.get(API_URL);
       setBlogs(response.data);
+      setIsLoading(true);
     };
     getData();
   }, []);
 
   return (
     <div className='max-w-[1040px] mx-auto select-none'>
-      <div>
-        {blogs
+      {isLoading &&
+        blogs
           ?.filter((blog) =>
             tag === 'All' ? blog : blog.tag.toString().indexOf(tag) !== -1
           )
@@ -43,7 +46,22 @@ export default function BlogList({ tag }) {
               </div>
             </Link>
           ))}
-      </div>
+
+      {!isLoading && (
+        <Stack spacing='1.5rem'>
+          {new Array(5).fill(0)?.map((blog, index) => (
+            <Box key={index}>
+              <Flex gap='3rem'>
+                <Skeleton height='30px' width='100px' mt='0.25rem' />
+                <Box width='100%'>
+                  <Skeleton height='36px' mb='1rem' />
+                  <Skeleton height='60px' />
+                </Box>
+              </Flex>
+            </Box>
+          ))}
+        </Stack>
+      )}
     </div>
   );
 }

@@ -41,11 +41,11 @@ export default function ContactForm() {
                 'RL_HWhqaWeDC367ts'
               )
               .then((response) => {
-                console.log('Email sent:', response);
+                // Log res
                 resolve(response);
               })
               .catch((error) => {
-                console.error('Error sending email:', error);
+                // Log error
                 reject(error);
               });
           });

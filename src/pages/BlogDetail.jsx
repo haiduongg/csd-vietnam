@@ -4,9 +4,9 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { Header, Footer, FloatButton, BlogPost } from '../components';
 import toSlug from '../utils/toSLug';
-// import blogs from '../data/blogs';
 
 export default function BlogDetail() {
+  const [isLoading, setIsLoading] = useState(false);
   const { href } = useParams();
   const [blogs, setBlogs] = useState([]);
   const API_URL = 'https://api-csd-vietnam.onrender.com/api/v1/blog';
@@ -15,6 +15,7 @@ export default function BlogDetail() {
     const getData = async () => {
       const response = await axios.get(API_URL);
       setBlogs(response.data);
+      setIsLoading(true);
     };
     getData();
   }, []);
@@ -44,7 +45,11 @@ export default function BlogDetail() {
       <FloatButton />
       <main className='py-[72px] dark:text-white pb-32'>
         <section className='container'>
-          <BlogPost blog={blog} relatedPosts={relatedPosts} />
+          <BlogPost
+            blog={blog}
+            relatedPosts={relatedPosts}
+            isLoading={isLoading}
+          />
         </section>
       </main>
       <Footer />
