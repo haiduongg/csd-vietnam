@@ -1,4 +1,4 @@
-import { Helmet, HelmetProvider } from 'react-helmet-async';
+import { Helmet } from 'react-helmet-async';
 import { BiSolidTimeFive } from 'react-icons/bi';
 import {
   Header,
@@ -30,10 +30,13 @@ export default function OurJourney() {
     },
   ];
   return (
-    <HelmetProvider>
+    <>
       <Helmet>
         <title>Our Journey | CSD Vietnam</title>
-        <meta name='description' content='Helmet application' />
+        <meta
+          name='description'
+          content='Discover CSD Vietnam: Your hub for captivating reads! Dive into diverse, inspiring articles & valuable insights. Join our journey of knowledge & inspiration.'
+        />
       </Helmet>
       <Header />
       <FloatButton />
@@ -53,6 +56,6 @@ export default function OurJourney() {
         </div>
       </main>
       <Footer />
-    </HelmetProvider>
+    </>
   );
 }

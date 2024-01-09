@@ -65,6 +65,8 @@ export default function CategoryGallery({ dataCategory }) {
             <img
               src={currentImage.img}
               alt={`image`}
+              title={`image`}
+              loading='eager'
               className='max-w-[95%] md:max-w-[85%] max-h-[95%] rounded-lg'
             />
           </div>
@@ -93,6 +95,8 @@ export default function CategoryGallery({ dataCategory }) {
                   key={index}
                   src={image}
                   alt={`image ${index}`}
+                  title={`image ${index}`}
+                  loading='eager'
                   className='w-full shadow-lg cursor-pointer select-none rounded-md'
                   onClick={() => setCurrentImage({ img: image, i: index })}
                   whileHover={{ scale: 1.04 }}

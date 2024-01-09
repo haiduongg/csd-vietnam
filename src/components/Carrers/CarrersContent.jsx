@@ -46,6 +46,8 @@ export default function CarrersContent({ dataImage }) {
       <img
         src={dataImage}
         alt='Carrer Photo'
+        title='Carrer Photo'
+        loading='eager'
         width={400}
         className='rounded-xl w-full lg:w-[400px]'
       />

@@ -29,6 +29,8 @@ export default function VisionCard() {
           src={avatar}
           alt='CSD Vietnam'
           className='rounded-full'
+          title='CSD Vietnam Card'
+          loading='eager'
           width='150px'
           height='150px'
         />

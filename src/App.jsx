@@ -14,6 +14,7 @@ import {
   CreatePost,
 } from './pages';
 import ThemeContext from './context/ThemeContext';
+import { HelmetProvider } from 'react-helmet-async';
 
 function App() {
   const get = JSON.parse(localStorage.getItem('dark-theme'));
@@ -35,22 +36,24 @@ function App() {
 
   return (
     <ThemeContext.Provider value={{ darkMode, setDarkMode }}>
-      <ChakraProvider>
-        <div className='page dark:bg-black-900 dark:text-black-none duration-75'>
-          <Routes>
-            <Route index element={<HomePage />} />
-            <Route path='vision' element={<Vision />} />
-            <Route path='our-journey' element={<OurJourney />} />
-            <Route path='service/:href' element={<Service />} />
-            <Route path='category/:href' element={<Category />} />
-            <Route path='blog' element={<BlogPage />} />
-            <Route path='blog/:href' element={<BlogDetail />} />
-            <Route path='carrers' element={<Carrers />} />
-            <Route path='create' element={<CreatePost />} />
-            <Route path='*' element={<ErrorPage />} />
-          </Routes>
-        </div>
-      </ChakraProvider>
+      <HelmetProvider>
+        <ChakraProvider>
+          <div className='page dark:bg-black-900 dark:text-black-none duration-75'>
+            <Routes>
+              <Route index element={<HomePage />} />
+              <Route path='vision' element={<Vision />} />
+              <Route path='our-journey' element={<OurJourney />} />
+              <Route path='service/:href' element={<Service />} />
+              <Route path='category/:href' element={<Category />} />
+              <Route path='blog' element={<BlogPage />} />
+              <Route path='blog/:href' element={<BlogDetail />} />
+              <Route path='carrers' element={<Carrers />} />
+              <Route path='create' element={<CreatePost />} />
+              <Route path='*' element={<ErrorPage />} />
+            </Routes>
+          </div>
+        </ChakraProvider>
+      </HelmetProvider>
     </ThemeContext.Provider>
   );
 }

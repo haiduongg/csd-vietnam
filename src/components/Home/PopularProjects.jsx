@@ -29,6 +29,9 @@ export default function ProjectsList() {
                 <img
                   src={project.img}
                   alt={`Project ${project.id}`}
+                  title={project.name}
+                  width='auto'
+                  loading='eager'
                   className='hover:opacity-60 duration-300 hover:scale-105 object-cover h-full'
                 />
               </div>

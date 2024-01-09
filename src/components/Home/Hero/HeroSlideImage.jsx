@@ -29,7 +29,14 @@ const HeroSlideImage = ({ dataImg }) => {
           key={image.id}
           className='w-[500px] flex items-center justify-center'
         >
-          <img src={image.src} alt={image.id} width={500} height={500} />
+          <img
+            src={image.src}
+            alt={`Image ${image.id}`}
+            width={500}
+            height={500}
+            title={`Image ${image.id}`}
+            loading='eager'
+          />
         </SwiperSlide>
       ))}
     </Swiper>

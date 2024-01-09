@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Helmet, HelmetProvider } from 'react-helmet-async';
+import { Helmet } from 'react-helmet-async';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import { Header, Footer, FloatButton, BlogPost } from '../components';
@@ -35,11 +35,13 @@ export default function BlogDetail() {
   });
   const relatedPosts = temp.filter((post) => post.id !== blog.id);
   return (
-    <HelmetProvider>
+    <>
       <Helmet>
         <link rel='icon' type='image/svg+xml' href='../../public/favicon.ico' />
         <title>{blog.title ? `${blog.title} | CSD Vietnam` : ''}</title>
-        <meta name='description' content='Helmet application' />
+        {blog.description && (
+          <meta name='description' content={blog.description} />
+        )}
       </Helmet>
       <Header />
       <FloatButton />
@@ -53,6 +55,6 @@ export default function BlogDetail() {
         </section>
       </main>
       <Footer />
-    </HelmetProvider>
+    </>
   );
 }

@@ -6,6 +6,8 @@ export default function ReasonCard({ data }) {
       <img
         src={data.icon}
         alt={data.title}
+        title={data.title}
+        loading='eager'
         width='70'
         height='70'
         className='mx-auto my-6 rounded-2xl'

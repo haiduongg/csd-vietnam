@@ -1,10 +1,10 @@
-import { Helmet, HelmetProvider } from 'react-helmet-async';
+import { Helmet } from 'react-helmet-async';
 import { Link } from 'react-router-dom';
 import { FloatButton } from '../components';
 
 export default function ErrorPage() {
   return (
-    <HelmetProvider>
+    <>
       <Helmet>
         <link rel='icon' type='image/svg+xml' href='../../public/favicon.ico' />
         <title>404 Not Found</title>
@@ -40,6 +40,6 @@ export default function ErrorPage() {
           </div>
         </div>
       </div>
-    </HelmetProvider>
+    </>
   );
 }

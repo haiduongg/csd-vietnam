@@ -26,6 +26,8 @@ export default function ServiceImageSlider({ dataImg, dataVideo }) {
             <img
               src={image}
               alt={`image ${index}`}
+              title={`image ${index}`}
+              loading='eager'
               className='max-h-[40rem] object-contain select-none'
             />
           </SwiperSlide>

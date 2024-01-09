@@ -115,6 +115,8 @@ export default function BlogPost({ isLoading, blog, relatedPosts }) {
                     <img
                       src={post.img}
                       alt={`image of ${post.title}`}
+                      title={post.title}
+                      loading='eager'
                       className='group-hover:opacity-70 object-cover w-20 aspect-video rounded-md duration-300'
                     />
                     <span className='opacity-95 hover:opacity-100 duration-300'>

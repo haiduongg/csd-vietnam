@@ -1,4 +1,4 @@
-import { Helmet, HelmetProvider } from 'react-helmet-async';
+import { Helmet } from 'react-helmet-async';
 import Focus1 from '/assets/img/vision/Focus_1.png';
 import worldwideBackground from '/assets/img/vision/WorldwideBackground.png';
 import {
@@ -12,11 +12,14 @@ import {
 
 export default function Vision() {
   return (
-    <HelmetProvider>
+    <>
       <Helmet>
         <link rel='icon' type='image/svg+xml' href='../../public/favicon.ico' />
         <title>Vision | CSD Vietnam</title>
-        <meta name='description' content='Helmet application' />
+        <meta
+          name='description'
+          content='Discover CSD Vietnam: Your hub for captivating reads! Dive into diverse, inspiring articles & valuable insights. Join our journey of knowledge & inspiration.'
+        />
       </Helmet>
       <Header />
       <FloatButton />
@@ -39,7 +42,7 @@ export default function Vision() {
         </div>
       </main>
       <Footer />
-    </HelmetProvider>
+    </>
   );
 }
 
@@ -54,6 +57,8 @@ const Content = () => {
           <img
             src={worldwideBackground}
             alt='background'
+            title='background'
+            loading='eager'
             className='absolute right-0 -z-10 opacity-80'
             width={800}
             height={800}
@@ -95,6 +100,8 @@ const Content = () => {
         <img
           src={Focus1}
           alt='Focus one'
+          title='Image'
+          loading='eager'
           className='mx-auto mt-3 rounded-md md:w-[50%] md:h-[50%] lg:w-[500px] lg:h-[282px]'
         />
       </section>

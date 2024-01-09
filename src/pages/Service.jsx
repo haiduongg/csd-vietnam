@@ -1,4 +1,4 @@
-import { Helmet, HelmetProvider } from 'react-helmet-async';
+import { Helmet } from 'react-helmet-async';
 import { useParams } from 'react-router';
 import servicesData from '../data/services';
 import {
@@ -16,11 +16,14 @@ export default function Service() {
       return x.href === href;
     }) ?? {};
   return (
-    <HelmetProvider>
+    <>
       <Helmet>
         <link rel='icon' type='image/svg+xml' href='../../public/favicon.ico' />
         <title>{service.name ? `${service.name} | CSD Vietnam` : ''}</title>
-        <meta name='description' content='Helmet application' />
+        <meta
+          name='description'
+          content='Discover CSD Vietnam: Your hub for captivating reads! Dive into diverse, inspiring articles & valuable insights. Join our journey of knowledge & inspiration.'
+        />
       </Helmet>
       <Header />
       <FloatButton />
@@ -34,6 +37,6 @@ export default function Service() {
         </section>
       </main>
       <Footer />
-    </HelmetProvider>
+    </>
   );
 }

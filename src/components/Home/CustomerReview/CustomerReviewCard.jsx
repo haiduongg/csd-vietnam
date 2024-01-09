@@ -31,6 +31,8 @@ export default function CustomerReviewCard({ dataCustomer }) {
           <img
             src={dataCustomer.avatar}
             alt={`avatar of ${dataCustomer.name}`}
+            title={dataCustomer.name}
+            loading='eager'
             width={90}
             height={90}
             className='rounded-full p-[1px] border-2 boder-solid border-primary-800 object-cover aspect-square'

@@ -41,6 +41,8 @@ function VisionSlider({ data }) {
               <img
                 src={person.avatar}
                 alt={person.name}
+                title={person.name}
+                loading='eager'
                 width={100}
                 height={100}
                 className='w-[100px] h-[100px] object-cover rounded-full'
@@ -74,6 +76,8 @@ function VisionSlider({ data }) {
               <img
                 src={person.avatar}
                 alt={person.name}
+                title={person.name}
+                loading='eager'
                 width={100}
                 height={100}
                 className='w-[100px] h-[100px] object-cover rounded-full'

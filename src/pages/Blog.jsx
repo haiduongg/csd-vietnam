@@ -1,4 +1,4 @@
-import { Helmet, HelmetProvider } from 'react-helmet-async';
+import { Helmet } from 'react-helmet-async';
 import { useState } from 'react';
 import { Button } from '@chakra-ui/react';
 import { Header, Footer, FloatButton, BlogList } from '../components';
@@ -7,10 +7,17 @@ export default function NewsPage() {
   const [showTag, setShowTag] = useState('All');
   const tags = ['All', 'machinal', 'design', 'web', 'dev', 'life', 'about-us'];
   return (
-    <HelmetProvider>
+    <>
       <Helmet>
         <title>Blog | CSD Vietnam</title>
-        <meta name='description' content='Helmet application' />
+        <meta
+          name='description'
+          content='Discover CSD Vietnam: Your hub for captivating reads! Dive into diverse, inspiring articles & valuable insights. Join our journey of knowledge & inspiration.'
+        />
+        <meta
+          name='keywords'
+          content='blogcsd, blog csd viet nam, blog csd, csd vietnam'
+        />
       </Helmet>
       <Header />
       <FloatButton />
@@ -20,9 +27,9 @@ export default function NewsPage() {
             <h1 className='text-center font-extrabold text-3xl md:text-4xl lg:text-4xl xl:text-5xl'>
               {showTag !== 'All' ? `Tag #${showTag}` : 'CSD Blogs'}
             </h1>
-            <h5 className='text-center mt-2 xl:mt-3 opacity-80 text-base md:text-lg xl:text-xl'>
+            <h2 className='text-center mt-2 xl:mt-3 opacity-80 text-base md:text-lg xl:text-xl'>
               All our articles
-            </h5>
+            </h2>
           </div>
           <div className='my-14 mx-auto xl:max-w-4xl'>
             <ul className='flex flex-wrap items-center justify-center gap-2'>
@@ -44,6 +51,6 @@ export default function NewsPage() {
         </section>
       </main>
       <Footer />
-    </HelmetProvider>
+    </>
   );
 }

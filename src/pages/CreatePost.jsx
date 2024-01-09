@@ -1,11 +1,10 @@
-import { Helmet, HelmetProvider } from 'react-helmet-async';
-import { Button, Center, Stack, Text, Toast } from '@chakra-ui/react';
+import { Helmet } from 'react-helmet-async';
+import { Button, Center, Stack, Text } from '@chakra-ui/react';
 import { Header, Footer, FloatButton, InputFeild } from '../components';
 import ReactQuill from 'react-quill';
 import 'react-quill/dist/quill.snow.css';
 import { useState } from 'react';
 import axios from 'axios';
-import { useToast } from '@chakra-ui/react';
 
 const PostForm = () => {
   const [title, setTitle] = useState('');
@@ -87,7 +86,7 @@ const PostForm = () => {
 
 export default function CreatePost() {
   return (
-    <HelmetProvider>
+    <>
       <Helmet>
         <title>Create New Post</title>
         <meta name='description' content='Helmet application' />
@@ -103,6 +102,6 @@ export default function CreatePost() {
         </section>
       </main>
       <Footer />
-    </HelmetProvider>
+    </>
   );
 }
