@@ -27,6 +27,7 @@ export default function BlogList({ tag }) {
           ?.filter((blog) =>
             tag === 'All' ? blog : blog.tag.toString().indexOf(tag) !== -1
           )
+          ?.reverse()
           ?.map((blog) => (
             <Link
               key={blog.id}

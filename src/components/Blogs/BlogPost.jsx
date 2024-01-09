@@ -4,6 +4,7 @@ import { MdOutlineArrowBackIos } from 'react-icons/md';
 import toSlug from '../../utils/toSLug';
 import Content from './Content';
 import { Box, Flex, Skeleton, SkeletonText } from '@chakra-ui/react';
+import getFromBetweenTwoCharacters from '../../utils/getFromBetweenTwoCharacters';
 
 BlogPost.propTypes = {
   isLoading: PropTypes.bool,
@@ -11,44 +12,51 @@ BlogPost.propTypes = {
   relatedPosts: PropTypes.array.isRequired,
 };
 export default function BlogPost({ isLoading, blog, relatedPosts }) {
-  const onThisPage = [
-    'What is Vue?',
-    'The Progressive Framework',
-    'Single-File Components',
-    'API Styles',
-    'Still Got Questions?',
-    'Pick Your Learning Path',
-    'What is Vue?',
-    'The Progressive Framework',
-    'Single-File Components',
-    'API Styles',
-    'Still Got Questions?',
-    'Pick Your Learning Path',
-    'What is Vue?',
-    'The Progressive Framework',
-    'Single-File Components',
-    'API Styles',
-    'Still Got Questions?',
-    'Pick Your Learning Path',
-    'What is Vue?',
-    'The Progressive Framework',
-    'Single-File Components',
-    'API Styles',
-    'Still Got Questions?',
-    'Pick Your Learning Path',
-    'What is Vue?',
-    'The Progressive Framework',
-    'Single-File Components',
-    'API Styles',
-    'Still Got Questions?',
-    'Pick Your Learning Path',
-    'What is Vue?',
-    'The Progressive Framework',
-    'Single-File Components',
-    'API Styles',
-    'Still Got Questions?',
-    'Pick Your Learning Path',
-  ];
+  // const onThisPage = [
+  //   'What is Vue?',
+  //   'The Progressive Framework',
+  //   'Single-File Components',
+  //   'API Styles',
+  //   'Still Got Questions?',
+  //   'Pick Your Learning Path',
+  //   'What is Vue?',
+  //   'The Progressive Framework',
+  //   'Single-File Components',
+  //   'API Styles',
+  //   'Still Got Questions?',
+  //   'Pick Your Learning Path',
+  //   'What is Vue?',
+  //   'The Progressive Framework',
+  //   'Single-File Components',
+  //   'API Styles',
+  //   'Still Got Questions?',
+  //   'Pick Your Learning Path',
+  //   'What is Vue?',
+  //   'The Progressive Framework',
+  //   'Single-File Components',
+  //   'API Styles',
+  //   'Still Got Questions?',
+  //   'Pick Your Learning Path',
+  //   'What is Vue?',
+  //   'The Progressive Framework',
+  //   'Single-File Components',
+  //   'API Styles',
+  //   'Still Got Questions?',
+  //   'Pick Your Learning Path',
+  //   'What is Vue?',
+  //   'The Progressive Framework',
+  //   'Single-File Components',
+  //   'API Styles',
+  //   'Still Got Questions?',
+  //   'Pick Your Learning Path',
+  // ];
+  const onThisPage =
+    blog.content &&
+    getFromBetweenTwoCharacters(blog.content, '<h3><strong>', '</strong></h3>');
+  onThisPage?.map((item) =>
+    item.replaceAll('strong>', '').replaceAll('</strong>', '')
+  );
+  console.log(onThisPage);
   return (
     <div className='grid grid-cols-14 gap-6'>
       <div className='col-span-3 pt-10 text-sm'>
@@ -60,7 +68,7 @@ export default function BlogPost({ isLoading, blog, relatedPosts }) {
               {onThisPage?.map((item, index) => (
                 <li
                   key={index}
-                  className='mt-3 opacity-60 font-semibold hover:opacity-100 duration-300'
+                  className='w-[85%] mt-3 opacity-60 font-semibold hover:opacity-100 duration-300 truncate '
                 >
                   <a
                     href={`#${item
@@ -77,7 +85,7 @@ export default function BlogPost({ isLoading, blog, relatedPosts }) {
           )}
 
           {!isLoading && (
-            <Box width='80%'>
+            <Box width='85%'>
               {new Array(10).fill(0).map((item, index) => (
                 <SkeletonText
                   key={index}
