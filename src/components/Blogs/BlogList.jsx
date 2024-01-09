@@ -4,7 +4,7 @@ import PropTypes from 'prop-types';
 import axios from 'axios';
 import toSlug from '../../utils/toSLug';
 import formatDate from '../../utils/formatDate';
-import { Box, Flex, Skeleton, Stack } from '@chakra-ui/react';
+import { Box, Flex, Skeleton, SkeletonText, Stack } from '@chakra-ui/react';
 
 export default function BlogList({ tag }) {
   const [isLoading, setIsLoading] = useState(false);
@@ -52,10 +52,10 @@ export default function BlogList({ tag }) {
           {new Array(5).fill(0)?.map((blog, index) => (
             <Box key={index}>
               <Flex gap='3rem'>
-                <Skeleton height='30px' width='100px' mt='0.25rem' />
+                <Skeleton height='30px' width='100px' mt='0.5rem' />
                 <Box width='100%'>
-                  <Skeleton height='36px' mb='1rem' />
-                  <Skeleton height='60px' />
+                  <Skeleton height='36px' mb='0.5rem' />
+                  <SkeletonText noOfLines={2} spacing='2' skeletonHeight='3' />
                 </Box>
               </Flex>
             </Box>
